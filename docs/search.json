@@ -1,0 +1,29 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "ideabank.html",
+    "href": "ideabank.html",
+    "title": "Ideabank",
+    "section": "",
+    "text": "Psychology\n\nIntergroup bias and its implications\n\nMaas et al., 1989 (Language use in intergroup contexts: The linguistic intergroup bias.)\nMaas, 1999 (Linguistic Intergroup Bias: Stereotype Perpetuation Through Language)\n\nBiological contributors to homicide\n\nSajous-Turner et al., 2020 (Aberrant brain gray matter in murderers)\nRaine, 2013 (The anatomy of violence: The biological roots of crime) - this is a book\n\n\n\n\nComputer Science\n\nTopic modelling - an overview of what it is, how it works, and how to apply it\n\nBlei, 2012 (Probabilistic Topic Models)\n\n\n\n\n(Ancient) History\n\nCassius Dio and his impact on Roman history",
+    "crumbs": [
+      "Ideabank"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jasmine’s Personal Encyclopedia",
+    "section": "",
+    "text": "Above all, I am an avid learner. So, this is my personal encyclopedia - a repository of knowledge, if you will - where I store mini articles of topics I am interested in, ranging from psychology to computer science to paleontology. I’ll probably only be brushing the surface of these areas, but hey, any learning is fun and any knowledge is powerful.",
+    "crumbs": [
+      "Home"
+    ]
+  }
+]

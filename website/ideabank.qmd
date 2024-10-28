@@ -1,0 +1,20 @@
+---
+title: "Ideabank"
+description: "Topics I want to look into 🤔"
+--- 
+
+### Psychology
+* Intergroup bias and its implications
+  * Maas et al., 1989 ([Language use in intergroup contexts: The linguistic intergroup bias.](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.57.6.981))
+  * Maas, 1999 ([Linguistic Intergroup Bias: Stereotype Perpetuation Through Language](https://www.sciencedirect.com/science/article/abs/pii/S0065260108602725?via%3Dihub))
+* Biological contributors to homicide
+  * Sajous-Turner et al., 2020 ([Aberrant brain gray matter in murderers](https://link.springer.com/article/10.1007/s11682-019-00155-y))
+  * Raine, 2013 ([The anatomy of violence: The biological roots of crime](https://psycnet.apa.org/record/2013-09813-000)) - this is a book
+  
+### Computer Science
+* Topic modelling - an overview of what it is, how it works, and how to apply it
+  * Blei, 2012 ([Probabilistic
+Topic Models](https://www.cs.columbia.edu/~blei/papers/Blei2012.pdf))
+
+### (Ancient) History
+* Cassius Dio and his impact on Roman history

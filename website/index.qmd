@@ -1,0 +1,5 @@
+---
+title: "Jasmine's Personal Encyclopedia"
+---
+
+Above all, I am an avid learner. So, this is my personal encyclopedia - a repository of knowledge, if you will - where I store mini articles of topics I am interested in, ranging from psychology to computer science to paleontology. I'll probably only be brushing the surface of these areas, but hey, any learning is fun and any knowledge is powerful.

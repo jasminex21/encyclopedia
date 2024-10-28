@@ -1,0 +1,41 @@
+project:
+  type: website
+  title: "Personal Encyclopedia"
+  output-dir: /home/jasmine/PROJECTS/encyclopedia/docs
+
+website:
+  title: "Personal Encyclopedia"
+  
+  page-navigation: true
+
+  sidebar:
+    # background: "#8D9F8E"
+    pinned: true
+    align: left
+
+    tools:
+    - icon: github
+      href: https://github.com/jasminex21/encyclopedia
+    style: docked
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: ideabank.qmd
+        text: Ideabank
+      - text: "---"
+      - section: Topics
+        contents:
+        - section: Psychology
+          contents: topics/psychology/*
+
+format:
+  html:
+    theme: 
+      light: [cosmo, theme.scss]
+      # dark: [cosmo, dark.scss]
+    css: styles.css 
+    toc: true
+
+editor:
+  render-on-save: true
