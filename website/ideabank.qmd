@@ -2,6 +2,7 @@
 title: "Ideabank"
 description: "Topics I want to look into 🤔"
 --- 
+> For additional ideas, [generate a random Wikipedia page...](https://en.wikipedia.org/wiki/Wikipedia:Random)
 
 ### Psychology
 * Intergroup bias and its implications
@@ -17,5 +18,22 @@ description: "Topics I want to look into 🤔"
   * Blei, 2012 ([Probabilistic
 Topic Models](https://www.cs.columbia.edu/~blei/papers/Blei2012.pdf))
 
-### (Ancient) History
+### Linguistics
+* Onomastics (the study of the history and origin of proper names, especially personal names) and nicknaming
+  * Kennedy & Zamuner, 2006 ([Nicknames and the Lexicon of Sports](https://read.dukeupress.edu/american-speech/article/81/4/387/5450/NICKNAMES-AND-THE-LEXICON-OF-SPORTS))
+  * Bechar-Israeli, 1995 ([From 〈Bonehead〉 to 〈cLoNehEad〉: Nicknames, Play, and Identity on Internet Relay Chat](https://academic.oup.com/jcmc/article/1/2/JCMC127/4584330))
+
+### Ancient History
 * Cassius Dio and his impact on Roman history
+
+### Astronomy
+* Olbers' Paradox
+  * Why is the sky dark at night? Via [Britannica](https://www.britannica.com/science/Olbers-paradox): "If the universe is endless and uniformly populated with luminous stars, then every line of sight must eventually terminate at the surface of a star. Hence, contrary to observation, this argument implies that the night sky should everywhere be bright, with no dark spaces between the stars."
+
+### Marine Science
+* Deep sea creatures - Giant Pacific Octopus, Colossal Squid, etc.
+* Extinction of the megalodon - proof that it is truly extinct
+
+### Philosophy
+* The Simulation Argument - are we living in a simulation?
+  * Via [Wikipedia](https://en.wikipedia.org/wiki/Simulation_hypothesis): "In 2001, philosopher Nick Bostrom proposed the simulation argument, which suggests that if a civilization becomes capable of creating conscious simulations, it could generate so many simulated beings that a randomly chosen conscious entity would almost certainly be in a simulation. The argument presents a trilemma: either such simulations are not created due to technological limitations or self-destruction; or advanced civilizations choose not to create them; or we are almost certainly living in one. This assumes that consciousness is not uniquely tied to biological brains but can arise from any system that implements the right computational structures and processes."
