@@ -1,4 +1,4 @@
-h3, h2, h1, strong, h4 {
+h3, h2, h1, h4 {
     font-weight: 700 !important;
 }
 
@@ -19,4 +19,8 @@ body, p {
     align-items: center;
     min-height: fit-content;
     padding: 0;
+}
+
+strong {
+    color: #7E60BF;
 }

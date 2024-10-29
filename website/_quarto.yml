@@ -5,17 +5,20 @@ project:
 
 website:
   title: "Personal Encyclopedia"
+  favicon: sunflower.png
   
   page-navigation: true
 
   sidebar:
-    # background: "#8D9F8E"
+    # title: "Personal Encyclopedia"
+    background: "#B1BDCC"
+    logo: "sunflower.png"
     pinned: true
-    align: left
+    align: center
 
-    tools:
-    - icon: github
-      href: https://github.com/jasminex21/encyclopedia
+    # tools:
+    # - icon: github
+    #   href: https://github.com/jasminex21/encyclopedia
     style: docked
     search: true
     contents:

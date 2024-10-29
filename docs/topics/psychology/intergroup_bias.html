@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-10-29">
 
 <title>Linguistic Intergroup Bias – Personal Encyclopedia</title>
 <style>
@@ -20,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -29,6 +50,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../sunflower.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -92,13 +114,10 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Personal Encyclopedia</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/jasminex21/encyclopedia" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
-</div>
-    </div>
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../sunflower.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -153,8 +172,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-intergroup-bias" id="toc-what-is-intergroup-bias" class="nav-link active" data-scroll-target="#what-is-intergroup-bias">What is Intergroup Bias?</a></li>
+  <li><a href="#linguistic-intergroup-bias" id="toc-linguistic-intergroup-bias" class="nav-link" data-scroll-target="#linguistic-intergroup-bias">Linguistic Intergroup Bias</a></li>
+  <li><a href="#quantifying-intergroup-bias" id="toc-quantifying-intergroup-bias" class="nav-link" data-scroll-target="#quantifying-intergroup-bias">Quantifying Intergroup Bias</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -169,6 +196,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 29, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -178,10 +211,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="what-is-intergroup-bias" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-intergroup-bias">What is Intergroup Bias?</h3>
+<p><strong>Intergroup bias</strong> refers to the systematic human tendency to exhibit favoritism towards one’s in-group over the out-group. This favoritism, or bias, may manifest in behaviour (e.g.&nbsp;discrimination), attitude (e.g.&nbsp;prejudice), and/or cognition (e.g.&nbsp;stereotyping), and may take the form of in-group favoritism and/or out-group derogation.</p>
+<p>A key motivator of intergroup bias is <strong>Social Identity Theory</strong> <span class="citation" data-cites="tajfel">(<a href="#ref-tajfel" role="doc-biblioref">Tajfel 1979</a>)</span>, which posits that humans derive a portion of their self-identity from their membership in social groups. Humans automatically categorize social groups into “us” (the in-group) and “them” (the out-group) based on attributes such as race, gender, familial relation, or sports team allegiance, and then adopt the behaviours, norms, and values of the group. After identifying with a group, members compare their group to others, and exhibit <strong>positive distinctiveness</strong> - the process in which members of the in-group are inclined to make their group seem <em>positively distinct</em> from the out-group. As in, not only are the two groups different, the in-group also attempts to make this difference <em>favorable</em>.</p>
+<p><strong>Social categorization</strong> is strong. In fact, <span class="citation" data-cites="klee_kandinsky">Tajfel (<a href="#ref-klee_kandinsky" role="doc-biblioref">1970</a>)</span> demonstrated that mere categorization, even if trivial or nonsensical, is sufficient for in-group favoritism and out-group discrimination. In the study, it was found that British schoolboys categorized based on their preference between abstract artists Paul Klee and Wassily Kandinsky exhibited favoritism towards fellow schoolboys with the same preference, despite the insignificance of the social categorization. The participants were asked to assign points to members of both groups, and it was seen that they tended to do so in such a way that the <em>difference</em> between the two groups was maximized, even if this meant that the in-group overall had less points. In short, the very act of categorization is enough to trigger intergroup discrimination, and additionally, individuals desire to <em>maximize the difference</em> between the in-group and out-group.</p>
+<p><img src="our_blessed_homeland.jpeg" class="img-fluid"></p>
+</section>
+<section id="linguistic-intergroup-bias" class="level3">
+<h3 class="anchored" data-anchor-id="linguistic-intergroup-bias">Linguistic Intergroup Bias</h3>
+<p>Naturally, intergroup bias manifests in language. The <strong>linguistic intergroup bias (LIB)</strong> model, proposed by Anne Maass, describes how systematic biases reflected in language contribute to the perpetuation and persistence of stereotypes <span class="citation" data-cites="maass_1989">(<a href="#ref-maass_1989" role="doc-biblioref">Maass et al. 1989</a>)</span>. Specifically, the LIB model highlights differences in levels of abstraction between in-group and out-group linguistics - positive behaviours displayed by in-group members are described in more <em>abstract</em> terms, whereas the same behaviours shown by an out-group member are described in more <em>concrete</em> terms. Inversely, negative behaviours are described more <em>concretely</em> when performed by an in-group member, but in more <em>abstract</em> terms when performed by an out-group member.</p>
+<p>This differential can be explained by beliefs about the agent’s intrinsic nature, based on their group membership. Describing an observed behaviour abstractly implies that the action is perceived as stable and characteristic of the actor, since such descriptions imply greater generality and probability of future repetition. Concrete descriptions of behaviours, however, suggest that the action is an isolated or uncharacteristic event not necessarily linked to the actor’s enduring qualities. These gaps in levels of abstraction when describing the same action can unsurprisingly result in varying impressions on a hypothetical listener.</p>
+<p>It is easy to see that such differential language can bolster existing stereotypes - it can be viewed as a self-perpetuating cycle where stereotype-congruent behaviours by the out-group are described in abstract terms that reinforce the prior (negative) expectations and perceptions of the out-group. Unexpected positive actions by the out-group are described in concrete terms, suggesting that they are uncharacteristic and are isolated events. These tendencies keep the unfavorable perception of the out-group intact. One can imagine especially how such differential language can have longstanding and consequential impacts in particular given the extensive use of social media in the modern age, which allows for the rapid dissemination of language in large volumes.</p>
+<p>According to <span class="citation" data-cites="maass_1989">Maass et al. (<a href="#ref-maass_1989" role="doc-biblioref">1989</a>)</span>, two main explanations for the underlying mechanism for the LIB are 1) in-group protection, and 2) differential expectancy.</p>
+<p>The former is motivated and based loosely on Tajfel’s Social Identity Theory (SIT) - it hypothesises that the LIB serves to protect or enhance one’s social identity. A key element of the SIT is positive distinctiveness, i.e., the desire for members of a group to portray the in-group as not only different, but different in a positive way, from the out-group. The LIB can be considered a potential strategy of maintaining a positive light of one’s in-group.</p>
+<p>The second explanation suggests that the LIB may be a result of differential expectancy - variations in a speaker’s expectations of the behaviours of the in-group and out-group. Abstract language may be preferred when behaviours confirm prior expectations, while concrete language is preferred when unexpected or surprising behaviours are observed. Hence, because individuals tend to expect more desirable behaviours from their in-group, they naturally utilize abstract language when referring to the positive behaviours, and concrete language when referring to the unexpected negative behaviours.</p>
+</section>
+<section id="quantifying-intergroup-bias" class="level3">
+<h3 class="anchored" data-anchor-id="quantifying-intergroup-bias">Quantifying Intergroup Bias</h3>
+<p>Measures of psychological valence, i.e., measures of the positivity of words, have been a longtime tool in the assessment of intergroup bias. <span class="citation" data-cites="schmidtke">Schmidtke and Kuperman (<a href="#ref-schmidtke" role="doc-biblioref">2024</a>)</span> used corpus-based lexical estimates of valence to investigate bias in intergroup scenarios. Participants were assigned to either the “in-group” or “out-group” conditions and were given a set of “seed” words. In the “in-group” condition, participants were told that the seed words described their in-group, and were asked to provide three more words to describe their group. Those in the “out-group” condition were told that the seed words described an out-group, and were asked to provide three more words to describe that out-group. The intention of the experiment was to assess differences in valence in the words produced by participants of either group. To control the “ground truth,” the valence of the seed words were manipulated such that they ranged from highly positive to highly negative.</p>
+<p>It was found, expectedly, that the valence of words directed towards the in-group was higher than that of words directed at the out-group. With regards to the seed “ground truth” valence, it was found that evaluations about the out-group were much closer to the seed valence, while evaluations about the in-group were consistently inflated. Furthermore, the magnitude of inflation from the “ground truth” tended to be larger when the valence of the seed words were more negative, suggesting that there is an implicit tendency to dissociate one’s in-group from negative characterizations.</p>
+<p>As an extension to their first experiment, <span class="citation" data-cites="schmidtke">Schmidtke and Kuperman (<a href="#ref-schmidtke" role="doc-biblioref">2024</a>)</span> also examined the propagation of intergroup bias throughout successive generations. Using the linear difusion chain paradigm (which feeds responses of one generation to a next generation, who is given the same task, in this case of providing additional words based on seed words and group membership), it was found that there was a gradual increase in positivity in successive in-group generations, and a gradual decline in positivity in successive out-group generations. In short, intergroup bias is amplified across generations. As in the former experiment, the valence of the seed words did impact the magnitude of amplicifcation. For evaluations directed at the in-group, the positive inflation of generation was significant when the seed words were of low and mid valence, but not of high valence. For evaluations of directed at the out-group, the negative effect of generation was significant when the seed words were of mid and high valence, but not of low valence. Examination of the actual slopes of each model indicated that the desire to enhance initially negative descriptions of the in-group are stronger than the desire to derogate negative traits of the out-group.</p>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-maass_1989" class="csl-entry" role="listitem">
+Maass, Anne, Daniela Salvi, Luciano Arcuri, and Gün R. Semin. 1989. <span>“Language Use in Intergroup Contexts: <span>The</span> Linguistic Intergroup Bias.”</span> <em>Journal of Personality and Social Psychology</em> 57 (6): 981–93. <a href="https://doi.org/10.1037/0022-3514.57.6.981">https://doi.org/10.1037/0022-3514.57.6.981</a>.
+</div>
+<div id="ref-schmidtke" class="csl-entry" role="listitem">
+Schmidtke, Daniel, and Victor Kuperman. 2024. <span>“A Psycholinguistic Study of Intergroup Bias and Its Cultural Propagation.”</span> <em>Scientific Reports</em> 14 (1): 8613. <a href="https://doi.org/10.1038/s41598-024-58905-y">https://doi.org/10.1038/s41598-024-58905-y</a>.
+</div>
+<div id="ref-klee_kandinsky" class="csl-entry" role="listitem">
+Tajfel, Henri. 1970. <span>“Experiments in Intergroup Discrimination.”</span> <em>Scientific American</em> 223 (5): 96–103. <a href="http://www.jstor.org/stable/24927662">http://www.jstor.org/stable/24927662</a>.
+</div>
+<div id="ref-tajfel" class="csl-entry" role="listitem">
+———. 1979. <span>“Individuals and Groups in Social Psychology*.”</span> <em>British Journal of Social and Clinical Psychology</em> 18 (2): 183–90. <a href="https://doi.org/10.1111/j.2044-8260.1979.tb00324.x">https://doi.org/10.1111/j.2044-8260.1979.tb00324.x</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
