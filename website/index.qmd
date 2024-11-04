@@ -1,5 +1,20 @@
 ---
 title: "Personal Encyclopedia"
+about:
+  template: solana
+  links:
+  - icon: github
+    text: GitHub
+    href: https://github.com/jasminex21
+  - icon: linkedin
+    text: LinkedIn
+    href: https://www.linkedin.com/in/jasminexu21/
 ---
 
+<p align="center">
+  <img src="flowers.png" width="160"/>
+</p>
+
 Above all, I am an avid learner. So, this is my personal encyclopedia - a repository of knowledge, if you will - where I store writeups of topics I am interested in, ranging from psychology to computer science to paleontology. I'll probably only be brushing the surface of these areas, but hey, any learning is fun and any knowledge is powerful.
+
+> Visit the [Ideabank](ideabank.qmd)!

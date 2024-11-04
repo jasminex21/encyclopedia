@@ -9,6 +9,14 @@ website:
   
   page-navigation: true
 
+  # navbar:
+  #   background: "#B1BDCC"
+  #   search: true
+  #   center:
+  #     - text: "Home"
+  #       href: index.qmd
+  #     - ideabank.qmd
+
   sidebar:
     # title: "Personal Encyclopedia"
     background: "#B1BDCC"

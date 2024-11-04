@@ -12,6 +12,11 @@ description: "Topics I want to look into 🤔"
 * Biological contributors to homicide
   * Sajous-Turner et al., 2020 ([Aberrant brain gray matter in murderers](https://link.springer.com/article/10.1007/s11682-019-00155-y))
   * Raine, 2013 ([The anatomy of violence: The biological roots of crime](https://psycnet.apa.org/record/2013-09813-000)) - this is a book
+* The psychology of advertising and consumer behaviour - what psychological tactics are used in marketing and why do they work to influence consumer decisions?
+* Cultural influences on behaviour and cognition
+  * Individualism vs Collectivism (Hofstede's Dimensions)
+* Attachment styles and their impact on adult romantic relationships
+  * Specifically, I find avoidant attachment styles to be pretty interesting
   
 ### Computer Science
 * Topic modelling - an overview of what it is, how it works, and how to apply it
@@ -25,13 +30,23 @@ Topic Models](https://www.cs.columbia.edu/~blei/papers/Blei2012.pdf))
 
 ### Ancient History
 * Cassius Dio and his impact on Roman history
+* Series of evil emperors / rulers and their reigns: 
+  * Emperor Qin
+  * Commodus
+  * Caligula
+  * Caracalla
+  * Nero
+  * Nebuchadnezzar II of Babylon
+  * Henry VI of England
 
 ### Astronomy
 * Olbers' Paradox
   * Why is the sky dark at night? Via [Britannica](https://www.britannica.com/science/Olbers-paradox): "If the universe is endless and uniformly populated with luminous stars, then every line of sight must eventually terminate at the surface of a star. Hence, contrary to observation, this argument implies that the night sky should everywhere be bright, with no dark spaces between the stars."
 
 ### Marine Science
-* Deep sea creatures - Giant Pacific Octopus, Colossal Squid, etc.
+* Series of deep sea creatures
+  * Giant Pacific Octopus
+  * Colossal Squid
 * Extinction of the megalodon - proof that it is truly extinct
 
 ### Philosophy
