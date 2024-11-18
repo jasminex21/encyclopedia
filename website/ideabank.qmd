@@ -17,16 +17,24 @@ description: "Topics I want to look into 🤔"
   * Individualism vs Collectivism (Hofstede's Dimensions)
 * Attachment styles and their impact on adult romantic relationships
   * Specifically, I find avoidant attachment styles to be pretty interesting
+* Why do people watch horror movies (when they are intended specifically to evoke fear and negative emotions in viewers)?
+  * Andersen et al., 2021 ([Playing With Fear: A Field Study in Recreational Horror](https://journals.sagepub.com/doi/10.1177/0956797620972116))
   
 ### Computer Science
 * Topic modelling - an overview of what it is, how it works, and how to apply it
-  * Blei, 2012 ([Probabilistic
-Topic Models](https://www.cs.columbia.edu/~blei/papers/Blei2012.pdf))
+  * Blei, 2012 ([Probabilistic Topic Models](https://www.cs.columbia.edu/~blei/papers/Blei2012.pdf))
+* Game Theory
+  * Application of Game Theory - SHAP values in machine learning
+* NLP - go through Dan Jurafsky and James H. Martin's [textbook](https://web.stanford.edu/~jurafsky/slp3/) 
 
 ### Linguistics
 * Onomastics (the study of the history and origin of proper names, especially personal names) and nicknaming
   * Kennedy & Zamuner, 2006 ([Nicknames and the Lexicon of Sports](https://read.dukeupress.edu/american-speech/article/81/4/387/5450/NICKNAMES-AND-THE-LEXICON-OF-SPORTS))
   * Bechar-Israeli, 1995 ([From 〈Bonehead〉 to 〈cLoNehEad〉: Nicknames, Play, and Identity on Internet Relay Chat](https://academic.oup.com/jcmc/article/1/2/JCMC127/4584330))
+* The impact of social media on political speech
+  * Etymology Nerd's article [Algorithms are making political speech more extreme](https://www.usermag.co/p/algorithms-are-making-political-speech?utm_medium=ios&triedRedirect=true)
+* Idiolects - the speech habits that are unique to specific people based on their own life experiences (education, sociological and geographical upbringing, etc.)
+  * Inspired by this short article by The Etymology Nerd: [how to catch a gubernatorial candidate, or a domestic terrorist](https://etymology.substack.com/p/how-to-catch-a-gubernatorial-candidate?r=3uxy8z&utm_medium=ios&triedRedirect=true)
 
 ### Ancient History
 * Cassius Dio and his impact on Roman history
@@ -52,3 +60,7 @@ Topic Models](https://www.cs.columbia.edu/~blei/papers/Blei2012.pdf))
 ### Philosophy
 * The Simulation Argument - are we living in a simulation?
   * Via [Wikipedia](https://en.wikipedia.org/wiki/Simulation_hypothesis): "In 2001, philosopher Nick Bostrom proposed the simulation argument, which suggests that if a civilization becomes capable of creating conscious simulations, it could generate so many simulated beings that a randomly chosen conscious entity would almost certainly be in a simulation. The argument presents a trilemma: either such simulations are not created due to technological limitations or self-destruction; or advanced civilizations choose not to create them; or we are almost certainly living in one. This assumes that consciousness is not uniquely tied to biological brains but can arise from any system that implements the right computational structures and processes."
+
+### Paleontology
+* Tiktaalik and transition fossils
+  * The evolution from swimming fisj to four-legged vertebrates
