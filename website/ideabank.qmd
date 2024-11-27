@@ -19,7 +19,10 @@ description: "Topics I want to look into 🤔"
   * Specifically, I find avoidant attachment styles to be pretty interesting
 * Why do people watch horror movies (when they are intended specifically to evoke fear and negative emotions in viewers)?
   * Andersen et al., 2021 ([Playing With Fear: A Field Study in Recreational Horror](https://journals.sagepub.com/doi/10.1177/0956797620972116))
-  
+* Psychiatric disorders as dynamical systems
+  * Scheffer et al., 2024 ([A Dynamical Systems View of Psychiatric Disorders-Theory: A Review](https://pubmed.ncbi.nlm.nih.gov/38568615/))
+  * [Tweet by Mitchell B. Slapik](https://x.com/mslapik/status/1860522739234132296?s=43)   
+
 ### Computer Science
 * Topic modelling - an overview of what it is, how it works, and how to apply it
   * Blei, 2012 ([Probabilistic Topic Models](https://www.cs.columbia.edu/~blei/papers/Blei2012.pdf))
@@ -63,4 +66,4 @@ description: "Topics I want to look into 🤔"
 
 ### Paleontology
 * Tiktaalik and transition fossils
-  * The evolution from swimming fisj to four-legged vertebrates
+  * The evolution from swimming fish to four-legged vertebrates
