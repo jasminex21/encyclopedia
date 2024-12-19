@@ -38,14 +38,18 @@ description: "Topics I want to look into 🤔"
   * Etymology Nerd's article [Algorithms are making political speech more extreme](https://www.usermag.co/p/algorithms-are-making-political-speech?utm_medium=ios&triedRedirect=true)
 * Idiolects - the speech habits that are unique to specific people based on their own life experiences (education, sociological and geographical upbringing, etc.)
   * Inspired by this short article by The Etymology Nerd: [how to catch a gubernatorial candidate, or a domestic terrorist](https://etymology.substack.com/p/how-to-catch-a-gubernatorial-candidate?r=3uxy8z&utm_medium=ios&triedRedirect=true)
+* Linguistic Game Theory
+  * Inspired once again by The Etymology Nerd ([reel](https://www.instagram.com/reel/DC9YYsnOa79/?igsh=MXAybnppY3pvdndkNA==))
+  * Game Theoretic Linguistics ([Applications of Game Theory in Linguistics](https://profgerhard.de/sfs/publications/compass.pdf))
 
 ### Ancient History
 * Cassius Dio and his impact on Roman history
-* Series of evil emperors / rulers and their reigns: 
+* Series of (evil) emperors / rulers / dictators and their reigns: 
   * Emperor Qin
   * Commodus
   * Caligula
   * Caracalla
+    * *SPQR: A History of Ancient Rome* page 527 and on (Epilogue: The First Roman Millenium)
   * Nero
   * Nebuchadnezzar II of Babylon
   * Henry VI of England
@@ -67,3 +71,9 @@ description: "Topics I want to look into 🤔"
 ### Paleontology
 * Tiktaalik and transition fossils
   * The evolution from swimming fish to four-legged vertebrates
+
+### Reviews
+*Doesn't quite fit the theme of an encyclopedia I suppose, but I'd enjoy writing up movie and book reviews here as well.*
+* Movies (movies I've watched that would be valuable to interpret):
+  * Get Out (2017)
+  * Crouching Tiger Hidden Dragon (2000) 
