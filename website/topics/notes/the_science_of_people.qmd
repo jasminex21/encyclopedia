@@ -4,11 +4,18 @@ subtitle: "The Science of People: Cues, Charisma, and Making People Like You"
 date: "2025-01-05"
 --- 
 
-## Video
+# Video
 {{< video https://www.youtube.com/watch?v=VHUrdELKjDw aspect-ratio="21x9" >}}
 
-## My Notes
-### How to be more likable
+---
+
+# My Notes
+
+Anyone can learn charisma; anyone can go from being an awkward person to being great with people. You also don't need to have a complete transformation in order to, say, make more friends or find a romantic partner. Anyone can make small or big changes, and nobody is unteachable.
+
+If you feel stuck when it comes to people, you must be willing to try something different, and that will yield different results.
+
+## How to be more likable
 Research has shown that a huge part of why certain people are deemed "popular" or more "likable" is simply because they themselves like more people. For example, simply saying hi to people you know whilst passing by helps them perceive you as more likable, because *you* like *them*. Make people feel *so* liked that *they* like *you* back. To facilitate this, three magic phrases for likeability (use as much as desired):
 
 1. "I was just thinking of you!" / "\<X\>, and it reminded me of you!"
@@ -20,12 +27,12 @@ Research has shown that a huge part of why certain people are deemed "popular" o
    * Can be used like "Hey, the last time we talked, you mentioned that big project you were really excited about, how's that going?"
    * People are honored when you remember stuff about them.
 
-### How to be CHARISMATIC
+## How to be CHARISMATIC
 To be **charismatic**, you have to be **highly competent** and **highly warm**, and more importantly, you need to signal that you are highly competent and highly warm. People cannot trust you if you do not send enough competency or warmth cues.
 
 A preface: **gestures** are massive in charisma. When speaking to someone, make sure your hands are always available to gesture. The significance of gestures is that they help indicate honesty and competency, and they also contribute to **vocal intonations** and **variety** (if you sit on your hands during a conversation or interview, the amount of your vocal intonations and variety will automatically decrease).
 
-#### Power cues of competence
+### Power cues of competence
 Competence = power, reliability, and capability. How to channel competence through cues: 
 
 1. The steeple gesture (i.e. making a triangle with your hands).
@@ -34,10 +41,10 @@ Competence = power, reliability, and capability. How to channel competence throu
    * Do NOT drum your hands / fingers.
 2. Maximize the distance between your earlobe and shoulder.
    * This distance is correlated with confidence; high shoulders indicates anxiety (and also prevents you from using full vocal power). People do not like anxious people. Relax your shoulders down, keep your earlobes out. This makes you both look more confident and feel more confident.
-3. Make eye contact at the end of your sentences, and ideally when the other person is making an important point.
+3. Make eye contact at the *end* of your sentences, and ideally when the other person is making an important point.
    * Maintaining 100% eye contact in a conversation feels invasive and awkward; 60-70% is more ideal.
    * People like when you process and gather information or memories from all around, but then look back at them at the end of the sentence to drill a point.
-4. Using and noticing the lower lid flex.
+4. Using and noticing the **lower lid flex**.
    * When you are trying to see something far away, you harden your lower lid to try and see it better (basically squinting). When you are really trying to focus on something, they flex their lower lid - people like this, because it shows that you are focused on what they are saying.
    * Note that this is *not* an inherently positive cue - it is a cue of *focus*, and is also important to notice when people are doing it (in addition to you yourself using it). So, if you are, say, presenting something, and someone flexes their lower lid, you can follow up with them and ask "does this make sense?" and try to gather more information and clarify concerns. This allows you to prevent skepticism and confusion.
 5. Using **downward** vocal inflections, and preventing accidental question inflections.
@@ -46,6 +53,108 @@ Competence = power, reliability, and capability. How to channel competence throu
    * Importantly, do NOT ask your name when you introduce yourself. You want to be perceived as confident when making a first impression.
    * Go DOWN at the end of sentences - this makes people think that you really belieave in what you are saying, and they will take you seriously.
 
-#### Power cues of warmth
-Warmth = trust, likeability, and friendliness. How to channel warmth through cues: 
+### Power cues of warmth
+Warmth = trust, likeability, and friendliness. Pay close attention to these if you've been told you're hard to talk to, intimidating, or cold, or if people don't tend to open up to you. How to channel warmth through cues: 
 
+1. A *slow* triple nod. 
+   * This draws people to tell you more - research has shown that the slow triple nod makes people talk longer.
+   * Do NOT bobble-head, and do NOT nod too quickly, because nodding too quickly implies impatience, and is basically telling the other person to stfu. 
+2. **Head tilt**.
+   * Tilting your head makes you look like you are listening and that you care.
+   * Research has shown that if you tilt your head when delivering bad news, you are more likable - people take the news better.
+   * This is good to use if you nod too much.
+3. An *authentic* smile.
+   * An authentic, genuine smile should reach all the way up to your eyes and hit your cheek muscles. Genuine happiness is contagious.
+   * Fake smiles arhave the same effect as not smiling at all.
+4. **Lean forward**, both as a speaker and a listener.
+   * If someone is leaning towards you, it makes you feel closer to them.
+   * You can lean in as a speaker if you want to emphasize an important point - lean slightly towards the other person to use it as a bold or a highlight. BUT, don't lean all the time, because highlighting an entire page of a book means nothing.
+   * You can lean in as a listener when the other person says something of interest, to show that you are engaged.
+   * Too much of a lean implies that you are subservient and submissive to the other person (it looks like a bow), and people want equal relationships.
+5. **Nonverbal bridging** - physically bridge the distance between yourself and the other person.
+   * In impactful conversations, people try to bridge the distance between themselves and the other speaker via bridges like leaning in, hand gestures, nods, drinks, and when close enough, light physical touches on the arm or shoulder. The warmest people are bridging all the time. You are reaching into the other person's intimate zone, but not staying there.
+   * You can even touch without touching - you can hover above the arm / shoulder and then go back.
+   * Closing bridges is a very warm action - this is why serving or giving people things is so warm.
+
+## Questions to level up with people
+1. "Are you working on anything exciting recently / these days?"
+   * Stop asking boring questions like "how are you?" or "what do you do?" - this puts people on autopilot.
+   * Asking someone "what do you do?" can actually be perceived as rude if that person is not defined by their work. 
+   * This is **permission connection** - *if* someone is defined by what they do, they will tell you about what they do. If they are not defined by what they do, they'll tell you something better. 
+   * The responses to this question also gives you something to bring up when you next see the person - you can start the conversation with "hey, last time we spoke, you mentioned you were working on \<X\> - how's that been going?"
+2. "What's your biggest goal right now?"
+   * This is a great question to ask, especially around the new year (Janurary - March).
+   * Generally, when you ask this question, people will either 1) shut you down, or 2) talk about their goals. Anyone who shuts you down, saying they "don't believe in goals" is probably not your person.
+   * This is another question that is great to follow up on.
+3. "What book, movie, or TV character is most like you, and why?"
+   * This is a deeper question that helps you figure out the other person's narrative, and the response to this question is so important, because how someone relates to characters (their values or personality) is how they see themselves.
+   * (For future reference, my answer to this question would be Riley from Inside Out)
+
+## How to improve your dating life
+### Social media presence
+Your social media presence should activate the correct neural networks for the right partner and create "*allergies*" in others (you don't want to appeal to *everyone*, because you don't want to waste your time with the wrong people). 
+   * E.g., do NOT overwhelm your Instagram with photos at bars and at parties if your intention is to settle down and have a family with someone. 
+   * E.g., if you want to attract a hard worker, post photos of yourself at conferences and working hard yourself.
+
+Your main profile picture should signal warmth and competence.
+
+### Body language
+Use your body language to signal that you are confident. Maximize the distance between your earlobe and shoulder, and the distance between your arm and your torso should *fluctuate*.
+
+* In a good conversation, the distance between the arm and torso fluctuates a lot. People who are anxious are contracted; their arms are stuck to their torso at all times and they have minimal hand gestures. Releasing that space makes you appear more confident and less anxious, and aids with vocal variety.
+  * Do NOT accidentally use vocal fry. People who are contracted also may tend to use vocal fry, which occurs when you are out of breath, causing the vocal chords to rattle. If you hear yourself using it, *speak louder*.
+
+Men and women perceive body language differently - in women, far more brain regions were activated than in men when looking at pictures of body language. Women take in a much broader pictures of body language, while men tend to be more cue-focused. Women tend to globalize cues and over-generalize. 
+
+### How to get approached
+Research has shown that people who get approached the most [in clubs] gave out the *biggest signals of availability* - these people did not necessarily have to be the most attractive. How to signal you are available: 
+
+1. **Open body** with no blocking your torso.
+   * Nothing should be in front of your torso - do NOT cross your arms, clutch your phone / computer, etc. Keep your torso open and angled out to the room.
+   * Your feet should also be angled toward the biggest part of the room, signaling you are open. Not parallel feet. 
+2. Small, darting **glances** to everyone in the room (who you want to approach you).
+   * You actually need to glance (quickly) at a person ~8 times to get them to approach - a higher number than you probably would've expected.
+   * These glances should be quick; things like side glances, a side glance with a smile, a flip of the hair and a look over. 
+3. Generally gesturing in the person of interest's direction.
+   * When talking to someone else, gesture in the person of interest's line of gesturing, almost signalling for them to come over. If that person is at all interested, they are likely to come over.
+
+Pay close attention to the responses to your gestures. If the person meets your glance, that's good. If the person turns away from you or turns their feet away from you, they are probably not very receptive to your advances.
+
+Generally, people are lonely and really want to meet their person and make friends. 
+
+## A framework for how to make friends as adults
+Approach friendship like dating - you are looking for your friend soulmates. Go on friendship dates, different every time.
+
+* Take your friend to places that might make them a bit "allergic," because it allows you to see their response. Test out values that you appreciate in friends.
+
+## How to spot a liar
+The average person is very bad at spotting a liar, so do not overestimate your ability to do so. Give people the benefit of the doubt. But, that being said, there are cues that repeatedly show up in people who are lying: 
+
+* Verbal cues:
+  1. *Sudden* use of the question inflection.
+     * If you hear that, especially in a statement, number, timeline, or boundary, it's a sign for you to dig deeper to see if you hear it again.
+  2. A *sudden* drop in volume.
+     * When people are anxious or nervous, we lose breath and our volume drops.
+     * If you hear this, it's a signal for you to dig deeper.
+* Nonverbal cues: 
+  1. Incongruencies where the **verbal** does not match the **body**.
+     * The biggest examples of this is when someone is saying yes but shakes their head no, or when they say no and nod their head yes. People don't often realize they are shaking their head no whilst saying yes - it is actively difficult to think about what you are saying and what you are doing separately. (Note, though, that there are cultural exceptions in India, Bulgaria, and Pakistan - they nod differently)
+  2. Mismatched facial expressions, typically **disgust**.
+     * Disgust is typically denoted by people crinkling their nose and sometimes flashing their upper teeth.
+     * Liars often feel "dirty" with themselves for lying, and so they'll show disgust when lying. 
+     * Liars may sometimes sniff when lying as well - it is a disgust activator.
+     * You can also use this cue as a speaker - if you see someone making a disgusted facial expression in response to something you're saying, take it as a sign to go back on it.
+
+## How to start a conversation
+
+1. Don't overthink your opener.
+   * Your opener can be something as simple as, "hey, I'm Jasmine, nice to meet you."
+   * Openers should actually be basic so that it signals to the other person that you are safe. Do not overcomplicate things.
+2. After introducing yourself and obtaining the basic information, **ask a version of the excitement question** ("have you done anything exciting recently?") based on the circumstances.
+   * On Mondays, you can ask, "Do anything exciting this past weekend?"
+   * On Fridays, you can ask, "Any exciting plans for this weekend?"
+
+## How to stop being awkward
+* Stop competing on stages where you can't be your best; think about your social strengths, and create spaces where you can exercise them.
+* Break autopilot - ask better questions as to not trigger autopilot. Stop asking basic, boring questions like "how are you?" and "what do you do?" - ask the excitement question or some version of it.
+* Find out where you fall on the competence and warmth scales, and address what must be addressed.
