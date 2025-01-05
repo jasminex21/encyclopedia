@@ -1,0 +1,51 @@
+---
+title: "The Diary of a CEO - Vanessa Van Edwards"
+subtitle: "The Science of People: Cues, Charisma, and Making People Like You"
+date: "2025-01-05"
+--- 
+
+## Video
+{{< video https://www.youtube.com/watch?v=VHUrdELKjDw aspect-ratio="21x9" >}}
+
+## My Notes
+### How to be more likable
+Research has shown that a huge part of why certain people are deemed "popular" or more "likable" is simply because they themselves like more people. For example, simply saying hi to people you know whilst passing by helps them perceive you as more likable, because *you* like *them*. Make people feel *so* liked that *they* like *you* back. To facilitate this, three magic phrases for likeability (use as much as desired):
+
+1. "I was just thinking of you!" / "\<X\>, and it reminded me of you!"
+   * Can be used as a transition into a "how are you?"
+   * Let this occur naturally - e.g., if you watch a documentary and it reminds you of someone, text that person and let them know.
+2. "You're always so \<X\>"
+   * Give the other party a positive label. This is especially effective because it fights signal amplification bias (people don't always know what you think of them!).
+3. "Last time we talked, you mentioned \<X\>..."
+   * Can be used like "Hey, the last time we talked, you mentioned that big project you were really excited about, how's that going?"
+   * People are honored when you remember stuff about them.
+
+### How to be CHARISMATIC
+To be **charismatic**, you have to be **highly competent** and **highly warm**, and more importantly, you need to signal that you are highly competent and highly warm. People cannot trust you if you do not send enough competency or warmth cues.
+
+A preface: **gestures** are massive in charisma. When speaking to someone, make sure your hands are always available to gesture. The significance of gestures is that they help indicate honesty and competency, and they also contribute to **vocal intonations** and **variety** (if you sit on your hands during a conversation or interview, the amount of your vocal intonations and variety will automatically decrease).
+
+#### Power cues of competence
+Competence = power, reliability, and capability. How to channel competence through cues: 
+
+1. The steeple gesture (i.e. making a triangle with your hands).
+   * Found to be the highest-ranked gesture that leaders use.
+   * Shows you are not hiding anything, yet you are relaxed and poised.
+   * Do NOT drum your hands / fingers.
+2. Maximize the distance between your earlobe and shoulder.
+   * This distance is correlated with confidence; high shoulders indicates anxiety (and also prevents you from using full vocal power). People do not like anxious people. Relax your shoulders down, keep your earlobes out. This makes you both look more confident and feel more confident.
+3. Make eye contact at the end of your sentences, and ideally when the other person is making an important point.
+   * Maintaining 100% eye contact in a conversation feels invasive and awkward; 60-70% is more ideal.
+   * People like when you process and gather information or memories from all around, but then look back at them at the end of the sentence to drill a point.
+4. Using and noticing the lower lid flex.
+   * When you are trying to see something far away, you harden your lower lid to try and see it better (basically squinting). When you are really trying to focus on something, they flex their lower lid - people like this, because it shows that you are focused on what they are saying.
+   * Note that this is *not* an inherently positive cue - it is a cue of *focus*, and is also important to notice when people are doing it (in addition to you yourself using it). So, if you are, say, presenting something, and someone flexes their lower lid, you can follow up with them and ask "does this make sense?" and try to gather more information and clarify concerns. This allows you to prevent skepticism and confusion.
+5. Using **downward** vocal inflections, and preventing accidental question inflections.
+   * Vocal cues are crucial because they tell people how you feel about them, and how you feel about yourself.
+   * The question inflection is when your tone goes up at the end of a sentence, like you are asking a question. Do NOT use the question inflection when you are not asking a question, because it makes people doubt and scrutinize you. In fact, people tend to use it when telling a lie.
+   * Importantly, do NOT ask your name when you introduce yourself. You want to be perceived as confident when making a first impression.
+   * Go DOWN at the end of sentences - this makes people think that you really belieave in what you are saying, and they will take you seriously.
+
+#### Power cues of warmth
+Warmth = trust, likeability, and friendliness. How to channel warmth through cues: 
+
