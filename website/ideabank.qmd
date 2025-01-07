@@ -74,6 +74,7 @@ description: "Topics I want to look into 🤔"
 
 ### Reviews
 *Doesn't quite fit the theme of an encyclopedia I suppose, but I'd enjoy writing up movie and book reviews here as well.*
+
 * Movies (movies I've watched that would be valuable to interpret):
   * Get Out (2017)
   * Crouching Tiger Hidden Dragon (2000) 

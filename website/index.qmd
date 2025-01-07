@@ -1,5 +1,5 @@
 ---
-title: "Personal Encyclopedia"
+title: "🌻 Personal Encyclopedia"
 about:
   template: solana
   links:
@@ -9,12 +9,20 @@ about:
   - icon: linkedin
     text: LinkedIn
     href: https://www.linkedin.com/in/jasminexu21/
+  - icon: envelope-at-fill
+    text: Email
+    href: mailto:jasminexu@utexas.edu
 ---
 
 <p align="center">
-  <img src="flowers.png" width="160"/>
+  <img src="flowers.png" width="180"/>
 </p>
 
-Above all, I am an avid learner. So, this is my personal encyclopedia - a repository of knowledge, if you will - where I store writeups of topics I am interested in, ranging from psychology to computer science to paleontology. I'll probably only be brushing the surface of these areas, but hey, any learning is fun and any knowledge is powerful.
+### Hi, I'm Jasmine! Welcome to my personal encyclopedia!
 
-> Visit the [Ideabank](ideabank.qmd)!
+I love learning - so, this is my personal encyclopedia - **a repository of knowledge**, if you will - where I store writeups of topics I am interested in, ranging from psychology to computer science to paleontology. I'll probably only be brushing the surface of these areas, but hey, any learning is fun and any knowledge is powerful.
+
+#### My favorite writeups...
+* [The Science of People: Cues, Charisma, and Making People Like You](topics/notes/01_the_science_of_people.qmd)
+
+#### Visit the [Ideabank](ideabank.qmd)!
