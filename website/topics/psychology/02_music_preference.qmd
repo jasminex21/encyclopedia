@@ -1,0 +1,28 @@
+---
+title: "The Psychology of Music Preference"
+subtitle: "Why do we like the music we like?"
+bibliography: music_preference_references.bib
+date: "2025-01-08"
+--- 
+
+## Introduction
+It intrigues me to think about why we like the music we like - how much does our music preference have to do with our personality traits? 
+
+Those who know me know that I am a music fanatic. My music taste has evolved dramatically over the past several years - in the past, I enjoyed pop and electronic dance music (EDM), but now, I almost exclusively listen to heavier music, including genres like pop punk, hard rock, and metalcore. In fact, I used to think it was impossible for anyone to actually *enjoy* songs where the artist is yelling or screaming at the top of their lungs, but such songs are now a focal (and highly enjoyable) part of my music taste (case in point: ARTIFICIAL SUICIDE by Bad Omens, which I listened to 650 times in the past 6 months alone). I wonder what factors are behind this shift, as well as what this says about how my personality has evolved over the years.
+
+## The Link between Music Preference and Personality
+Many studies have found that there is indeed a connection (to some extent) between one's **music preferences** and their **personality traits**. Several of these studies have yielded findings in support of interactionist theories, wherein people seek social contexts that provide them with self-confirmatory feedback [@swann_jr_self-verification_2003]. As in, people intentionally select musical environments that reflect their psychological traits and needs.
+
+@anderson_just_2021 conducted a study that aimed to gauge whether the **Big Five personality traits** could be predicted by music preference and music listening habits.
+
+> ### The Big Five Personality Traits
+>
+> The **Big Five personality traits** are a group of five key dimensions of personality, outlined by the **Five Factor Model**, that provide a comprehensive framework for understanding and summarizing human personality [@roccas_big_2002]. These traits are generally measured using self-report questionnaires, where respondants rate their agreement with various statements through a Likert scale.
+>
+> The traits as described by @john_big_1999:
+> 
+> 1. **Openness to experience**: one's willingness to try new things, and to engage in imaginative or intellectual activities. Those who score high in openness tend to be creative, intellectually curious, and open to new experiences, while low-scorers generally prefer routine and are uncomfortable with change.
+> 2. **Conscienciousness**: one's desire to take obligations and tasks seriously. This personality trait is defined by high levels of thoughtfulness, responsibility, and goal-oriented behaviours. Those who score high in conscientiousness are usually considerate, self-disciplined, goal-oriented, and have good impulse control, whereas low-scorers struggle to complete tasks due to poor impulse control.
+> 3. **Extraversion**: one's tendency to seek (usually social) interaction with their environment. This manifests in outgoing, energetic, and talkative behaviours. Those high in extraversion (i.e., are extroverts) are sociable and are energized by social interaction, whereas those low in extraversion (i.e., are introverts) are reserved, reflective, happy in solitude, and may feel fatigued from social interaction.
+> 4. **Agreeableness**: one's tendency to act in a cooperative, unselfish manner. Highly agreeable people are sensitive to the needs of others, and are described as trustworthy, sympathetic, and considerate. Those low in agreeableness may be perceived as competitive, uncooperative, and even manipulative.
+> 5. **Neuroticism**: describes one's emotional stability - it takes into account how likely a person is to interpret events as threatening or difficult, as well as one's propensity for negative emotions. Those scoring high in neuroticism tend to be lower in self-esteem and more anxious and irritable, while those low in neuroticism are calm, secure, resilient, and self-satisfied.
