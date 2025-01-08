@@ -18,11 +18,16 @@ about:
   <img src="flowers.png" width="180"/>
 </p>
 
-### Hi, I'm Jasmine! Welcome to my personal encyclopedia!
+### Hi, I'm Jasmine! Welcome!
 
-I love learning - so, this is my personal encyclopedia - **a repository of knowledge**, if you will - where I store writeups of topics I am interested in, ranging from psychology to computer science to paleontology. I'll probably only be brushing the surface of these areas, but hey, any learning is fun and any knowledge is powerful.
+I love learning - so, this is my personal encyclopedia - **a repository of knowledge**, if you will - where I store writeups of topics I am interested in, ranging from psychology to computer science to paleontology. 
+
+This is a more tech-y and accessible continuation of a trend I started way back in grade school, during which I kept a thick notebook covered in a floral pattern, filled with handwritten writeups of miscellaneous topics (I still have it!). I used to keep that notebook secret because I thought it would make me look too nerdy, but I'm at a point in life where I'm more than happy to embrace and share my nerdiness. So, welcome to my encyclopedia!
+
+> Visit the [Ideabank](ideabank.qmd)!
+
+#### Currently working on...
+* [The Psychology of Music Preference](topics/psychology/02_music_preference.qmd) (I've been on a psychology kick lately)
 
 #### My favorite writeups...
 * [The Science of People: Cues, Charisma, and Making People Like You](topics/notes/01_the_science_of_people.qmd)
-
-#### Visit the [Ideabank](ideabank.qmd)!

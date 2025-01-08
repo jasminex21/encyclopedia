@@ -5,10 +5,10 @@ bibliography: music_preference_references.bib
 date: "2025-01-08"
 --- 
 
-## Introduction
-It intrigues me to think about why we like the music we like - how much does our music preference have to do with our personality traits? 
+## Introduction & Motivation
+It intrigues me to think about why we like the music we like - how much does our music preference have to do with our personality? 
 
-Those who know me know that I am a music fanatic. My music taste has evolved dramatically over the past several years - in the past, I enjoyed pop and electronic dance music (EDM), but now, I almost exclusively listen to heavier music, including genres like pop punk, hard rock, and metalcore. In fact, I used to think it was impossible for anyone to actually *enjoy* songs where the artist is yelling or screaming at the top of their lungs, but such songs are now a focal (and highly enjoyable) part of my music taste (case in point: ARTIFICIAL SUICIDE by Bad Omens, which I listened to 650 times in the past 6 months alone). I wonder what factors are behind this shift, as well as what this says about how my personality has evolved over the years.
+Those who know me know that I am a music fanatic. My music taste has evolved dramatically over the past several years - in the past, I enjoyed pop and electronic dance music (EDM), but now, I almost exclusively listen to heavier music, including genres like pop punk, hard rock, and metalcore. In fact, I used to think it was impossible for anyone to actually *enjoy* songs where the artist is yelling or screaming at the top of their lungs, but such songs are now a focal (and highly enjoyable) part of my music taste (case in point: ARTIFICIAL SUICIDE by Bad Omens, which I listened to 650+ times in the past 6 months alone). I wonder what factors are behind this shift, as well as what this says about how my personality has evolved over the years.
 
 ## The Link between Music Preference and Personality
 Many studies have found that there is indeed a connection (to some extent) between one's **music preferences** and their **personality traits**. Several of these studies have yielded findings in support of interactionist theories, wherein people seek social contexts that provide them with self-confirmatory feedback [@swann_jr_self-verification_2003]. As in, people intentionally select musical environments that reflect their psychological traits and needs.
