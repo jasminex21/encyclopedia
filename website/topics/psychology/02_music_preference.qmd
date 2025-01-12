@@ -1,8 +1,9 @@
 ---
-title: "The Psychology of Music Preference"
-subtitle: "Why do we like the music we like?"
+title: "Music Preference & Personality"
+subtitle: "A summary of @anderson_just_2021, and a self-study"
 bibliography: music_preference_references.bib
 date: "2025-01-08"
+categories: ["Psychology", "Personal favorite"]
 --- 
 
 ## Introduction & Motivation
@@ -74,7 +75,7 @@ There were also correlations between the derived metrics and personality traits:
 
 * Emotional stability correlated negatively with average skip rate, indicating that those who were more neurotic tended to be more selective of what they listened to at any given moment.
 * Openness correlated positively with all-time track discovery rate and genre entropy, indicating predictably that high scorers in Openness are more willing to explore new music and different types of music.
-* Those scoring high in Conscienciousness tended to concentrate their listening to a narrow window of time in the day across multiple weeks, indicating they structure teir day more rigidly than lower scorers.
+* Those scoring high in Conscienciousness tended to concentrate their listening to a narrow window of time in the day across multiple weeks, indicating they structure their day more rigidly than lower scorers.
 * Those high in Extraversion tended to listen more from others' playlists, which can have many possible explanations. For example, they may be more reliant on their social networks' music suggestions, or they may prefer to discover new music based on their friend group.
 * Those who listened to more Spotify-suggested music tended to score higher in Agreeableness or Conscientiousness.
 

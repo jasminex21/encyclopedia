@@ -12,6 +12,17 @@ about:
   - icon: envelope-at-fill
     text: Email
     href: mailto:jasminexu@utexas.edu
+listing:
+  - id: writeups
+    categories: true
+    contents: topics
+    sort: date
+    type: table
+    fields: [title, date, categories]
+    field-display-names: 
+      title: Title
+      date: Date
+      categories: Categories
 ---
 
 <p align="center">
@@ -26,8 +37,7 @@ This is a more tech-y and accessible continuation of a trend I started way back 
 
 > Visit the [Ideabank](ideabank.qmd)!
 
-#### Currently working on...
-* [The Psychology of Music Preference](topics/psychology/02_music_preference.qmd) (I've been on a psychology kick lately)
+### Writeups
 
-#### My favorite writeups...
-* [The Science of People: Cues, Charisma, and Making People Like You](topics/notes/01_the_science_of_people.qmd)
+::: {#writeups}
+:::

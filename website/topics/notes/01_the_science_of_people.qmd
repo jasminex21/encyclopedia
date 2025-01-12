@@ -2,6 +2,7 @@
 title: "The Diary of a CEO - Vanessa Van Edwards"
 subtitle: "The Science of People: Cues, Charisma, and Making People Like You"
 date: "2025-01-05"
+categories: ["Notes", "Personal favorite"]
 --- 
 
 # Video

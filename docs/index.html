@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./ideabank.html" rel="next">
 <link href="./sunflower.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,7 +68,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-writeups .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-writeups'] = new List('listing-writeups', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -145,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./topics/psychology/02_music_preference.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Psychology of Music Preference</span></a>
+ <span class="menu-text">Music Preference &amp; Personality</span></a>
   </div>
 </li>
       </ul>
@@ -185,9 +245,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
   <ul>
   <li><a href="#hi-im-jasmine-welcome" id="toc-hi-im-jasmine-welcome" class="nav-link active" data-scroll-target="#hi-im-jasmine-welcome">Hi, I’m Jasmine! Welcome!</a></li>
+  <li><a href="#writeups" id="toc-writeups" class="nav-link" data-scroll-target="#writeups">Writeups</a></li>
   </ul>
 </nav>
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Notes">Notes <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Personal favorite">Personal favorite <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Psychology">Psychology <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <div class="quarto-about-solana column-body">
   <div class="about-entity">
@@ -224,20 +285,99 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>Visit the <a href="./ideabank.html">Ideabank</a>!</p>
 </blockquote>
-<section id="currently-working-on" class="level4">
-<h4 data-anchor-id="currently-working-on">Currently working on…</h4>
-<ul>
-<li><a href="./topics/psychology/02_music_preference.html">The Psychology of Music Preference</a> (I’ve been on a psychology kick lately)</li>
-</ul>
 </section>
-<section id="my-favorite-writeups" class="level4">
-<h4 data-anchor-id="my-favorite-writeups">My favorite writeups…</h4>
-<ul>
-<li><a href="./topics/notes/01_the_science_of_people.html">The Science of People: Cues, Charisma, and Making People Like You</a></li>
-</ul>
+<section id="writeups" class="level3">
+<h3 data-anchor-id="writeups">Writeups</h3>
+<div id="listing-writeups" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-writeups-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-writeups'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+Categories
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="Psychology" data-listing-date-sort="1730178000000" data-listing-file-modified-sort="1736662431323" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1210" data-listing-title-sort="Linguistic Intergroup Bias" data-listing-filename-sort="01_intergroup_bias.qmd">
+<td>
+<a href="./topics/psychology/01_intergroup_bias.html" class="title listing-title">Linguistic Intergroup Bias</a>
+</td>
+<td>
+<span class="listing-date">Oct 29, 2024</span>
+</td>
+<td>
+<span class="listing-categories">Psychology</span>
+</td>
+</tr>
+<tr data-index="1" data-categories="Notes" data-listing-date-sort="1736056800000" data-listing-file-modified-sort="1736662421312" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="456" data-listing-title-sort="Speed Dating Questions to Build Connections" data-listing-filename-sort="02_speed_dating_questions.qmd">
+<td>
+<a href="./topics/notes/02_speed_dating_questions.html" class="title listing-title">Speed Dating Questions to Build Connections</a>
+</td>
+<td>
+<span class="listing-date">Jan 5, 2025</span>
+</td>
+<td>
+<span class="listing-categories">Notes</span>
+</td>
+</tr>
+<tr data-index="2" data-categories="Notes,Personal favorite" data-listing-date-sort="1736056800000" data-listing-file-modified-sort="1736662408800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2743" data-listing-title-sort="The Diary of a CEO - Vanessa Van Edwards" data-listing-filename-sort="01_the_science_of_people.qmd">
+<td>
+<a href="./topics/notes/01_the_science_of_people.html" class="title listing-title">The Diary of a CEO - Vanessa Van Edwards</a>
+</td>
+<td>
+<span class="listing-date">Jan 5, 2025</span>
+</td>
+<td>
+<span class="listing-categories">Notes, Personal favorite</span>
+</td>
+</tr>
+<tr data-index="3" data-categories="Psychology,Personal favorite" data-listing-date-sort="1736316000000" data-listing-file-modified-sort="1736662442390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2845" data-listing-title-sort="Music Preference &amp; Personality" data-listing-filename-sort="02_music_preference.qmd">
+<td>
+<a href="./topics/psychology/02_music_preference.html" class="title listing-title">Music Preference &amp; Personality</a>
+</td>
+<td>
+<span class="listing-date">Jan 8, 2025</span>
+</td>
+<td>
+<span class="listing-categories">Psychology, Personal favorite</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 
 
-</section>
 </section>
 </main></div>
     </div>
