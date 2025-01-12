@@ -1,7 +1,8 @@
 ---
-title: "🌻 Personal Encyclopedia"
+title: "Personal Encyclopedia"
 about:
-  template: solana
+  template: marquee
+  id: buttons
   links:
   - icon: github
     text: GitHub
@@ -22,7 +23,7 @@ listing:
     field-display-names: 
       title: Title
       date: Date
-      categories: Categories
+      categories: Tags
 ---
 
 <p align="center">
