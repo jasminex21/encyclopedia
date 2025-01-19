@@ -1,0 +1,29 @@
+---
+title: "Thinking in Bets"
+subtitle: "Making Smarter Decisions when you Don't Have All the Facts"
+date: "2025-01-19"
+date-modified: "2025-01-19"
+categories: ["Notes"]
+--- 
+
+# Reference
+
+This page is where I'm storing notes I've taken from the book *Thinking in Bets* by poker champion Annie Duke. 
+
+<p align="center">
+  <img src="book.jpg" width="250"/>
+</p>
+
+---
+
+# My Notes
+
+## Decision-Making vs Decision Outcomes
+Recognize that there are exactly two elements that determine how our lives turn out: the **quality of our decisions**, and **luck**.
+
+Regarding the first element - the quality of our decisions - people tend to equate the quality of a decision with the quality of the outcome (this is called **resulting** in poker). Often this is not the case, because external factors such as luck come into play regardless of how well-thought-out the decision was. 
+
+* Consider the call made by Seattle Seahawks coach Pete Carroll in the 2014 Super Bowl vs the Patriots on their last play of the game, notoriously regarded as the "worst play call in NFL history." Trailing by 4 points with 26 seconds remaining, the Seahawks had the ball at the Patriots' 1-yard line on second down. Carroll went against expectations and called for the quarterback to pass instead of running the ball, leading to an interception and a loss (this may be painfully familiar to Texas Football fans following *that* final play call vs Ohio State in the 24/25 CFP semifinals). 
+  * Naturally, Carroll (and Sarkisian) was thrown heaps of criticism following the loss. People were stuck on Carroll having made a terrible decision that cost them the game. However, had the play call succeeded and won the Seahawks the Super Bowl, nobody would've batted an eye about the call. The reason why people were mad and considered the call a bad decision was because it *didn't work*. In reality, the call was not a bad decision - Carroll had simply got unlucky with the outcome. In an overwhelmingly vast majority of the time, the call would've resulted in either an immediate touchdown or further opportunities to score on later downs, and *not* an interception. It was a good-quality decision that came with a bad (unlucky) result. 
+
+It is important to separate the quality of your decisions from their outcomes, because it is dangerous to change your behaviour based on the quality of the *results* as opposed to the quality of your *decision-making*. 
