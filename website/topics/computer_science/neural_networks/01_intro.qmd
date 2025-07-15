@@ -1,0 +1,44 @@
+---
+title: "Introduction to Neural Networks"
+date: "2025-06-28"
+categories: ["Computer Science"]
+draft: true
+--- 
+
+## What are Neural Networks?
+
+**Neural networks** have undoubtedly become a staple of modern innovation. Technologies we use or come across every day - such as self-driving cars, music recommendor systems, and social media for-you-pages - are all applications of neural networks.
+
+Put simply, neural networks are a subset of machine learning models that operate in a manner similar to the human brain. The way these networks learn relationships between data and make decisions mimics the way we humans and our neurons do. 
+
+Unlike classical machine learning algorithms, such as linear regression or decision trees, neural networks are skilled at learning **non-linear** patterns from data, and at handling high-dimensional data, such as images.
+
+Importantly, neural networks rely on data to learn and improve their accuracy over time. After they are fine-tuned for accuracy, they are extremely powerful tools on problems that would take human experts far longer to complete.
+
+![](neurons.png)
+
+## The Basic Building Blocks: Neural Network Architecture
+Very broadly, a neural network consists of nodes (known as **neurons**), and connections between those nodes. Returning to the analogy of the human brain, these neural network neurons are likened to biological neurons, and the connections are likened to synapses that communicates information between the neurons.
+
+> ### Basic Demonstrative Example
+> Consider a basic example where you have a dataset of houses, and you want to predict the price of a house based on its size. This could be framed as a simple linear regression problem, where you fit a straight line to the data - the larger the size of the house, the more expensive it will be. However, if you wanted to be more thorough, you might take into consideration that prices cannot be negative. So, instead of the straight line fit, that fitted line is bent to show that the minimum value of the output (y-axis value) is zero. 
+> This, essentially, is an extremely simple neural network. The input of this network is the size of house, and the output is its predicted price. In neural network architecture, an input passes through nodes, which do a series of computations, before yielding the final output. Each of these nodes is known as a **neuron**. In this simple example, our input passes into a single node, which applies the bent function (i.e., takes `max(input, 0)`), and then outputs the predicted price.
+> * Note that this bent function is known as the Rectified Linear Unit (ReLU) activation function, although that will be discussed in more detail later.
+> 
+> ![](simple_example_2.png)
+>
+> This example is a neural network with a single input, a single neuron, and a single output. Pratcically, neural networks are far larger, with millions more neurons. We can form larger neural networks by stacking more of these single neurons on top of each other, to form a layer of neurons. 
+>
+> ![](single_neuron.png)
+>
+> Consider a more complex version of the above problem, where the input is instead a collection of features of a house, which are passed through a stack of neurons in order to derive the final predicted house price. Suppose we have the house's size, number of bedrooms, zip code, and area wealth. These input features are passed to the layer of neurons, which combine features to capture relationships. For example, the home's size and number of bedrooms may indicate family size, the zip code may indicate walkability, and the zip code and area wealth may influence school quality. These derivative features are then used to predict the final price.
+>
+> ![](more_complex_example.png)
+>
+> Practically, when constructing neural networks, we simply need to provide many examples of the input and output; the task of determining what each node in the hidden layers represent is left to the neural network itself. And, note that each node in each hidden layer will take input from each input from the prior layer (unlike in the crude example above, which shows nodes only taking inputs from certain inputs). 
+>
+> ![](basic_nn_structure.png)
+
+Let us break down the architecture of neural networks by layers. Neural networks consist of three broad layers: 
+
+![](nn_structure.jpg)

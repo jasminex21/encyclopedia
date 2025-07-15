@@ -72,9 +72,7 @@ description: "Topics I want to look into 🤔"
 * Tiktaalik and transition fossils
   * The evolution from swimming fish to four-legged vertebrates
 
-### Reviews
-*Doesn't quite fit the theme of an encyclopedia I suppose, but I'd enjoy writing up movie and book reviews here as well.*
-
-* Movies (movies I've watched that would be valuable to interpret):
-  * Get Out (2017)
-  * Crouching Tiger Hidden Dragon (2000) 
+### Bioinformatics / Computational Biology
+* [AVADA: toward automated pathogenic variant evidence
+retrieval directly from the full-text literature](https://www.gimjournal.org/article/S1098-3600(21)01282-X/pdf)
+  * I'm super interested in their approach - I can learn a lot from this.

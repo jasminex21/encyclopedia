@@ -1,0 +1,26 @@
+---
+title: '"Dude"'
+subtitle: 'When and Why do we use "Dude"? / A general discussion of slang and "brainrot"' 
+date: "2025-02-17"
+categories: ["Anthropology", "Linguistics"]
+draft: true
+--- 
+
+### References
+*Move later*
+
+* [Dude by Scott Kiesling](dude.pdf)
+* [How Brainrot becomes Brainrot by The Etymology Nerd](https://etymology.substack.com?utm_source=navbar&utm_medium=web)
+
+### Introduction
+Some may view slang terms as inexpressive and inarticulate additions to discourse. Such terms include the word "*dude*," which rose in popularity amongst young men in the 1980s and has seen its usage not just retained but expanded to become a general address term used by (and to) both men and women. Interestingly, however, studies of such words have found their usage to be constrained - as in, they have specific purposes in interaction, which have in turn augmented their rise in popularity.
+
+A stereotypical, misconceived view of the use of "*dude*" from the "*Zits*" comic strip in 2001:
+
+<p align="center">
+  <img src="dude_comic.jpeg" width="500"/>
+</p>
+
+Think about the circumstances in which *you* use the word "*dude*." How often do you use "*dude*"? What kind of person - e.g., a family member, a friend, a romantic partner, a stranger, a boss - are you likely to be speaking to when you use "*dude*"? Do you think your gender identity, as well as that of the person you are speaking to, matters in your usage of "*dude*"?
+
+You may realize that your usage of "*dude*" encodes your stance with the addressee(s).

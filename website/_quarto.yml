@@ -39,11 +39,14 @@ website:
         contents:
         - section: Psychology
           contents: topics/psychology/*
-        # - section: Computer Science
-        #   contents: 
-        #     - href: topics/computer_science/*
-        #     - section: Natural Language Processing
-        #       contents: topics/computer_science/nlp/*
+        - section: Anthropology
+          contents: topics/anthropology/*
+        - section: Computer Science
+          contents: 
+            - section: Neural Networks
+              contents: topics/computer_science/neural_networks/*
+            # - section: Natural Language Processing
+            #   contents: topics/computer_science/nlp/*
         - section: Notes
           contents: topics/notes/*
 format:
