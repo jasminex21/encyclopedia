@@ -24,3 +24,8 @@ body, p {
 strong {
     color: #7E60BF;
 }
+
+code {
+    color: #CA7842;
+    background-color: #E3E1D9 !important;
+}

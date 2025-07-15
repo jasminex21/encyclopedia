@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-07-14">
+
+<title>Machine Learning with Graphs – Personal Encyclopedia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../topics/computer_science/neural_networks/03_intro_to_networkx_pytorch.html" rel="next">
+<link href="../../../topics/computer_science/neural_networks/01_intro.html" rel="prev">
+<link href="../../../sunflower.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/neural_networks/01_intro.html">Neural Networks</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/neural_networks/02_graph_neural_networks.html">Machine Learning with Graphs</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../sunflower.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../ideabank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ideabank</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/psychology/01_intergroup_bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linguistic Intergroup Bias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/psychology/02_music_preference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Music Preference &amp; Personality</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Anthropology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Computer Science</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Neural Networks</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/neural_networks/02_graph_neural_networks.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Machine Learning with Graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/neural_networks/03_intro_to_networkx_pytorch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to NetworkX and Pytorch Geometric</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/notes/01_the_science_of_people.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Diary of a CEO - Vanessa Van Edwards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/notes/02_speed_dating_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Speed Dating Questions to Build Connections</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-graphs" id="toc-why-graphs" class="nav-link active" data-scroll-target="#why-graphs">1.1 - Why Graphs?</a></li>
+  <li><a href="#applications-of-graph-ml" id="toc-applications-of-graph-ml" class="nav-link" data-scroll-target="#applications-of-graph-ml">1.2 - Applications of Graph ML</a>
+  <ul class="collapse">
+  <li><a href="#node-level-ml-application-examples" id="toc-node-level-ml-application-examples" class="nav-link" data-scroll-target="#node-level-ml-application-examples">Node-level ML Application Examples</a></li>
+  <li><a href="#edge-level-ml-application-examples" id="toc-edge-level-ml-application-examples" class="nav-link" data-scroll-target="#edge-level-ml-application-examples">Edge-level ML Application Examples</a></li>
+  <li><a href="#subgraph-level-ml-application-examples" id="toc-subgraph-level-ml-application-examples" class="nav-link" data-scroll-target="#subgraph-level-ml-application-examples">Subgraph-level ML Application Examples</a></li>
+  <li><a href="#graph-level-ml-application-examples" id="toc-graph-level-ml-application-examples" class="nav-link" data-scroll-target="#graph-level-ml-application-examples">Graph-level ML Application Examples</a></li>
+  </ul></li>
+  <li><a href="#choice-of-graph-representation" id="toc-choice-of-graph-representation" class="nav-link" data-scroll-target="#choice-of-graph-representation">1.3 - Choice of Graph Representation</a>
+  <ul class="collapse">
+  <li><a href="#directed-vs-undirected-graphs" id="toc-directed-vs-undirected-graphs" class="nav-link" data-scroll-target="#directed-vs-undirected-graphs">Directed vs Undirected Graphs</a></li>
+  <li><a href="#node-degrees" id="toc-node-degrees" class="nav-link" data-scroll-target="#node-degrees">Node Degrees</a></li>
+  <li><a href="#bipartite-graphs" id="toc-bipartite-graphs" class="nav-link" data-scroll-target="#bipartite-graphs">Bipartite Graphs</a></li>
+  <li><a href="#representing-graphs" id="toc-representing-graphs" class="nav-link" data-scroll-target="#representing-graphs">Representing Graphs</a></li>
+  <li><a href="#node-and-edge-attributes" id="toc-node-and-edge-attributes" class="nav-link" data-scroll-target="#node-and-edge-attributes">Node and Edge Attributes</a></li>
+  <li><a href="#more-types-of-graphs" id="toc-more-types-of-graphs" class="nav-link" data-scroll-target="#more-types-of-graphs">More Types of Graphs</a></li>
+  <li><a href="#connectivity" id="toc-connectivity" class="nav-link" data-scroll-target="#connectivity">Connectivity</a></li>
+  </ul></li>
+  <li><a href="#traditional-feature-based-methods-of-ml" id="toc-traditional-feature-based-methods-of-ml" class="nav-link" data-scroll-target="#traditional-feature-based-methods-of-ml">Traditional Feature-based Methods of ML</a>
+  <ul class="collapse">
+  <li><a href="#node-level-tasks-and-features" id="toc-node-level-tasks-and-features" class="nav-link" data-scroll-target="#node-level-tasks-and-features">2.1 - Node-Level Tasks and Features</a></li>
+  <li><a href="#link-prediction-and-link-level-features" id="toc-link-prediction-and-link-level-features" class="nav-link" data-scroll-target="#link-prediction-and-link-level-features">2.2 - Link Prediction and Link-level Features</a></li>
+  <li><a href="#graph-level-features-and-graph-kernels" id="toc-graph-level-features-and-graph-kernels" class="nav-link" data-scroll-target="#graph-level-features-and-graph-kernels">2.3 - Graph-level Features and Graph Kernels</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/neural_networks/01_intro.html">Neural Networks</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/neural_networks/02_graph_neural_networks.html">Machine Learning with Graphs</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Machine Learning with Graphs</h1>
+<p class="subtitle lead">Graph Neural Networks and Applications</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Computer Science</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 14, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="why-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="why-graphs">1.1 - Why Graphs?</h2>
+<p><strong>Graphs</strong> are a general language for describing and analyzing entities with relations or interactions.</p>
+<p>Many types of data can naturally be represented by graphs - e.g., disease pathways, food webs, and underground networks. Similarly, social networks, citation networks, and the internet can also inherently be represented as graphs. The power in graphs is that we can represent knowledge and facts as relationships between different entities - for example, the regulatory mechanisms in our cells can be described as processes governed by the connections between different entities.</p>
+<p><img src="gnn_data.png" class="img-fluid"></p>
+<p>Consider two types of domains that can be represented graphically:</p>
+<ol type="1">
+<li>Networks (or Natural Graphs):
+<ul>
+<li>social networks</li>
+<li>communication and transactions</li>
+<li>biomedicine (interactions between genes and proteins)</li>
+<li>brain connections</li>
+</ul></li>
+<li>Graphs:
+<ul>
+<li>information or knowledge</li>
+<li>software</li>
+<li>similarity networks</li>
+<li>relational structures</li>
+</ul></li>
+</ol>
+<p><img src="graph_types.png" class="img-fluid"></p>
+<p>The key question we’d like to address is: how do we take advantage of relational structure in order to make better predictions?</p>
+<ul>
+<li>Complex domains often have a rich relational structure, which can be represented as a relational graph. And, by modeling relationships in such a way, we can achieve better predictive performance.</li>
+</ul>
+<p>The difficulty of using graphical data lies in their complexity - they are arbitrarily-sized and have complex topological structures, unlike text or image data. So, we would like to construct neural networks that are generalizable to graphs - neual networks that take a graph as input, and ultimately output predictions.</p>
+<p><img src="graphs_are_hard.png" class="img-fluid"></p>
+<ul>
+<li><p>In particular, we would like to implement <strong>representation learning</strong>, where <strong>embeddings</strong> are generated to capture both structural and feature-related information from the graph (in place of feature engineering in classical ML algorithms).</p>
+<ul>
+<li>In <strong>representation learning</strong>, we map nodes to <strong><span class="math inline">\(d\)</span>-dimensional embeddings</strong> such that similar nodes in the network are embedded in close proximity in <span class="math inline">\(d\)</span>-dimensional space.
+<ul>
+<li>So, the aim is to learn the function <span class="math inline">\(f\)</span> that takes each node <span class="math inline">\(u\)</span> and maps it to their <span class="math inline">\(d\)</span>-dimensional embeddings, i.e., <span class="math inline">\(f: u \to \mathbb{R}^d\)</span>, such that “similar” nodes in the graph are also close to each other in space.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><img src="gnn_task.png" class="img-fluid"></p>
+</section>
+<section id="applications-of-graph-ml" class="level2">
+<h2 class="anchored" data-anchor-id="applications-of-graph-ml">1.2 - Applications of Graph ML</h2>
+<p>Representing data as graphs allows us to formulate tasks at different levels:</p>
+<ul>
+<li>node-level
+<ul>
+<li>A classic node-level task is <strong>node classification</strong> - predicting the property of a node, such as categorizing online users or items.</li>
+</ul></li>
+<li>edge-level
+<ul>
+<li>A classic edge-level task is <strong>link prediction</strong> - predicting whether there are missing links between a pair of nodes.</li>
+</ul></li>
+<li>community (subgraph) level
+<ul>
+<li>A classic community-level task is <strong>clustering</strong> or <strong>community detection</strong> - identifying closely-linked subparts of a graph where nodes are densely-connected; e.g., social circle detection.</li>
+</ul></li>
+<li>graph-level
+<ul>
+<li>A classic graph-level task is <strong>graph classification</strong> - categorizing different graphs; e.g., representing molecules as graphs, and predicting properties of molecules.</li>
+</ul></li>
+</ul>
+<p><img src="graph_tasks.png" class="img-fluid"></p>
+<section id="node-level-ml-application-examples" class="level3">
+<h3 class="anchored" data-anchor-id="node-level-ml-application-examples">Node-level ML Application Examples</h3>
+<p>In node-level tasks, the aim is, for each node in the graph, to predict its position in space.</p>
+<blockquote class="blockquote">
+<p>Protein folding: given a sequence of amino acids, predict the 3D structure of the underlying protein.</p>
+<ul>
+<li>This problem was addressed by Deepmind’s AlphaFold.</li>
+<li>The key idea that made AlphaFold possible was to represent the protein as a spatial graph where nodes were amino acids, and edges represented proximity between amino acids. By training a GNN on this data, the folding of a protein was able to be simulated by predicting the final positions of amino acids.</li>
+</ul>
+<p><img src="alphafold.png" class="img-fluid"></p>
+</blockquote>
+</section>
+<section id="edge-level-ml-application-examples" class="level3">
+<h3 class="anchored" data-anchor-id="edge-level-ml-application-examples">Edge-level ML Application Examples</h3>
+<p>In edge-level tasks, the aim is to understand the relationships between different nodes.</p>
+<blockquote class="blockquote">
+<p><strong>Recommender systems</strong>: think of such systems as users interacting with items, where “items” is a broad term that can emcompass products, movies, songs, etc. The goal of a recommender system is to recommend items that a specific user might like, based on the structure of the graph, as well as the properties of the users and the items.</p>
+<ul>
+<li>Nodes: users and items</li>
+<li>Edges: user-item interactions The key insight is that we can learn how to embed or represent nodes such that related nodes are embedded closer to each other than nodes that are not related.</li>
+</ul>
+<p><img src="graph_based_rec.png" class="img-fluid"></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Predicting drug side effects: many patients take multiple drugs simultaneously to treat complex or co-existing diseases. The interactions between these many drugs may cause adverse side effects. As such, the goal of this problem is, given an arbitrary pair of drugs, to predict how they interact and cause side effects.</p>
+<ul>
+<li>Nodes: drugs and proteins</li>
+<li>Edges: interactions</li>
+</ul>
+<p><img src="side_effect_preds.png" class="img-fluid"></p>
+</blockquote>
+</section>
+<section id="subgraph-level-ml-application-examples" class="level3">
+<h3 class="anchored" data-anchor-id="subgraph-level-ml-application-examples">Subgraph-level ML Application Examples</h3>
+<blockquote class="blockquote">
+<p>Traffic prediction: predicting travel time from one location to another based on traffic conditions on the road segments between those destinations.</p>
+<ul>
+<li>Nodes: road segments</li>
+<li>Edges: connectivity between road segments</li>
+</ul>
+<p><img src="traffic_pred.png" class="img-fluid"></p>
+</blockquote>
+</section>
+<section id="graph-level-ml-application-examples" class="level3">
+<h3 class="anchored" data-anchor-id="graph-level-ml-application-examples">Graph-level ML Application Examples</h3>
+<blockquote class="blockquote">
+<p>Drug discovery: representing antibiotics (molecules) as small molecular graphs, with the aim of predicting which molecules have therapeutic effects (molecule prioritization for testing in the lab).</p>
+<ul>
+<li>Nodes: atoms</li>
+<li>Edges: chemical bonds</li>
+</ul>
+<p><img src="drug_discovery.png" class="img-fluid"></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Generating novel molecules via graph generation: generating molecules as graphs in a targeted way, and optimizing existing moelcules to have desirable properties.</p>
+<p><img src="molecule_optimization.png" class="img-fluid"></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Physical simulation: representing different materials as a set of particles, and use a graph to capture how to particles interact with each other, in order to ultimately predict how the materal deforms.</p>
+<p><img src="physics_sim.png" class="img-fluid"></p>
+</blockquote>
+</section>
+</section>
+<section id="choice-of-graph-representation" class="level2">
+<h2 class="anchored" data-anchor-id="choice-of-graph-representation">1.3 - Choice of Graph Representation</h2>
+<p>Graphs (or networks) are composed of:</p>
+<ul>
+<li>objects: <strong>nodes</strong> or <strong>vertices</strong>, denoted <span class="math inline">\(N\)</span> or <span class="math inline">\(V\)</span></li>
+<li>interactions: <strong>links</strong> or <strong>edges</strong>, denoted <span class="math inline">\(E\)</span></li>
+<li>the entire system: the <strong>network</strong> or <strong>graph</strong> itself - a set of nodes and edges, denoted <span class="math inline">\(G(N, E)\)</span></li>
+</ul>
+<p><img src="graph_components.png" class="img-fluid"></p>
+<p>Graph are versatile - we can represent connections between, say, actors, friends, proteins, and more. As the underlying structure of these graphs are essentially the same, the same ML algorithms can be used to analyze them.</p>
+<ul>
+<li>But, it is important to choose the correct network - the choice of nodes and edges is crucial, as it ultimately determines the nature of the question we are able to study.</li>
+</ul>
+<p><img src="graph_versatility.png" class="img-fluid"> <img src="defining_graphs.png" class="img-fluid"></p>
+<section id="directed-vs-undirected-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="directed-vs-undirected-graphs">Directed vs Undirected Graphs</h3>
+<p><strong>Undirected graphs</strong> have undirected links, meaning they are useful in modeling <em>symmetric</em> or <em>reciprocal</em> relationships.</p>
+<p><strong>Directed</strong> relationships are captured by directed links, where every link has a direction, source, and destination. * e.g., financial transactions</p>
+<p><img src="graph_direction.png" class="img-fluid"></p>
+</section>
+<section id="node-degrees" class="level3">
+<h3 class="anchored" data-anchor-id="node-degrees">Node Degrees</h3>
+<p>Given that we have an undirected graph, we can explore the notion of <strong>node degrees</strong>, which denotes the number of edges adjacent to a given node.</p>
+<ul>
+<li><p>It follows that the average node degree is given by the following, which can be simplified to be twice the number of edges in the network divided by the number of nodes.</p>
+<p><span class="math inline">\(\bar k = \frac 1 n \sum^N_{i=1} k_i = \frac {2E} N\)</span></p></li>
+</ul>
+<p>In directed networks, we define an <strong>in-degree</strong> and an <strong>out-degree</strong>, where the in-degree is the number of edges pointing towards the node, while the out-degree is the number of edges pointing outwards from the node.</p>
+<p><img src="node_degrees.png" class="img-fluid"></p>
+</section>
+<section id="bipartite-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="bipartite-graphs">Bipartite Graphs</h3>
+<p><strong>Bipartite graphs</strong> are a popular type of graph structure - they are graphs whose nodes can be divided into two disjoint sets <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> such that every edge connects a node in <span class="math inline">\(U\)</span> to one in <span class="math inline">\(V\)</span> - i.e., <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> are <em>independent</em> sets.</p>
+<ul>
+<li><p>Every node only interacts with the other type of node, but not the other.</p>
+<ul>
+<li>E.g., authors-to-papers, actors-to-movies, recipes-to-ingredients, customers-to-products</li>
+</ul></li>
+</ul>
+<p>We can also define the concept of <strong>folded</strong> or <strong>projected networks</strong>. The idea of folded networks is that, if we have a bipartite graph, we can then project it to either side (using only the nodes from one side) to create a projection graph where nodes are connected if they have at least one neighbour in common.</p>
+<ul>
+<li>e.g., if we have a bipartite graph that connects authors to scientific papers, we can create a folded network that becomes a co-authorship network, i.e., authors (nodes) are connected if they co-authored at least one paper in common.</li>
+</ul>
+<p><img src="bipartite_graphs.png" class="img-fluid"></p>
+</section>
+<section id="representing-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="representing-graphs">Representing Graphs</h3>
+<section id="adjacency-matrix" class="level4">
+<h4 class="anchored" data-anchor-id="adjacency-matrix">Adjacency Matrix</h4>
+<p>One way to represent a graph is via an <strong>adjacency matrix</strong>, which is a square binary matrix <span class="math inline">\(A\)</span> whose elements indicate whether pairs of nodes are adjacent in the graph.</p>
+<ul>
+<li><span class="math inline">\(A_{ij} = 1\)</span> if there is a link from node <span class="math inline">\(i\)</span> to node <span class="math inline">\(j\)</span>; <span class="math inline">\(A_{ij} = 0\)</span> otherwise.</li>
+<li>Note that adjacency matrices of <em>undirected</em> graphs are inherently <em>symmetric</em>, as node <span class="math inline">\(i\)</span> being connected to node <span class="math inline">\(j\)</span> automatically means the inverse is also true. However, adjacency matrices of directed graphs are <em>not</em> symmetric.</li>
+</ul>
+<p>The representation of adjacency matrices means that we can compute node degrees by simply summing across a given row or column of the matrix.</p>
+<ul>
+<li>For undirected graphs, the row and column sum for a given node is the same.</li>
+<li>For nodes of directed graphs, in-degrees are computed by the sum of the columns, while out-degrees are given by the sum of the rows.</li>
+</ul>
+<p>In real-world networks, adjacency matrices are very <em>sparse</em>, which has consequences for the properties of the matrices.</p>
+<ul>
+<li>e.g., in a social network that connects people to their friends, the maximum degree that a given node can have is every other human - but it is of course impossible to have 7 billion friends, and so the adjacency matrix of such a problem would be very sparse, since every person’s number of friends is on the order of tens or hundreds and not billions.</li>
+</ul>
+<p><img src="adj_matrix.png" class="img-fluid"></p>
+</section>
+<section id="edge-list" class="level4">
+<h4 class="anchored" data-anchor-id="edge-list">Edge List</h4>
+<p>Another way to represent graphs is to use an <strong>edge list</strong> - a list of pairs of edges. This representation is popular in deep learning frameworks, because it allows us to represent graphs as a <em>2-dimensional matrix</em>.</p>
+<ul>
+<li>However, the difficulty of such a representation is that it becomes hard to do graph manipulation or any sort of analysis in the graph - even computing the degree of a node becomes non-trivial.</li>
+</ul>
+<p><img src="edge_list.png" class="img-fluid"></p>
+</section>
+<section id="adjacency-list" class="level4">
+<h4 class="anchored" data-anchor-id="adjacency-list">Adjacency List</h4>
+<p>If graph manipulation and analysis is needed, a preferred graph representation to an edge list is an <strong>adjacency list</strong>, which associates each node with a list of its neighbours.</p>
+<ul>
+<li>These are easier to work with for large and sparse networks.</li>
+</ul>
+<p><img src="adj_list.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="node-and-edge-attributes" class="level3">
+<h3 class="anchored" data-anchor-id="node-and-edge-attributes">Node and Edge Attributes</h3>
+<p>Nodes and edges (entire graphs as well) can be associated with <strong>attributes</strong> or <strong>properties</strong>. Some examples:</p>
+<ul>
+<li><strong>weights</strong> (as an indication of frequency)</li>
+<li><strong>rankings</strong> (best friend, second best friend)</li>
+<li><strong>type</strong> (friend, relative, co-worker)</li>
+</ul>
+<p>Some properties can be directly represented in adjacency matrices. For example, if edges are weighted, the corresponding value in the adjacency matrix is simply multiplied by that weight.</p>
+<p><img src="attributes.png" class="img-fluid"></p>
+</section>
+<section id="more-types-of-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="more-types-of-graphs">More Types of Graphs</h3>
+<p>Some graphs may have <strong>self-edges</strong> or <strong>self-loops</strong>, where nodes are connected to themselves. On the adjacency matrix, self-loops are represented by entries on the <em>diagonal</em> of the matrix.</p>
+<p>Some graphs are known as <strong>multigraphs</strong>, where multiple edges are allowed between a pair of nodes. These graphs can be thought of as a weighted graph, where the entries in the adjacency matrix are non-binary, but it is oftentimes useful to represent the edges individually, as they may have varying properties.</p>
+<p><img src="self_multi.png" class="img-fluid"></p>
+</section>
+<section id="connectivity" class="level3">
+<h3 class="anchored" data-anchor-id="connectivity">Connectivity</h3>
+<section id="undirected-graphs" class="level4">
+<h4 class="anchored" data-anchor-id="undirected-graphs">Undirected Graphs</h4>
+<p>A graph is <strong>connected</strong> if any pair of nodes on the graph can be joined by a path. A <strong>disconnected</strong> graph is made up by two or more connected <strong>components</strong>, and may have <strong>isolated nodes</strong>.</p>
+<p>There is a useful distinction in adjacency matrices of connected and disconnected graphs. When a graph is disconnected (i.e., has several components), its adjacency matrix can be written in a <strong>block-diagonal form</strong>, where its nonzero elements are confined in a square area, and all other elements are zero (i.e., there is no connectivity between the components).</p>
+<p><img src="connectivity_undirected.png" class="img-fluid"></p>
+</section>
+<section id="directed-graphs" class="level4">
+<h4 class="anchored" data-anchor-id="directed-graphs">Directed Graphs</h4>
+<p>The notion of connectivity also generalizes to connected graphs - here, we talk about strong vs weak connectivity.</p>
+<ul>
+<li>A <strong>weakly connected directed graph</strong> is a graph that is connected if the directions of the edges are <em>ignored</em>, i.e., each node is connected to another node in some way.</li>
+<li>A <strong>strongly connected directed graph</strong> is a graph where there exists a directed path between every pair of nodes; i.e., there is a path from node A to node B, as well as from node B to node A.</li>
+</ul>
+<p>We can also speak of <strong>strongly-connected components (SCCs)</strong>, which are sets of nodes in a graph such that every node in the set can visit another node via a directed path.</p>
+<p><img src="connectivity_directed.png" class="img-fluid"></p>
+</section>
+</section>
+</section>
+<section id="traditional-feature-based-methods-of-ml" class="level2">
+<h2 class="anchored" data-anchor-id="traditional-feature-based-methods-of-ml">Traditional Feature-based Methods of ML</h2>
+<p>The traditional ML pipeline centers around designing the correct features. In particular, we can think about 1) node attributes and 2) structural features that describe how a particular node is positioned within the network.</p>
+<p>Using effective features is the key to achieving good test performance for node-level, edge-level, and graph-level predictions.</p>
+<p>Given that our goal is to make predictions for a set of objects, we must make the following design choices:</p>
+<ul>
+<li>features: <span class="math inline">\(d\)</span>-dimensional vectors</li>
+<li>objects: nodes, edges, sets of nodes, entire graphs</li>
+<li>objective function: what task are we aiming to solve?</li>
+</ul>
+<p>More explicitly, our task is: given a graph <span class="math inline">\(G = (V, E)\)</span>, we would like to learn a function <span class="math inline">\(f: V \to \mathbb{R}\)</span> that makes predictions. The question becomes how we learn this function <span class="math inline">\(f\)</span>.</p>
+<p><img src="ml_tasks.png" class="img-fluid"> <img src="feature_design.png" class="img-fluid"></p>
+<section id="node-level-tasks-and-features" class="level3">
+<h3 class="anchored" data-anchor-id="node-level-tasks-and-features">2.1 - Node-Level Tasks and Features</h3>
+<p>A common node-level task is <strong>node classification</strong>, where we would like to assign a category or label to each unlabeled node in a graph.</p>
+<ul>
+<li>In the below example, green nodes have at least two edges, while red nodes have just one.</li>
+</ul>
+<p><img src="node_class.png" class="img-fluid"></p>
+<p>As seen in the above example, the category of a node is often dependent on how it lies in a network, and as such, we need features that characterize the structure and position of the node in its network and describe its topological pattern. Four approaches to this:</p>
+<ol type="1">
+<li><p><strong>Node degree</strong></p>
+<ul>
+<li>The node degree <span class="math inline">\(k_v\)</span> of node <span class="math inline">\(v\)</span> is defined as the number of edges, or <em>neighbouring nodes</em>, the node has.</li>
+<li>A key limitation of this is that it treats all neighbouring nodes <em>equally</em> without capturing their <em>importance</em>.</li>
+</ul>
+<p><img src="node_degree.png" class="img-fluid"></p></li>
+<li><p><strong>Node centrality</strong></p>
+<ul>
+<li>A more generalized version of node degree is node centrality, denoted <span class="math inline">\(c_v\)</span>, which takes the node importance in a graph into account.</li>
+</ul>
+<p><img src="node_centrality.png" class="img-fluid"></p>
+<ul>
+<li>There are many ways to model node importance:
+<ul>
+<li><p><strong>Eigenvector centrality</strong>: a node <span class="math inline">\(v\)</span> is important if it is surrounded by important neighbouring nodes <span class="math inline">\(u \in N(v)\)</span>.</p>
+<ul>
+<li>The importance of a given node is given by <span class="math inline">\(c_v = \frac 1 \lambda \sum_{u \in N(v)} c_u\)</span>, where <span class="math inline">\(\lambda\)</span> is some positive constant. This can also be expressed as an <em>eigenvector problem</em> <span class="math inline">\(\lambda c = Ac\)</span>, where <span class="math inline">\(A\)</span> is the adjacency matrix where <span class="math inline">\(A_{uv} = 1\)</span> if <span class="math inline">\(u \in N(v)\)</span>, and <span class="math inline">\(c\)</span> is the <strong>centrality vector</strong>. This comes down to determining the <em>eigenvector</em> <span class="math inline">\(c\)</span> associated with the <em>eigenvalue</em> (given) <span class="math inline">\(\lambda\)</span>. People tend to take the <strong>leading eigenvector</strong> <span class="math inline">\(c_{max}\)</span> that is associated with the largest eigenvalue <span class="math inline">\(\lambda_{max}\)</span> (which is always positive and unique by Perron-Frobenius Theorem) as a measure of centrality for nodes.</li>
+<li>“The more important my friends are, the higher my own importance is.”</li>
+</ul>
+<p><img src="eig_centrality.png" class="img-fluid"></p></li>
+<li><p><strong>Betweenness centrality</strong>: a node is important if it lies on many shortest paths between other nodes; a node is important if it is an important bridge between other nodes.</p>
+<ul>
+<li>The importance of a given node is given by <span class="math inline">\(c_v = \sum_{s \neq v \neq t} \frac {\textnormal{num. shortest paths between s and t that contain v}} {\textnormal{num. shortest paths between s and t}}\)</span></li>
+<li>Measures how good a <em>connector</em> or <em>transit point</em> a given node is</li>
+</ul>
+<p><img src="btwn.png" class="img-fluid"></p></li>
+<li><p><strong>Closeness centrality</strong>: a node is important if it has small shortest path lengths to all other nodes in the network.</p>
+<ul>
+<li>The more central you are, the shorter the path to everyone else, and hence the more important you are.</li>
+<li>Given by <span class="math inline">\(c_v = \frac 1 {\sum_{u \neq v} \textnormal{shortest path length between u and v}}\)</span> - the closer to the center the node is, the smaller the sum in the denominator will be, which results in a larger measure of importance.</li>
+</ul>
+<p><img src="closeness.png" class="img-fluid"></p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Clustering coefficient</strong></p>
+<ul>
+<li>The clustering coefficient measures how connected a given nodes’ neighbours are, and is given by <span class="math inline">\(e_v = \frac {\textnormal{num. edges among neighbouring nodes of v}} {k_v \choose 2} \in [0, 1]\)</span>, where <span class="math inline">\(k_v \choose 2\)</span> represents the number of node pairs amongst <span class="math inline">\(k_v\)</span> (the degree) neighbouring nodes. This metric measures how actual edges there are out of how many potential edges there could be, and hence it is between 0 and 1.</li>
+<li>e.g., a value of 0 could mean that none of your friends know each other, while a value of 1 means that all of your friends know each other.</li>
+</ul>
+<p><img src="clustering_coef.png" class="img-fluid"></p></li>
+<li><p><strong>Graphlets</strong></p>
+<ul>
+<li>We can generalize the notion of the clustering coefficient to that of graphlets, based on the observation that the clustering coefficient is essentially counting the number of triangles in the ego-network of a node.
+<ul>
+<li>The <strong>ego-network</strong> of a node is a network induced by the node itself and its neighbours (the degree-1 neighbourhood around a given node).</li>
+</ul></li>
+<li>Graphlets are rooted connected non-isomorphic <em>subgraphs</em> (they count shapes beyong triangles) on a larger graph.
+<ul>
+<li>We can define a <strong>graphlet degree vector (GDV)</strong>, which counts the number of graphlets that a node touches. This is ultimately a count vector of graphlets rooted at a given node. These help characterize the local neighbourhood structure around the node of interest based on the frequency of the graphlets that the given node participates in.
+<ul>
+<li>E.g., if we were to consider graphlets on 2-5 nodes, we would get a vector of 73 coordinates that describes the topology of a node’s neighbourhood, capturing its interconnectivities out to a distance of 4 hops.</li>
+<li>GDVs provide a measure of a node’s local network topology; comparing vectors of two nodes provides a more detailed measure of local topological similarity than if we were to just look at node degrees or clustering coefficient.</li>
+</ul>
+<img src="graphlets.png" class="img-fluid"> <img src="gdvs.png" class="img-fluid"></li>
+</ul></li>
+</ul></li>
+</ol>
+<p><strong>Importance-based features</strong>, such as node degree and node centrality, help capture the importance of a node in a graph, which becomes useful in predicting influential nodes in a graph (e.g., predicting celebrity users in a social network).</p>
+<p><strong>Structure-based features</strong>, such as node degree, clustering coefficient, and graphlet degree vectors, help capture the topological properties of a local neighbourhood around a node. This is useful in predicting the particular role that a given node plays in a graph (e.g., predicting protein functionality in a protein-protein interaction network).</p>
+<p><img src="node_features.png" class="img-fluid"></p>
+</section>
+<section id="link-prediction-and-link-level-features" class="level3">
+<h3 class="anchored" data-anchor-id="link-prediction-and-link-level-features">2.2 - Link Prediction and Link-level Features</h3>
+<p>The task of <strong>link prediction</strong> is to predict new links based on existing links in the network, meaning that at test time, all node pairs who are not already linked are ranked, and the top <span class="math inline">\(K\)</span> node pairs are predicted. So, the key is to design features for a pair of nodes.</p>
+<p><img src="link_pred.png" class="img-fluid"></p>
+<p>The link prediction task can be approached in two ways:</p>
+<ol type="1">
+<li>Removing random links from the network
+<ul>
+<li>A random set of links are removed from the network, and we aim to predict them</li>
+<li>This is useful for networks that are static</li>
+</ul></li>
+<li>Predict links over time
+<ul>
+<li>If we have a network that inherently evolves over time, we look at the graph between two times, and based on the edges and the structure of the graph between this time, we output a ranked list <span class="math inline">\(L\)</span> of links that are predicted to appear in a future time.</li>
+<li>This is useful for transaction or social networks that change over time</li>
+</ul></li>
+</ol>
+<p>In link prediction, we ultimately want to compute a score <span class="math inline">\(c(x,y)\)</span> for each pair of nodes <span class="math inline">\((x,y)\)</span>, where <span class="math inline">\(c(x,y)\)</span> could be something like the number of common neighbours of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, and then to sort the pairs of nodes by decreasing <span class="math inline">\(c(x,y)\)</span> score. * The top <span class="math inline">\(n\)</span> pairs are predicted as the new pairs who will appear in the network.</p>
+<p><img src="link_pred_task.png" class="img-fluid"></p>
+<p>The aim in generating link-level features is to describe the relationship between two nodes, such that this relationship allows us to predict whether there exists a link between them or not. Link-level features can be produced in several ways.</p>
+<ol type="1">
+<li><p><strong>Distance-based features</strong></p>
+<ul>
+<li>The shortest-path distance between two nodes - although this does not capture the degree of neighbourhood overlap</li>
+</ul>
+<p><img src="dist_features.png" class="img-fluid"></p></li>
+<li><p><strong>Local neighbourhood overlap</strong></p>
+<ul>
+<li>Captures the number of neighbouring nodes shared between two nodes <span class="math inline">\(v_1\)</span> and <span class="math inline">\(v_2\)</span>. Many different metrics can be applied:
+<ul>
+<li><strong>Common neighbours</strong>: the number of common neighbours shared by the two nodes, computed via <span class="math inline">\(|N(v_1) \cap N(v_2)|\)</span>. Nodes with higher degrees are more likely to have neighbours with each other, and so normalizing is useful.</li>
+<li><strong>Jaccard’s coefficient</strong>: a normalized version of common neighbours - the size of the intersection divided by the size of the union: <span class="math inline">\(\frac {|N(v_1) \cap N(v_2)|} {|N(v_1) \cup N(v_2)|}\)</span></li>
+<li><strong>Adamic-Adar index</strong>: the sum of the inverse logarithmic degree - the basis of this is that if a node has a lot of neighbours, then the importance of those neighbours is less than if they had few neighbours. This is derived via <span class="math inline">\(\sum_{u \in N(v_1) \cap N(v_2)} \frac 1 {\textnormal{log}(k_u)}\)</span>.
+<ul>
+<li>Analogy: having a bunch of lesser-connected friends is better than having a bunch of friends with tons of connections to other people (in terms of the importance those friends place on you)</li>
+</ul></li>
+</ul></li>
+<li>The limitation of local neighbourhood features, though, is that the metric will always return zero if two nodes have no neighbours in common, despite the possibility that those nodes may still be connected in the future - if the nodes are more than two hops apart, their score will be zero.</li>
+</ul>
+<p><img src="local.png" class="img-fluid"></p></li>
+<li><p><strong>Global neighbourhood overlap</strong></p>
+<ul>
+<li>Expands upon local neighbourhood features by considering the entire graph.</li>
+</ul>
+<p><img src="global.png" class="img-fluid"></p>
+<ul>
+<li><strong>Katz index</strong>: counts the number of paths of all lengths between a given pair of nodes
+<ul>
+<li>We can use a graph adjacency matrix to compute the number of paths between two nodes. The problem of finding the number of paths reduces down to taking powers of the adjacency matrix - recall that if nodes <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> are connected, then <span class="math inline">\(A_{uv} = 1\)</span>. If we let <span class="math inline">\(P_{uv}^{(K)}\)</span> denote the number of paths of length <span class="math inline">\(K\)</span> between nodes <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>, then it can be shown that <span class="math inline">\(P_{uv}^{(K)} = A^K\)</span>. If we wanted to compute <span class="math inline">\(P_{uv}^{(2)}\)</span>, i.e., the number of paths of length 2 between <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>, we decompose the problem into two steps:
+<ol type="1">
+<li>Compute the number of paths of length 1 between <span class="math inline">\(u\)</span>’s neighbours and <span class="math inline">\(v\)</span></li>
+<li>Find the sum of those numbers of paths across <span class="math inline">\(u\)</span>’s neighbours</li>
+</ol></li>
+<li>The Katz index sums over all path lengths for a given set of nodes, and is computed via <span class="math inline">\(S_{v_1, v_2} = \sum_{l=1}^{\infty} \beta^l A^l_{v_1, v_2}\)</span>, where <span class="math inline">\(0&lt;\beta&lt;1\)</span> is a discount factor that gives lower importance to paths of longer lengths. This can be computed in closed-form as so: <span class="math inline">\(S = \sum^{\infty}_{i=1} \beta^iA^i = (I - \beta A)^{-1} - I\)</span>, as it is simply a geometric series for matrices. The entries of <span class="math inline">\(S\)</span> will give the Katz score for any pair of nodes.</li>
+</ul>
+<img src="katz1.png" class="img-fluid"> <img src="katz2.png" class="img-fluid"></li>
+</ul></li>
+</ol>
+<p><img src="link_summaru.png" class="img-fluid"></p>
+</section>
+<section id="graph-level-features-and-graph-kernels" class="level3">
+<h3 class="anchored" data-anchor-id="graph-level-features-and-graph-kernels">2.3 - Graph-level Features and Graph Kernels</h3>
+<p>The goal here is that we want features that characterize the structure of an <em>entire graph</em>. We can do this by using <strong>kernel methods</strong>, which are widely used in traditional machine learning.</p>
+<p>In kernel methods, the idea is to design kernels instead of feature vectors, where a <strong>kernel</strong> <span class="math inline">\(K(G, G')\)</span> between two graphs measures the <em>similarity</em> between those two graphs (their data points). A kernel matrix <span class="math inline">\(K = (K(G, G'))_{G,G'}\)</span>, then, measures the similarity between all pairs of data points or graphs. * In order for a kernel to be valid, the kernel matrix must be <strong>positive semidefinite</strong>, meaning it has <em>positive eigenvalues</em> and is <em>symmetric</em>. * There exists a <strong>feature representation</strong> <span class="math inline">\(\Phi(*)\)</span> such that <span class="math inline">\(K(G, G') = \Phi(G)^T \Phi(G')\)</span> - i.e., the the kernel between two graphs is simply the dot product of the feature representations of each individual graph. * Once the kernel is defined, off-the-shelf ML models, such as the kernel SVM, can be used to make predictions.</p>
+<p><img src="kernels.png" class="img-fluid"></p>
+<p>Many <strong>graph kernels</strong> - which measure similarity between two graphs - exist. Common examples are the <strong>graphlet kernel</strong> and the <strong>Weisfeiler-Lehman kernel</strong>, and other examples proposed in literature are the <strong>random-walk kernel</strong>, the <strong>shortest-path graph kernel</strong>, and more.</p>
+<p>The basis of graph kernels is to design some graph feature vector <span class="math inline">\(\Phi(G)\)</span>. We can apply a b<strong>ag-of-words (BoW)</strong> representation of a graph, where we regard nodes as words. However, note that graphs can have many structures that result in the same BoW feature vectors. So, an enhanced version of this is to use a <strong>bag-of node degrees</strong> method, in which a graph is represented as a feature vector of its node degress (e.g., [1, 3, 0] means 1 node of degree 1, 3 nodes of degree 2, 0 nodes of degree 3). Both the graphlet kernel and the Weisfeiler-Lehman kernel use this idea of bag-of-* representations of graphs, where * is something more sophisticated than node degrees.</p>
+<p><img src="graph_kernels.png" class="img-fluid"></p>
+<ol type="1">
+<li><p><strong>Graphlet kernel</strong>: representing a graph as the count of the number of different graphlets in a graph.</p>
+<ul>
+<li><strong>Graphlets</strong> here differ from that of node-level graphlets - here, they do not need to be rooted, and do not need to be connected.</li>
+<li>Given a graph <span class="math inline">\(G\)</span>, and a graphlet list <span class="math inline">\(g_k = (g_1, g_2, ..., g_{n_k})\)</span>, we define the graphlet count vector <span class="math inline">\(f_G \in \mathbb{R}^{n_k}\)</span> as <span class="math inline">\((f_G)_i = \textnormal{num.} (g_i \subseteq G)\)</span> for <span class="math inline">\(i = 1,2,...,n_k\)</span> - the number of instances of a given graphlet that appears in our graph of interest.</li>
+<li>Given two graphs, the graphlet kernel can simply be computed as the dot product between the graphlet count vectors of each graph, i.e., <span class="math inline">\(K(G, G') = f_G^Tf_{G'}\)</span>.
+<ul>
+<li>However, the two graphs may have different sizes, and computing the kernel as such may skew the value. As such, this can be addressed by normalizing each feature vector - each feature vector can be represented as a vector of the count of individual graphlets divided by the total number of graphlets that appear in the graph: <span class="math inline">\(h_G = \frac {f_G}{\textnormal{sum}(f_G)}\)</span>, and then the kernel is computed as <span class="math inline">\(K(G, G') = h_G^Th_{G'}\)</span>.</li>
+</ul></li>
+<li>A key limitation of the graphlet kernel is that counting graphlets is an expensive task - counting size-<span class="math inline">\(k\)</span> graphlets for a graph with size <span class="math inline">\(n\)</span> by enumeration is <span class="math inline">\(O(n^k)\)</span>.</li>
+</ul>
+<p><img src="graphlet_feats1.png" class="img-fluid"> <img src="graphlet_feats2.png" class="img-fluid"></p></li>
+<li><p><strong>Weisfeiler-Lehman kernel</strong>: aims to address inefficiencies of the graphlet kernel by using neighbourhood structure to <em>iteratively</em> enrich node vocabulary.</p>
+<ul>
+<li>This is a generalized version of the bag-of node degrees method.</li>
+</ul>
+<p><img src="wl_kernel.png" class="img-fluid"></p>
+<ul>
+<li>The algorithm used to achieve this is known as <strong>color refinement</strong>.
+<ul>
+<li>Given a graph <span class="math inline">\(G\)</span> with a set of nodes <span class="math inline">\(V\)</span>, an initial color <span class="math inline">\(c^{(0)} (v)\)</span> is assigned to each node <span class="math inline">\(v\)</span>, and then node colors are iteratively refined by hashing (mapping different inputs to different colors) to create new colors: <span class="math inline">\(c^{k+1}(v) = \textnormal{HASH}({c^{k}(v), {c^{k}(u)}_{u \in N(v)}})\)</span>. Then, after <span class="math inline">\(K\)</span> steps of color refinement, <span class="math inline">\(c^{K}(v)\)</span> summarizes the structure of the graph within a <span class="math inline">\(K\)</span>-hop neighbourhood.</li>
+<li>As more iterations are done, the node gathers color information from nodes farther away in the network.</li>
+</ul></li>
+<li>After color refinement, the Weisfeiler-Lehman kernel counts the number of ndoes with a given color to produce the ultimate feature vector. Then, the Weisfeiler-Lehman kernel value is found by computing the inner product of the color count vectors.</li>
+<li>The Weisfeiler-Lehman kernel is popular as it is useful and <em>computationally efficient</em> - its time complexity is linear in the number of edges, as it involves aggregating neighbouring colors.
+<ul>
+<li>When computing a kernel value, only the colors who appear in the two graphs need to be tracked, and hence the number of colors is at most the total number of nodes.</li>
+<li>Counting colors is also linear with respect to the number of nodes.</li>
+<li>The total time complexity is linear in the number of edges.</li>
+</ul>
+<img src="color1.png" class="img-fluid"> <img src="color2.png" class="img-fluid"> <img src="color3.png" class="img-fluid"> <img src="color4.png" class="img-fluid"></li>
+</ul></li>
+</ol>
+<p><img src="graph_level_summary.png" class="img-fluid"></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../topics/computer_science/neural_networks/01_intro.html" class="pagination-link" aria-label="Introduction to Neural Networks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to Neural Networks</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../topics/computer_science/neural_networks/03_intro_to_networkx_pytorch.html" class="pagination-link" aria-label="Introduction to NetworkX and Pytorch Geometric">
+        <span class="nav-page-text">Introduction to NetworkX and Pytorch Geometric</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

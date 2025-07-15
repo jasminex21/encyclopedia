@@ -7,7 +7,8 @@
       "/topics/notes/01_the_science_of_people.html",
       "/topics/psychology/02_music_preference.html",
       "/topics/computer_science/nlp/01_ngram_language_models.html",
-      "/topics/notes/03_thinking_in_bets.html"
+      "/topics/computer_science/neural_networks/02_graph_neural_networks.html",
+      "/topics/computer_science/neural_networks/03_intro_to_networkx_pytorch.html"
     ]
   }
 ]
