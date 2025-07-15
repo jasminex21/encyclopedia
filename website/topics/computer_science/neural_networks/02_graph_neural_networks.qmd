@@ -410,3 +410,67 @@ The basis of graph kernels is to design some graph feature vector $\Phi(G)$. We 
      ![](color4.png)
 
 ![](graph_level_summary.png)
+
+## 3.1 - Node Embeddings
+
+In tradtional machine learning methods, we take a graph as input, extract node, link, and graph-level features, and then learn a model (e.g., SVM, NN, etc.) that maps features to labels. Much effort in such processes go into feature engineering - how to best describe the network to ensure success of downstream prediction tasks.
+
+![](trad_graph_ml.png)
+
+Is it, then, possible to avoid the need to manually curate features each time? This is the idea of **Graph Representation Learning**, which alleviates the need to do feature engineering every sigle time by *automatically* learning the features. The aim of graph representation learning is to achieve *efficient* *task-independent feature learning* for machine learning with graphs. For example, given a graph wherein we'd like to make node-level predictions, we want to learn how to *automatically* map each node into $d$-dimensional space and represent it as a feature representation, or an embedding - a vector of $d$ elements, which captures the structure of the underlying network, allowing us to make downstream predictions.
+
+![](grl.png)
+
+### Why Embeddings?
+The basis of embeddings is that similarity of embeddings of nodes translates to similarity of those nodes in the network.
+
+By embedding nodes, many downstream prediction tasks, including node classification, link prediction, graph classification, anamolous node detection, and clustering, can be done.
+
+![](embeddings.png)
+
+### Encoders and Decoders
+Assume we have a graph $G$ with a set of nodes $V$ and an adjacency matrix $A$.
+
+![](node_embeddings.png)
+
+Our goal is to *encode* nodes so that the similarity in the embedding space (usually dot product) approximates similarity in the original network. To do this, we need to define the **objective function** that connects the network similarity to embedding similarity. This can be broken down as so:
+
+1. The **encoder** maps from nodes to embeddings
+   * The encoder maps each node $v$ to a low-dimensional vector: $\textnormal{ENC}(v) = z_v$
+   * The embeddings are in some $d$-dimensional, usually ranging from 64 to 1,000.
+2. Define a **node similarity function** - a measure of similarity in the original network
+   * The similarity function specifies how the relationships in vector space map to the relationships in the original network.
+3. The **decoder** $\textnormal{DEC}$ maps from embeddings to the similarity score
+4. Optimize the parameters of the encoder so that similarity in the underlying network corresponds as closely as possible to the similarity of the embeddings: $\textnormal{similarity}(u, v) \approx z_v^T z_u$
+
+![](enc_dec.png)
+![](enc_dec_summary.png)
+
+#### "Shallow" Encoding
+The simplest approach to embedding is known as **"shallow" encoding**, where the encoder is just an **embedding lookup**, as so: $\textnormal{ENC}(v) = z_v = Z \cdot v$, where $Z$ is a matrix $Z \in \mathbb{R}^{d \times |V|}$ in which each column is a node embedding (what we are learning and optimizing), and $v$ is an indicator vector $v \in \mathbb{I}^{|V|}$ that consists of all zeroes except for a one value in the column indicating node $v$.
+
+Note, though, that this method is not scalable, because having a large number of nodes coupled with a large embedding dimension results in a massive matrix $Z$, containing tons of parameters to optimize.
+
+The idea of shallow encoding is that each node is essentially assigned a unique embedding vector, and the goal is to learn and optimize the embedding of each node. There are many methods that can do this - two particular examples are **DeepWalk** and **node2vec**.
+
+![](shallow_encodinf.png)
+
+#### How Do We Define Node Similarity?
+Naturally, a key decision to make is the definition of **node similarity**. You may regard two nodes as being similar (and hence desiring to encode them similarly) if, say, they are linked, or if they share neighbours, or if they are in similar parts of the network, or if they have similar structural roles, etc.
+
+We will start by defining node similarity based on **random walks**, and learn to optimize embeddings for random walks.
+* This is an **unsupervised** or **self-supervised** means of learning node embeddings, where we are not using any node labels when learning - we are simply trying to capture some notion of network similarity. Node features are also not used.
+* The goal is to directly estimate a set of coordinates (i.e., the embedding) of a node so that some aspect of the network structure is preserved.
+  * In this sense, these embeddings are **task-independent**, as they are not trained for a specific task and can be used for any task.
+
+![](node_sim.png)
+
+### 3.2 - Random Walk Approaches for Node Embeddings
+We would like to learn a vector $z_u$ - the node embedding - of each node $u$. We also define a probability $P(v|z_u)$, which represents the predicted probability of visiting node $v$ on random walks starting from node $u$.
+
+We also require two nonlinear functions that we will use to produce the predicted probabilities: 
+
+1. Softmax function: a generalization of the logistic function to multiple dimensions - it transforms a vector of $K$ raw scores (model predictions) into a probability distribution where each element represents the probability of a specific class; these $K$ probabilities sum to 1. 
+   * Given by $\sigma(z)_i = \frac {e^{z_i}}{\sum^K_{j=1}e^{z_j}}$
+   * The larger the initial prediction, the more probability will be concentrated on it
+2. Sigmoid function
