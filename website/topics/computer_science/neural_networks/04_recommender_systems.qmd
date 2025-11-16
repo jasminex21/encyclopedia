@@ -1,0 +1,60 @@
+---
+title: "GNNs for Recommender Systems"
+subtitle: "Recommender Systems and how Graph Learning can be applied"
+date: "2025-07-16"
+categories: ["Computer Science"]
+--- 
+
+## Introduction to Recommender Systems
+In the modern online world, with social and entertainment platforms such as Netflix, Amazon, Spotify, Youtube, and Pinterest, being able to curate personalized recommendations - i.e., suggesting a small number of interesting items for each user - becomes critical for users to effectively explore the content of their interests.
+* The whole point of this is that different people should have different recommendations, as each person has different preferences and histories.
+
+Recommender systems can inherently be modeled as a bipartite graph, with users on one side and items on another. Items can be abstract - they can be movies, songs, products, etc. An edge between a user and an item indicates some sort of user-item interaction at a certain timestamp.
+
+The recommendation task at hand is, given past user-item interactions, we would like to predict new items that each user will interact with in the future.
+* This can be thought of as a link prediction problem, where we want to predict new user-item interactions given the past edges. 
+* For each user $u \in U$ and each item $v \in V$, we need to find a real-valued score $f(u,v)$.
+  * However, practically, we cannot evaluate $f$ for every user-item pair - the scale is simply too large (consider evaluating a function for every user-item connection in Amazon, e.g.). Hence, the problem is often split into a two-stage process: 
+    1. Candidate generation (cheap and fast): using the user as a query, and retrieving the most relevant items for that user
+       * Technically, in the embedding world, the user gets embedded, and the embedding of the user is the query. Then, a KNN engine determines a small number of item embeddings similar to that of the user.
+    2. Ranking: scoring the candidate items with respect to the user, and returning the top-$K$ items 
+
+### Top-$K$ Recommendations
+For each user, we recommend $K$ (usually in the order of 10-100) items. For the recommendation to be effective, $K$ needs to be much smaller than the total number of items. Our aim is to include as many positive items - items that the user will interact with in the future - as possible in the top-$K$ recommended items. 
+
+To evaluate the performance of the recommender system, we use a metric called recall@ $k$.
+* Let $P_u$ be a set of positive items that the user will interact with in the future, and let $R_u$ be a set of items recommended by the model. We would like to maximize the intersection of these two sets.
+* Recall @ $k$ for some user $u$ is given by $\frac {|P_u \cup R_u|} {|P_u|}$ - the intersection of the two sets divided by the total number of positive items. A higher recall value means that more positive items were recommended in the top-$K$ for user $u$.
+
+## Embedding-Based Methods 
+We establish the following notation: 
+* $U$: a set of all users
+* $V$: a set of all items
+* $E$: a set of observed user-item interactions; $E = {(u,v) | u \in U, v \in V, u \textnormal{interacted with} v}$; note that a "positive interaction" is domain-specific
+
+To retrieve the top-$K$ items, we need some scoring function to get a real-valued scalar score $\textnormal{score}(u,v)$ for each $u$ and each $v$. Then, we return the $K$ items with the highest scores for a given user (excluding already-interacted items).
+
+One useful approach to scoring user-item interactions is embedding-based models. 
+* For each user $u \in U$, we have a $D$-dimensional embedding $\textbf{u} \in \mathbb{R}^D$
+* Similarly, for each item $v \in V$, we have a $D$-dimensional embedding $\textbf{v} \in \mathbb{R}^D$
+* Then, we have some scoring function $f$ that takes the embeddings of both the user and the item, and returns a score.
+  * $f_\theta(*) = \mathbb{R}^D \times \mathbb{R}^D \to \mathbb{R}$
+  * So $\textnormal{score}(u, v) = f_\theta(u,v)$
+
+### Training Objective
+Embedding-based models have three types of parameters that we need to learn or estimate: 
+1. An encoder to generate user embeddings ${\textbf{u}}_{u \in U}$
+2. An encoder to generate item embeddings ${\textbf{v}}_{v \in V}$
+3. A score function $f_\theta(*)$
+
+Our aim is the optimize the model parameters in order to achieve a high recall@ $k$ on seen (training) user-item interactions, with the hope that this recall@ $k$ will translate to unseen (test) interactions.
+
+An issue with the objective function recall@ $k$ is that it is not differentiable, and so we cannot apply gradient-based optimization to it. So, in practice, we define two surrogate loss functions that are widely-used to enable efficient gradient-based optimization. The basis is that these surrogate losses *are* differentiable, and should align nicely with the original training objective.
+1. Binary Loss:
+   * Define positive and negative edges, where a set of positive edges $E$ (already observed/training user-item interactions) and a set of negative edges $E_{neg} = {(u,v) | (u, v) \nin E, u \in U, v \in V}$ that represent interactions that will not happen in the future.
+     * How you select these negative edges becomes very important.
+   * Define a sigmoid function - sigmoid functions map real-valued scores into binary likelihood scores in the range of 0 and 1. 
+     * $\sigma(x) = \frac 1 {1 + \textnormal{exp}(-x)}$
+   * Binary loss is defined as the binary classification of positive or negative edges (basically a cross entropy loss):
+     * $-\frac 1 {|E|} \sum_{(u,v) \in E} \textnormal{log}(\sigma(f_\theta(\textbf{u}, \textbf{v}))) - \frac 1 {|E_{neg}|} \sum_{(u,v) \in E_{neg}} \textnormal{log}(1-\sigma(f_\theta(\textbf{u}, \textbf{v})))$
+2. Bayesian Personalized Ranking (BPR) loss

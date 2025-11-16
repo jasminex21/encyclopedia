@@ -43,6 +43,8 @@ website:
           contents: topics/anthropology/*
         - section: Computer Science
           contents: 
+            - section: Data Structures & Algorithms
+              contents: topics/computer_science/dsa/*
             - section: Neural Networks
               contents: topics/computer_science/neural_networks/*
             # - section: Natural Language Processing

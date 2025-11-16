@@ -1,0 +1,53 @@
+---
+title: "Strings"
+date: "2025-11-16"
+categories: ["Computer Science"]
+--- 
+
+## Introduction
+A string is a sequence of characters; as such, many tips that apply to arrays apply also to strings. 
+
+### Considerations
+* What is the set of input characters?
+  * Use `str[i].isalnum()` to check whether a character is alphanumeric.
+* Are the characters case sensitive?
+  * Use `str[i].lower()` to convert a character to lower case.
+
+### Corner Cases
+* Empty string
+* String with 1 character
+* String with repeated characters
+* Strings with only distinct characters
+
+## Time Complexity
+Time complexities of basic string operations closely resemble that of array operations. 
+
+| Operation | Complexity | Notes |
+| :--- | :--: | :--- |
+| access | $O(1)$ |  |
+| search | $O(n)$ | i.e., traversing through a string to find a value when you do not have its index |
+| insert | $O(n)$ | inserting requires shifting all subsequent elements to the right by one, with the exception of the element being at the end, which would be $O(1)$ |
+| remove | $O(n)$ | removing requires shifting all subsequent elements to the left by one, with the exception of the element being at the end, which would be $O(1)$ |
+
+## Techniques
+
+### Counting Characters
+Often, problems require you to count the frequency of characters in a string. The most common way of doing this is by using a hash table/map. For Python, ask if you can use the built-in `Counter` class.
+
+A common mistake with character counters is saying that the space complexity required for the counter is $O(n)$. The space required for a counter of a string of Latin caracters is actually $O(1)$, because the upper bound is the range of characters, which is usually a fixed constant of `26`. 
+
+### Anagrams
+Anagrams are the result of rearranging the letters of a word or phrase to produce a new word or phrase, while using all the original letters once each. 
+
+Approaches: 
+
+* Sort both strings and check if the resulting strings are the same. This takes $O(n \textnormal{log}n)$ time and $O(n)$ space (i.e., not ideal).
+* Count up the frequencies of each character in both strings and check if the frequencies are the same. This takes $O(n)$ time and $O(1)$ space.
+
+### Palindromes
+Palindromes are sequences who read the same backward as forward, such as `hannah` or `racecar`. 
+
+Approaches: 
+
+* Reversing the string should result in a string equal to the original string.
+* Use opposite pointers at the start and end of the string, and move the pointers inwards until they meet. At every index pair, the characters at both pointers should match.

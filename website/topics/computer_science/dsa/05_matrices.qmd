@@ -1,0 +1,42 @@
+---
+title: "Matrices"
+date: "2025-11-16"
+categories: ["Computer Science"]
+--- 
+
+## Introduction
+A matrix is a two-dimensional array.
+
+Questions involving matrices are often related to graph traversal. 
+
+### Considerations
+* Empty matrix (check that none of the arrays have 0 length)
+* 1 x 1 matrix
+* Matrix with only one row or column
+
+## Techniques
+
+### Creating an empty $N \times M$ matrix
+For questions involving traversal or dynamic programming, you almost always want to make a copy of the matrix with the same size containing empty values so that you can store the visited state. 
+
+In Python, creating an empty matrix of the same size can be done as follows: 
+
+```python
+# assuming that matrix is non-empty
+zero_matrix = [[0 for _ in range(len(matrix[0])) for _ in range(len(matrix))]]
+```
+
+Copying a matrix and its values is: 
+
+```python
+copied_matrix = [row[:] for row in matrix]
+```
+
+### Transposing a matrix
+The transpose of a matrix is found by interchanging its rows into columns or columns into rows. 
+
+To transpose a matrix in Python is: 
+
+```python
+transposed_matrix = zip(*matrix)
+```

@@ -473,4 +473,29 @@ We also require two nonlinear functions that we will use to produce the predicte
 1. Softmax function: a generalization of the logistic function to multiple dimensions - it transforms a vector of $K$ raw scores (model predictions) into a probability distribution where each element represents the probability of a specific class; these $K$ probabilities sum to 1. 
    * Given by $\sigma(z)_i = \frac {e^{z_i}}{\sum^K_{j=1}e^{z_j}}$
    * The larger the initial prediction, the more probability will be concentrated on it
-2. Sigmoid function
+2. Sigmoid function: an S-shaped function that maps any real-valued number to a value between 0 and 1.
+   * Defined by $S(x) = \frac 1 {1 + e^{-x}}$
+
+A random walk is a process where, given a graph and a starting point, we select a neighbour of the starting point at random, and move to it; then another neighbour is selected and moved to, etc.. The random sequence of nodes visited in this way is known as a random walk on the graph.
+
+* So, we want to learn $z$ such that the dot product of $z$ at two nodes $u$ and $v$ estimates the probability that $u$ and $v$ co-occur on a random walk over the graph ($P_R(v|u)$). We can break it down as so: 
+  1. Estimate the probability of visiting node $v$ on a random walk starting from node $u$ using some random walk strategy $R$
+  2. Optimize embeddings to encode these random walk statistics
+
+Random walks are useful because of their expressivity - they provide a flexible stochastic definition of node similarity that incorporates both local and higher-order neighbourhood information. The basis is that if a random walk on a graph starting from node $u$ visits node $v$ with high probability, then $u$ and $v$ are similar - they have a similar network neighbourhood, are close together, or have multiple paths between them, etc. Random walks are also efficient, because we do not need to consider all node pairs when training; we only need to consider pairs that co-occur otgether in random walks.
+
+Our ultimate aim in creating node embeddings is to find embeddings in $d$-dimensional space that preserves similarity, such that the (cosine) similarity of nodes nearby in the network is high. So then, given a node $u$, we must define the notion of "nearby" nodes. Using the concept of random walks, we can define $N_R(u)$, the neighbourhood of $u$ obtained by some random walk strategy $R$. We set this up as an optimization problem: 
+
+* Given a graph$G = (V, E)$, out aim is to learn a mapping $f: u \to \mathbb{R}^d: f(u) = z_u$ from the nodes to the embeddings. 
+* We try to maximize $\textnormal{max}_f \sum_{u \in V} P(N_R(u)|z_u)$ - we want to find the function that maximizes log probabilities of the nodes that appear in the random-walk neighbourhood of node $u$.
+  * I.e., we want nodes that are visited in the same random walk to be embdedded close together in space - given node $u$, we want to learn feature representations that are predictive of the nodes in its random walk neighbourhood $N_R(u)$.
+
+We can approach random walk optimization as so: 
+1. Run short, fixed-length random walks starting from each node $u$ in the graph using some random walk strategy $R$
+2. For each node $u$, collect $N_R(u)$, which is the multiset of nodes visited on random walks starting from $u$. A multiset means that the same node can appear multiple times in the set (as it may be visited multiple times).
+3. Optimize the embeddings such that, given node $u$, we can predict its neighbours $N_R(u)$ by maximizing $\textnormal{max}_f \sum_{u \in V} P(N_R(u)|z_u)$.
+   * This can also be written as $L = \max_{u \in V} \sum_{v \in N_R(u)} -\textnormal{log}(P(v|z_u))$
+   * The intuition is that we'd like to optimize embeddings $z_u$ to maximize the likelihood of random walk co-occurrences.
+   * The probability $P(v|z_u)$ can be defined using softmax: $P(v|z_u) = \frac {\textnormal{exp} (z_u^Tz_v)} {\sum_{n \in V} \textnormal{exp} (z_u^Tz_n)}$
+     * We want to assign as much probability mass as we can to a node $v$ who is similar to node $u$, and as little as we can to all other nodes $n$
+     * 

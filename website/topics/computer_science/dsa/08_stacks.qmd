@@ -1,0 +1,27 @@
+---
+title: "Stacks"
+date: "2025-11-16"
+categories: ["Computer Science"]
+--- 
+
+## Introduction
+A **stack** is a data type that supports the **push** (inserting a new element at the top of the stack) and **pop** (removing and returning the most recently added element at the top of the stack) operations. 
+
+The behaviour of stacks is often called **last in, first out (LIFO)**.
+
+Stacks are frequently used to implement depth-first search (DFS). 
+
+In Python, stacks can be simulated using a list. 
+
+### Corner Cases
+* Empty stack (in particular, popping from an empty stack)
+* Stack with one or two items
+
+![](stacks.avif)
+
+## Time Complexity
+
+| Operation | Complexity | Notes |
+| :--- | :--: | :--- |
+| push | $O(1)$ | adding a new element to the end of the list (does not require shifting) |
+| pop | $O(1)$ | removing the last element from the list (does not require shifting) |
