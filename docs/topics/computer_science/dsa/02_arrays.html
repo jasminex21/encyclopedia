@@ -379,6 +379,13 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sliding-window" id="toc-sliding-window" class="nav-link" data-scroll-target="#sliding-window">Sliding Window</a></li>
   <li><a href="#two-pointers" id="toc-two-pointers" class="nav-link" data-scroll-target="#two-pointers">Two Pointers</a></li>
+  <li><a href="#when-to-use-each-technique" id="toc-when-to-use-each-technique" class="nav-link" data-scroll-target="#when-to-use-each-technique">When to Use Each Technique</a></li>
+  </ul></li>
+  <li><a href="#more-examples" id="toc-more-examples" class="nav-link" data-scroll-target="#more-examples">More Examples</a>
+  <ul class="collapse">
+  <li><a href="#two-sum-ii" id="toc-two-sum-ii" class="nav-link" data-scroll-target="#two-sum-ii">Two Sum II</a></li>
+  <li><a href="#sum" id="toc-sum" class="nav-link" data-scroll-target="#sum">3Sum</a></li>
+  <li><a href="#container-with-most-water" id="toc-container-with-most-water" class="nav-link" data-scroll-target="#container-with-most-water">Container with Most Water</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -632,7 +639,14 @@ window.Quarto = {
 <p>A palindrome is a string that reads the same forward and backward. It is also case-insensitive and ignores all non-alphanumeric characters.</p>
 <p>Note: Alphanumeric characters consist of letters (A-Z, a-z) and numbers (0-9).</p>
 <blockquote class="blockquote">
-<p>Example 1: Input: <code>s = "Was it a car or a cat I saw?"</code> Output: <code>true</code> Explanation: After considering only alphanumerical characters we have “wasitacaroracatisaw”, which is a palindrome. Example 2: Input: <code>s = "tab a cat"</code> Output: <code>false</code> Explanation: “tabacat” is not a palindrome.</p>
+<p>Example 1:</p>
+<p>Input: <code>s = "Was it a car or a cat I saw?"</code></p>
+<p>Output: <code>true</code></p>
+<p>Explanation: After considering only alphanumerical characters we have “wasitacaroracatisaw”, which is a palindrome.</p>
+<p>Example 2:</p>
+<p>Input: <code>s = "tab a cat"</code></p>
+<p>Output: <code>false</code></p>
+<p>Explanation: “tabacat” is not a palindrome.</p>
 </blockquote>
 <p>The brute force solution would be to create a copy of the input string, reverse it, and then check for equality. However, this is an <span class="math inline">\(O(n)\)</span> solution with extra space.</p>
 <p>Consider that a palindromic string is one that reads the same from the start as well as from the end, meaning that the character at the start should match the character at the end at the same index. This is a great place to apply the opposite pointers variant of the Two Pointers algorithm.</p>
@@ -664,9 +678,187 @@ window.Quarto = {
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>        left <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-
 </section>
+</section>
+<section id="when-to-use-each-technique" class="level3">
+<h3 class="anchored" data-anchor-id="when-to-use-each-technique">When to Use Each Technique</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Use Case</th>
+<th style="text-align: left;">Technique</th>
+<th style="text-align: left;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Do we need a <em>contiguous</em> subarray/substring with some property/condition (sum &lt; X, no repeating chars, exactly K distinct, etc.)</td>
+<td style="text-align: left;">Sliding Window (pointers move in same direction, window is of variable size)</td>
+<td style="text-align: left;">longest substring without repeating chars, max consecutive ones</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Is the array sorted (or can we sort it) and we are looking for pairs ot triplets that satisfy a condition (sum = target, sum &lt; target, etc.)?</td>
+<td style="text-align: left;">Opposite Pointers (two pointers, <code>left = 0, right = n - 1</code>)</td>
+<td style="text-align: left;">two sum II, 3sum</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Do we need to remove duplicates, partition, or copmact an in-place array while maintaining relative order?</td>
+<td style="text-align: left;">Same Direction Pointers (a <code>slow</code> and <code>fast</code> pointer, both moving right)</td>
+<td style="text-align: left;">remove duplicates from sorted array, move zeroes, sort colors</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="more-examples" class="level2">
+<h2 class="anchored" data-anchor-id="more-examples">More Examples</h2>
+<section id="two-sum-ii" class="level3">
+<h3 class="anchored" data-anchor-id="two-sum-ii">Two Sum II</h3>
+<p>Taken from <a href="https://neetcode.io/problems/two-integer-sum-ii?list=neetcode150">Neetcode’s Two Integer Sum II</a>.</p>
+<p>Given an array of integers numbers that is sorted in non-decreasing order, return the indices (1-indexed) of two numbers, <code>[index1, index2]</code>, such that they add up to a given target number <code>target</code> and <code>index1 &lt; index2</code>. Note that <code>index1</code> and <code>index2</code> cannot be equal, therefore you may not use the same element twice.</p>
+<p>There will always be exactly one valid solution.</p>
+<blockquote class="blockquote">
+<p>Example 1:</p>
+<p>Input: <code>numbers = [1,2,3,4], target = 3</code></p>
+<p>Output: <code>[1,2]</code></p>
+<p>Explanation: The sum of 1 and 2 is 3. Since we are assuming a 1-indexed array, <code>index1 = 1, index2 = 2</code>. We return <code>[1, 2]</code>.</p>
+</blockquote>
+<p>Notice that we have a sorted (ascending) array, and we are looking for a pair of elements that satisfy the sum condition. This is a great place to apply the Opposite Two Pointers algorithm. Again, the key characteristic of this array is that it is <em>sorted</em>.</p>
+<p>Because our array is sorted in ascending order, we can take advantage of this to implement a <span class="math inline">\(O(n)\)</span> solution. For each pair of pointers, we find the sum [of the elements at those pointers], and if the sum is too large, we should move the right pointer inwards (to a lower value). If the sum is too small, we move the left pointer inwards (to a higher value).</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> twoSum(numbers: List[<span class="bu">int</span>], target: <span class="bu">int</span>) <span class="op">-&gt;</span> List[<span class="bu">int</span>]:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize pointers</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    left <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    right <span class="op">=</span> <span class="bu">len</span>(numbers) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> left <span class="op">&lt;</span> right: </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        candidate_sum <span class="op">=</span> numbers[left] <span class="op">+</span> numbers[right]</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># we want to increase the sum </span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> candidate_sum <span class="op">&lt;</span> target: </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            left <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># we want to decrease the sum</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> candidate_sum <span class="op">&gt;</span> target: </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            right <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> [left <span class="op">+</span> <span class="dv">1</span>, right <span class="op">+</span> <span class="dv">1</span>]</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> []</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sum" class="level3">
+<h3 class="anchored" data-anchor-id="sum">3Sum</h3>
+<p>Taken from <a href="https://neetcode.io/problems/three-integer-sum?list=neetcode150">Neetcode’s 3Sum</a>.</p>
+<p>Given an integer array <code>nums</code>, return all the triplets <code>[nums[i], nums[j], nums[k]]</code> where <code>nums[i] + nums[j] + nums[k] == 0</code>, and the indices <code>i</code>, <code>j</code> and <code>k</code> are all distinct.</p>
+<p>The output should not contain any duplicate triplets. You may return the output and the triplets in any order.</p>
+<blockquote class="blockquote">
+<p>Example 1:</p>
+<p>Input: <code>nums = [-1,0,1,2,-1,-4]</code></p>
+<p>Output: <code>[[-1,-1,2],[-1,0,1]]</code></p>
+<p>Explanation:</p>
+<p><code>nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0</code></p>
+<p><code>nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0</code></p>
+<p><code>nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0</code></p>
+<p>The distinct triplets are <code>[-1,0,1]</code> and <code>[-1,-1,2]</code>.</p>
+</blockquote>
+<p>This problem can be seen as an extension of Two Sum II. Notice, however, that we do not start with a sorted list, so the first step would be to sort the array.</p>
+<p>Then, we can use the Opposite Two Pointers algorithm. We iterate through the list and treat each value as a first value in the triplet. Then, for the remaining two values, we apply the Opposite Pointers. We derive a sum for the first value, and the values at the pointers. If the sum is too large, we decrement <code>right</code>, and if it is too small, we increment <code>left</code>.</p>
+<p>There is also the issue of repeated values. Since we don’t want repeated triplets in the final answer, we need to skip repeated values in the array.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> threeSum(nums: List[<span class="bu">int</span>]) <span class="op">-&gt;</span> List[List[<span class="bu">int</span>]]:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># sort the input list s.t. opp. pointers can be applied</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    nums.sort()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># result variable</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    triplets <span class="op">=</span> []</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># need index for pointers</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, start_num <span class="kw">in</span> <span class="bu">enumerate</span>(nums): </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if encountering repeated start_num</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> start_num <span class="op">==</span> nums[i <span class="op">-</span> <span class="dv">1</span>]: </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            <span class="co"># skip this iteration</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># initialize pointers</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        left <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        right <span class="op">=</span> <span class="bu">len</span>(nums) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> left <span class="op">&lt;</span> right: </span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>            candidate_sum <span class="op">=</span> start_num <span class="op">+</span> nums[left] <span class="op">+</span> nums[right]</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>            <span class="co"># too large</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> candidate_sum <span class="op">&gt;</span> <span class="dv">0</span>: </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>                right <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># too small</span></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> candidate_sum <span class="op">&lt;</span> <span class="dv">0</span>: </span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>                left <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>: </span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>                triplets.append([start_num, nums[left], nums[right]])</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>                <span class="co"># update pointers; keep looking for more valid triplets</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>                left <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>                right <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>                <span class="co"># avoid duplicate values; i.e., updated value is the same as before</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>                <span class="co"># shift pointer to next unique value</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>                <span class="cf">while</span> nums[left] <span class="op">==</span> nums[left <span class="op">-</span> <span class="dv">1</span>] <span class="kw">and</span> left <span class="op">&lt;</span> right: </span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>                    left <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> triplets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="container-with-most-water" class="level3">
+<h3 class="anchored" data-anchor-id="container-with-most-water">Container with Most Water</h3>
+<p>Taken from <a href="https://neetcode.io/problems/max-water-container?list=neetcode150">Neetcode’s Container With Most Water</a>.</p>
+<p>You are given an integer array <code>heights</code> where <code>heights[i]</code> represents the height of the ith bar.</p>
+<p>You may choose any two bars to form a container. Return the maximum amount of water a container can store.</p>
+<p><img src="containter.avif" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>Example 1:</p>
+<p>Input: <code>height = [1,7,2,5,4,7,3,6]</code></p>
+<p>Output: <code>36</code></p>
+<p>Example 2:</p>
+<p>Input: <code>height = [2,2,2]</code></p>
+<p>Output: <code>4</code></p>
+</blockquote>
+<p>Let us break this problem down. We are seeking a pair of values out of the array that fulfill the “max area” criterion. This is an application of the Opposite Two Pointers algorithm.</p>
+<p>We create our <code>left</code> and <code>right</code> pointers, find the candidate area, attempt to update the resulting max area, and then update our pointers. Note that the pointers are updated conditionally; we want to move the left pointer inwards if the left value is less than the right, and move the right pointer inwards otherwise.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> maxArea(heights: List[<span class="bu">int</span>]) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize pointers and final max area</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    left <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    right <span class="op">=</span> <span class="bu">len</span>(heights) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    max_area <span class="op">=</span> <span class="bu">float</span>(<span class="st">"-inf"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> left <span class="op">&lt;</span> right: </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># compute candidate area</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        candidate_area <span class="op">=</span> <span class="bu">min</span>(heights[left], heights[right]) <span class="op">*</span> (right <span class="op">-</span> left)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># attempt to update</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        max_area <span class="op">=</span> <span class="bu">max</span>(candidate_area, max_area)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># update pointers</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> heights[left] <span class="op">&lt;</span> heights[right]: </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>            left <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            right <span class="op">-=</span> <span class="dv">1</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> max_area <span class="cf">if</span> max_area <span class="op">!=</span> <span class="bu">float</span>(<span class="op">-</span>inf) <span class="cf">else</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 </section>
 

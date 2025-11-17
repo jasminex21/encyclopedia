@@ -191,12 +191,19 @@ A palindrome is a string that reads the same forward and backward. It is also ca
 Note: Alphanumeric characters consist of letters (A-Z, a-z) and numbers (0-9).
 
 > Example 1:
+> 
 > Input: `s = "Was it a car or a cat I saw?"`
+> 
 > Output: `true`
+> 
 > Explanation: After considering only alphanumerical characters we have "wasitacaroracatisaw", which is a palindrome.
+> 
 > Example 2:
+> 
 > Input: `s = "tab a cat"`
+> 
 > Output: `false`
+> 
 > Explanation: "tabacat" is not a palindrome.
 
 The brute force solution would be to create a copy of the input string, reverse it, and then check for equality. However, this is an $O(n)$ solution with extra space.
@@ -232,4 +239,185 @@ def isPalindrome(s: str) -> bool:
         left += 1
 
     return True
+```
+
+### When to Use Each Technique
+| Use Case | Technique | Examples |
+| :--- | :--- | :--- |
+| Do we need a *contiguous* subarray/substring with some property/condition (sum < X, no repeating chars, exactly K distinct, etc.) | Sliding Window (pointers move in same direction, window is of variable size) | longest substring without repeating chars, max consecutive ones |
+| Is the array sorted (or can we sort it) and we are looking for pairs ot triplets that satisfy a condition (sum = target, sum < target, etc.)? | Opposite Pointers (two pointers, `left = 0, right = n - 1`) | two sum II, 3sum |
+| Do we need to remove duplicates, partition, or copmact an in-place array while maintaining relative order? | Same Direction Pointers (a `slow` and `fast` pointer, both moving right) | remove duplicates from sorted array, move zeroes, sort colors |
+
+## More Examples
+### Two Sum II
+Taken from [Neetcode's Two Integer Sum II](https://neetcode.io/problems/two-integer-sum-ii?list=neetcode150).
+ 
+Given an array of integers numbers that is sorted in non-decreasing order, return the indices (1-indexed) of two numbers, `[index1, index2]`, such that they add up to a given target number `target` and `index1 < index2`. Note that `index1` and `index2` cannot be equal, therefore you may not use the same element twice.
+
+There will always be exactly one valid solution.
+
+> Example 1:
+> 
+> Input: `numbers = [1,2,3,4], target = 3`
+> 
+> Output: `[1,2]`
+> 
+> Explanation: The sum of 1 and 2 is 3. Since we are assuming a 1-indexed array, `index1 = 1, index2 = 2`. We return `[1, 2]`.
+
+Notice that we have a sorted (ascending) array, and we are looking for a pair of elements that satisfy the sum condition. This is a great place to apply the Opposite Two Pointers algorithm. Again, the key characteristic of this array is that it is *sorted*.
+
+Because our array is sorted in ascending order, we can take advantage of this to implement a $O(n)$ solution. For each pair of pointers, we find the sum [of the elements at those pointers], and if the sum is too large, we should move the right pointer inwards (to a lower value). If the sum is too small, we move the left pointer inwards (to a higher value).
+
+```python
+def twoSum(numbers: List[int], target: int) -> List[int]:
+
+    # initialize pointers
+    left = 0
+    right = len(numbers) - 1
+
+    while left < right: 
+
+        candidate_sum = numbers[left] + numbers[right]
+
+        # we want to increase the sum 
+        if candidate_sum < target: 
+            left += 1
+
+        # we want to decrease the sum
+        elif candidate_sum > target: 
+            right -= 1
+        
+        else: 
+            return [left + 1, right + 1]
+    
+    return []
+```
+
+### 3Sum
+Taken from [Neetcode's 3Sum](https://neetcode.io/problems/three-integer-sum?list=neetcode150).
+
+Given an integer array `nums`, return all the triplets `[nums[i], nums[j], nums[k]]` where `nums[i] + nums[j] + nums[k] == 0`, and the indices `i`, `j` and `k` are all distinct.
+
+The output should not contain any duplicate triplets. You may return the output and the triplets in any order.
+
+> Example 1:
+> 
+> Input: `nums = [-1,0,1,2,-1,-4]`
+>
+> Output: `[[-1,-1,2],[-1,0,1]]`
+> 
+> Explanation:
+> 
+> `nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0`
+> 
+> `nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0`
+> 
+> `nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0`
+> 
+> The distinct triplets are `[-1,0,1]` and `[-1,-1,2]`.
+
+This problem can be seen as an extension of Two Sum II. Notice, however, that we do not start with a sorted list, so the first step would be to sort the array.
+
+Then, we can use the Opposite Two Pointers algorithm. We iterate through the list and treat each value as a first value in the triplet. Then, for the remaining two values, we apply the Opposite Pointers. We derive a sum for the first value, and the values at the pointers. If the sum is too large, we decrement `right`, and if it is too small, we increment `left`. 
+
+There is also the issue of repeated values. Since we don't want repeated triplets in the final answer, we need to skip repeated values in the array.
+
+```python
+def threeSum(nums: List[int]) -> List[List[int]]:
+
+    # sort the input list s.t. opp. pointers can be applied
+    nums.sort()
+
+    # result variable
+    triplets = []
+
+    # need index for pointers
+    for i, start_num in enumerate(nums): 
+
+        # if encountering repeated start_num
+        if i > 0 and start_num == nums[i - 1]: 
+            # skip this iteration
+            continue
+
+        # initialize pointers
+        left = i + 1
+        right = len(nums) - 1
+
+        while left < right: 
+
+            candidate_sum = start_num + nums[left] + nums[right]
+
+            # too large
+            if candidate_sum > 0: 
+                right -= 1
+
+            # too small
+            elif candidate_sum < 0: 
+                left += 1
+            
+            else: 
+                triplets.append([start_num, nums[left], nums[right]])
+
+                # update pointers; keep looking for more valid triplets
+                left += 1
+                right -= 1
+                # avoid duplicate values; i.e., updated value is the same as before
+                # shift pointer to next unique value
+                while nums[left] == nums[left - 1] and left < right: 
+                    left += 1
+
+    return triplets
+```
+
+### Container with Most Water
+Taken from [Neetcode's Container With Most Water](https://neetcode.io/problems/max-water-container?list=neetcode150).
+ 
+You are given an integer array `heights` where `heights[i]` represents the height of the ith bar.
+
+You may choose any two bars to form a container. Return the maximum amount of water a container can store.
+
+![](containter.avif)
+
+> Example 1: 
+> 
+> Input: `height = [1,7,2,5,4,7,3,6]`
+> 
+> Output: `36`
+> 
+> Example 2:
+> 
+> Input: `height = [2,2,2]`
+> 
+> Output: `4`
+
+Let us break this problem down. We are seeking a pair of values out of the array that fulfill the "max area" criterion. This is an application of the Opposite Two Pointers algorithm. 
+
+We create our `left` and `right` pointers, find the candidate area, attempt to update the resulting max area, and then update our pointers. Note that the pointers are updated conditionally; we want to move the left pointer inwards if the left value is less than the right, and move the right pointer inwards otherwise.
+
+```python
+def maxArea(heights: List[int]) -> int:
+
+    # initialize pointers and final max area
+    left = 0
+    right = len(heights) - 1
+
+    max_area = float("-inf")
+
+    while left < right: 
+
+        # compute candidate area
+        candidate_area = min(heights[left], heights[right]) * (right - left)
+        # attempt to update
+        max_area = max(candidate_area, max_area)
+
+        # update pointers
+        if heights[left] < heights[right]: 
+
+            left += 1
+        
+        else: 
+
+            right -= 1
+
+    return max_area if max_area != float(-inf) else 0
 ```
