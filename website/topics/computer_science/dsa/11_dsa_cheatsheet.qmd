@@ -1,0 +1,235 @@
+---
+title: "Data Structures & Algorithms Cheat Sheet"
+date: "2025-11-18"
+categories: ["Computer Science"]
+---
+
+This page includes Python templates for DSA patterns that cover a vast majority of use cases. 
+
+### Sliding Window
+Good for contiguous string/array problems.
+
+We would like to maintain a contiguous window within the sequence. As we move the right pointer, we add the new element. If the window becomes invalid, we shrink from the left until it is valid once more. We keep track of the best (and valid) window we have encountered.
+
+#### General template: 
+
+```python
+def sliding_window(seq, k=None): 
+
+    # k is the fixed size for the window, in the case of fixed size problems
+
+    # initialize variables
+    left = 0
+    # whatever structure is needed to track the data in the window
+    # e.g., sum, max, min, etc.
+    window_data = 0
+    # the response variable to ultimately return
+    # e.g., max/min length, etc.
+    best = 0
+
+    # go through each element as the start of the window
+    for right in range(len(seq)):
+        # add this start to the window
+        window_data += seq[right]
+
+        # while required condition is INVALID, shrink window from left
+        # e.g., window_data > some_target
+        while INVALID: 
+            # remove the left element from data
+            window_data -= seq[left]
+            # shift left pointer in
+            left += 1
+        
+        # attempt to update the best result
+        best = func(best, some_metric)
+    
+    return best
+```
+
+#### Example: Minimum Size Subarray Sum
+[Here](https://jasminex21.github.io/encyclopedia/topics/computer_science/dsa/02_arrays.html#example)
+
+### Two Pointers - Opposite Direction
+Good for pair/partition problems.
+
+We take advantage of the fact that the array is sorted. We start one pointer at the beginning, and the other at the end. Their combination moves monotonically, so they will converge in $O(n)$ time if for each iteration we move the pointer that is causing a violation of the desired condition. 
+
+#### General template:
+
+```python
+def two_pointers_opposite(nums, target): 
+    # sort the array if it is not already sorted
+    nums.sort()
+
+    # initialize pointers; they will converge towards e/o
+    left = 0
+    right = len(nums) - 1
+
+    while left < right: 
+
+        # some sort of combination, in this example we use the sum
+        total = nums[left] + nums[right]
+
+        if total == target: 
+            return True
+        # we konw that we want to increase the sum, so increment left
+        elif total < target: 
+            left += 1
+        # sum is too large, need to decrease it
+        else: 
+            right -=1
+    
+    return False
+```
+
+#### Example: Two Sum II
+[Here](https://jasminex21.github.io/encyclopedia/topics/computer_science/dsa/02_arrays.html#two-sum-ii)
+
+### Two Pointers - Fast & Slow 
+Good for problems involving removing duplicates or partitioning in place.
+
+The fast pointer scans every element. The slow pointer indicates the position where the next valid element should go. Whenever the fast pointer finds something that belongs in the clean part, it is copied forward, and the slow pointer is moved forward.
+
+#### General template
+
+```python
+def two_pointers_fast_slow(nums): 
+
+    slow = 0
+    for fast in range(len(nums)): 
+
+        # can be any condition
+        if nums[fast] != val_to_remove and nums[fast] <= limit: 
+            nums[slow] = nums[fast]
+            slow += 1
+    return slow
+```
+
+#### Example: Remove Duplicates from Sorted Array
+Given a sorted array, remove duplicates in-place such that each element appears only once. Return the new length. 
+
+```python
+def remove_duplicates(nums): 
+
+    slow = 0
+
+    for fast in range(len(nums)): 
+        if nums[fast] != nums[slow]: 
+            slow += 1
+            nums[slow] = nums[fast]
+    return slow + 1
+```
+
+As the array is sorted, duplicates are adjacent. The `fast` pointer will scan every element, while `slow` tracks the position where the next unique element should go. So, when `nums[fast]` is different from `nums[slow]`, it is a unique value, so add it to the count.
+
+### Binary Search
+Given a sorted array, each guess at the midpoint can eliminate half the search space. So, we keep a left and right bound, calculate the midpoint, and decide on which half of the array contains the desired answer.
+
+#### General template
+
+```python
+def binary_search(nums, target): 
+
+    # nums is a sorted sequence with a monotonic condition
+
+    left = 0
+    right = len(nums) - 1
+
+    while left <= right: 
+
+        mid = (left + right) // 2
+
+        # value found
+        if nums[mid] == target: 
+            return mid
+        # too small, move towards larger values
+        elif nums[mid] < target: 
+            left = mid + 1
+        # too large, move towards smaller values
+        else: 
+            right = mid - 1
+    # value not found
+    return -1
+```
+
+### BFS on Grid/Graph
+We want the shortest path or level-by-level processing, so BFS is useful here. The graph is processed level-by-level via a queue.
+
+#### General template
+
+```python
+def bfs(matrix): 
+
+    # check for an empty matrix
+    if not matrix: 
+        return []
+
+    rows, cols = len(matrix), len(matrix[0])
+    visited = set()
+    directions = ((0, 1), (0, -1), (1, 0), (-1, 0))
+
+    def traverse(i, j): 
+        queue = deque([(i, j)])
+
+        while queue: 
+            # first in, first out
+            curr_i, curr_j = queue.popleft()
+            if (curr_i, curr_j) not in visited: 
+                visited.add((curr_i, curr_j))
+                # traverse all neighbors
+                for direction in directions: 
+                    next_i, next_j = curr_i + direction[0], curr_j + direction[1]
+
+                    if 0 <= next_i < rows and 0 <= next_j < cols: 
+                        # this is where question-specific checks would be implemented
+                        queue.append((next_i, next_j))
+
+    for i in range(rows): 
+        for j in range(cols): 
+            traverse(i, j)
+```
+
+### Dijkstra
+Good for shortest path problems.
+
+Heaps are useful when it is always true that the smallest or largest remaining element is desired. A min-heap allows for extraction of that value in $O(\textnormal{log}n)$ time. Heaps are used in Dijkstra because for step, we want to expand to the closest (minimum weight/distance) unvisited node. 
+
+#### General template
+
+```python
+import heapq
+from collections import defaultdict
+
+def dijkstra(edges, n, k): 
+
+    # n is the number of nodes; k is the starting node
+
+    edges = defaultdict(list)
+
+    for u, vertex, weight in times: 
+        edges[u].append((vertex, weight))
+
+    # the heap starts with the source node and distance (0)
+    min_heap = [(0, k)]
+    visited = set()
+
+    while min_heap:
+        # pop the smallest value from the heap
+        w1, n1 = heapq.heappop(min_heap)
+
+        # if the popped node has already been visited, skip iteration
+        if n1 in visited: 
+            continue
+        
+        # add this node to visited set
+        visited.add((n1))
+
+        # go through all node neighbors
+        for n2, w2 in edges[n1]: 
+            # push each neighbor onto the heap if it hasn't been visited yet
+            # remember that the weight being added is the cumulative weight along the path
+            if n2 not in visit: 
+                heapq.heappush(min_heap, (w1 + w2, n2))
+        
+    return final_variable
+```

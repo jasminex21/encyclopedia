@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-16">
+<meta name="dcterms.date" content="2025-11-17">
 
-<title>Matrices – Personal Encyclopedia</title>
+<title>Graphs – Personal Encyclopedia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../topics/computer_science/dsa/06_linked_lists.html" rel="next">
-<link href="../../../topics/computer_science/dsa/04_hash_maps.html" rel="prev">
+<link href="../../../topics/computer_science/dsa/11_dsa_cheatsheet.html" rel="next">
+<link href="../../../topics/computer_science/dsa/09_trees.html" rel="prev">
 <link href="../../../sunflower.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -146,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/01_time_space_complexity.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/05_matrices.html">Matrices</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/01_time_space_complexity.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/10_graphs.html">Graphs</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -271,7 +271,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/computer_science/dsa/05_matrices.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../topics/computer_science/dsa/05_matrices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Matrices</span></a>
   </div>
 </li>
@@ -301,7 +301,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/computer_science/dsa/10_graphs.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../topics/computer_science/dsa/10_graphs.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Graphs</span></a>
   </div>
 </li>
@@ -381,12 +381,9 @@ window.Quarto = {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#considerations" id="toc-considerations" class="nav-link" data-scroll-target="#considerations">Considerations</a></li>
-  </ul></li>
-  <li><a href="#techniques" id="toc-techniques" class="nav-link" data-scroll-target="#techniques">Techniques</a>
-  <ul class="collapse">
-  <li><a href="#creating-an-empty-n-times-m-matrix" id="toc-creating-an-empty-n-times-m-matrix" class="nav-link" data-scroll-target="#creating-an-empty-n-times-m-matrix">Creating an empty <span class="math inline">\(N \times M\)</span> matrix</a></li>
-  <li><a href="#transposing-a-matrix" id="toc-transposing-a-matrix" class="nav-link" data-scroll-target="#transposing-a-matrix">Transposing a matrix</a></li>
+  <li><a href="#graph-representations" id="toc-graph-representations" class="nav-link" data-scroll-target="#graph-representations">Graph Representations</a></li>
+  <li><a href="#graph-search-algorithms" id="toc-graph-search-algorithms" class="nav-link" data-scroll-target="#graph-search-algorithms">Graph Search Algorithms</a></li>
+  <li><a href="#dijkstras-algorithm" id="toc-dijkstras-algorithm" class="nav-link" data-scroll-target="#dijkstras-algorithm">Dijkstra’s Algorithm</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -394,9 +391,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/01_time_space_complexity.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/05_matrices.html">Matrices</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/01_time_space_complexity.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/10_graphs.html">Graphs</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Matrices</h1>
+<h1 class="title">Graphs</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Computer Science</div>
   </div>
@@ -410,7 +407,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 16, 2025</p>
+      <p class="date">November 17, 2025</p>
     </div>
   </div>
   
@@ -424,33 +421,221 @@ window.Quarto = {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>A matrix is a two-dimensional array.</p>
-<p>Questions involving matrices are often related to graph traversal.</p>
-<section id="considerations" class="level3">
-<h3 class="anchored" data-anchor-id="considerations">Considerations</h3>
+<p>A <strong>graph</strong> is a non-linear data structure consisting of a set of <strong>nodes</strong> or <strong>vertices</strong> and <strong>edges</strong> that connect the nodes. Edges can be <strong>directed</strong> or <strong>undirected</strong>, and can optionally have values (<strong>weighted</strong> graphs).</p>
+<p>Trees are examples of undirected graphs in which any two nodes are connected by exactly one edge, and there can be no cycles in the graph.</p>
+<p>Graphs are commonly used to model relationships between unordered entities, such as friendships between people, or distances between locations.</p>
+<p>It is useful to be familiar with the various graph representations, graph search algorithms, and their time and space complexities.</p>
+<section id="graph-representations" class="level3">
+<h3 class="anchored" data-anchor-id="graph-representations">Graph Representations</h3>
+<p>In order to traverse a graph, you must first have a representation of the graph. The most common graph representations are:</p>
 <ul>
-<li>Empty matrix (check that none of the arrays have 0 length)</li>
-<li>1 x 1 matrix</li>
-<li>Matrix with only one row or column</li>
+<li>Adjacency matrix</li>
+<li>Adjacency list</li>
+<li>Hash table of hash tables</li>
 </ul>
 </section>
+<section id="graph-search-algorithms" class="level3">
+<h3 class="anchored" data-anchor-id="graph-search-algorithms">Graph Search Algorithms</h3>
+<p>This video explains DFS and BFS fantastically:</p>
+<div class="quarto-video ratio ratio-21x9"><iframe data-external="1" src="https://www.youtube.com/embed/pcKY4hjDrxk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="breadth-first-search-bfs" class="level4">
+<h4 class="anchored" data-anchor-id="breadth-first-search-bfs">Breadth-First Search (BFS)</h4>
+<p>Breadth-first search is a graph traversal algorithm which starts at a node and explores all nodes at the current depth before mocing on to the nodes at the next depth level.</p>
+<p>Typically, a queue is used to keep track of the nodes that have been visited but not yet explored.</p>
+<p>Queues in Python should be implemented via the <code>deque</code> module, which allows us to use double-ended queues (<span class="math inline">\(O(1)\)</span> dequeuing) and not Python lists (<span class="math inline">\(O(n) dequeuing\)</span>).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bfs(matrix):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> matrix: </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    rows, cols <span class="op">=</span> <span class="bu">len</span>(matrix), <span class="bu">len</span>(matrix[<span class="dv">0</span>])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    visited <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># this is iterative; it runs until the queue is empty</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> traverse(r, c): </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        queue <span class="op">=</span> dequeue()</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># mark the position as visited</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        visited.add((r, c))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># add the position to the queue</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        queue.append((r, c))</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># while queue is not empty</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> queue: </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># pop from queue</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            row, col <span class="op">=</span> queue.popleft()</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>            <span class="co"># check adjacent positions from the popped positoin</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>            directions <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">0</span>], [<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> dr, dc <span class="kw">in</span> directions: </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                <span class="co"># check if position is in bounds</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                <span class="co"># and that the position has not already been visited</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> ((r <span class="op">+</span> dr) <span class="kw">in</span> <span class="bu">range</span>(rows)) <span class="kw">and</span> ((c <span class="op">+</span> dc) <span class="kw">in</span> <span class="bu">range</span>(cols)) <span class="kw">and</span> ((r <span class="op">+</span> dr, c <span class="op">+</span> dc) <span class="kw">not</span> <span class="kw">in</span> visited): </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># add to queue to run BFS later</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>                    queue.append((r <span class="op">+</span> dr, c <span class="op">+</span> dc))</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>                    <span class="co"># mark as visited</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>                    visited.add((r <span class="op">+</span> dr, c <span class="op">+</span> dc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> deque</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bfs(matrix): </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># check for an empty matrix</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> matrix: </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    rows, cols <span class="op">=</span> <span class="bu">len</span>(matrix), <span class="bu">len</span>(matrix[<span class="dv">0</span>])</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    visited <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    directions <span class="op">=</span> ((<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>), (<span class="dv">1</span>, <span class="dv">0</span>), (<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> traverse(i, j): </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        queue <span class="op">=</span> deque([(i, j)])</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> queue: </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            <span class="co"># first in, first out</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            curr_i, curr_j <span class="op">=</span> queue.popleft()</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (curr_i, curr_j) <span class="kw">not</span> <span class="kw">in</span> visited: </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                visited.add((curr_i, curr_j))</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                <span class="co"># traverse all neighbors</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> direction <span class="kw">in</span> directions: </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>                    next_i, next_j <span class="op">=</span> curr_i <span class="op">+</span> direction[<span class="dv">0</span>], curr_j <span class="op">+</span> direction[<span class="dv">1</span>]</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span> <span class="dv">0</span> <span class="op">&lt;=</span> next_i <span class="op">&lt;</span> rows <span class="kw">and</span> <span class="dv">0</span> <span class="op">&lt;=</span> next_j <span class="op">&lt;</span> cols: </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                        <span class="co"># this is where question-specific checks would be implemented</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>                        queue.append((next_i, next_j))</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(rows): </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(cols): </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>            traverse(i, j)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="techniques" class="level2">
-<h2 class="anchored" data-anchor-id="techniques">Techniques</h2>
-<section id="creating-an-empty-n-times-m-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="creating-an-empty-n-times-m-matrix">Creating an empty <span class="math inline">\(N \times M\)</span> matrix</h3>
-<p>For questions involving traversal or dynamic programming, you almost always want to make a copy of the matrix with the same size containing empty values so that you can store the visited state.</p>
-<p>In Python, creating an empty matrix of the same size can be done as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assuming that matrix is non-empty</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>zero_matrix <span class="op">=</span> [[<span class="dv">0</span> <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(matrix[<span class="dv">0</span>])) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(matrix))]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Copying a matrix and its values is:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>copied_matrix <span class="op">=</span> [row[:] <span class="cf">for</span> row <span class="kw">in</span> matrix]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="depth-first-search-dfs" class="level4">
+<h4 class="anchored" data-anchor-id="depth-first-search-dfs">Depth-First Search (DFS)</h4>
+<p>Depth-first search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking. To keep track of the nodes on the current search path, typically a stack is used.</p>
+<p>Python template:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs(matrix): </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># corner case: check for empty matrix/graph</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> matrix: </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># matrix dimensions</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    nrows, ncols <span class="op">=</span> <span class="bu">len</span>(matrix), <span class="bu">len</span>(matrix[<span class="dv">0</span>])</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># global set to keep track of visited nodes</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    visited <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># right, left, down, up</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    directions <span class="op">=</span> ((<span class="dv">0</span>, <span class="dv">1</span>), (<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>), (<span class="dv">1</span>, <span class="dv">0</span>), (<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># recursive DFS helper function</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> traverse(i, j): </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (i, j) <span class="kw">in</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="transposing-a-matrix" class="level3">
-<h3 class="anchored" data-anchor-id="transposing-a-matrix">Transposing a matrix</h3>
-<p>The transpose of a matrix is found by interchanging its rows into columns or columns into rows.</p>
-<p>To transpose a matrix in Python is:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>transposed_matrix <span class="op">=</span> <span class="bu">zip</span>(<span class="op">*</span>matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="dijkstras-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="dijkstras-algorithm">Dijkstra’s Algorithm</h3>
+<p><strong>Dijkstra’s algorithm</strong> is commonly used to solve single-source shortest-path problems (with non-zero edge weights). Dijkstra’s algorithm finds the <em>shortest paths</em> from a <em>single source node</em> to all other nodes in a graph with <em>non-negative edge weights</em>. This is usually implemented using a <strong>priority queue</strong> (i.e., a <strong>min-heap</strong>) for efficiency.</p>
+<p>The algorithm can be summarized as follows:</p>
+<ol type="1">
+<li>Start from the source, which has distance (weight) 0</li>
+<li>Always expand the currently known closest unvisited node (greedy choice). I.e., the next node you explore should be the one linked to the previous node with the smallest edge weight.</li>
+<li>Once a node is expanded, its shortest distance is finalized and never updated again.</li>
+<li>Use a priority queue (min-heap) to always pick the next closest node.</li>
+</ol>
+<p>General implementation:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> heapq</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dijkstra(edges, n, k): </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># n is the number of nodes; k is the starting node</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    edges <span class="op">=</span> defaultdict(<span class="bu">list</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> u, vertex, weight <span class="kw">in</span> times: </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        edges[u].append((vertex, weight))</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the heap starts with the source node and distance (0)</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    min_heap <span class="op">=</span> [(<span class="dv">0</span>, k)]</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    visited <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> min_heap:</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># pop the smallest value from the heap</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        w1, n1 <span class="op">=</span> heapq.heappop(min_heap)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if the popped node has already been visited, skip iteration</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n1 <span class="kw">in</span> visited: </span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># add this node to visited set</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>        visited.add((n1))</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># go through all node neighbors</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> n2, w2 <span class="kw">in</span> edges[n1]: </span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>            <span class="co"># push each neighbor onto the heap if it hasn't been visited yet</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>            <span class="co"># remember that the weight being added is the cumulative weight along the path</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> n2 <span class="kw">not</span> <span class="kw">in</span> visit: </span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>                heapq.heappush(min_heap, (w1 <span class="op">+</span> w2, n2))</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> final_variable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Example: Taken from <a href="https://neetcode.io/problems/network-delay-time/question?list=neetcode150">Neetcode’s Network Delay Time</a>.</p>
+<p>You are given a network of <code>n</code> directed nodes, labeled from <code>1</code> to <code>n</code>. You are also given <code>times</code>, a list of directed edges where <code>times[i] = (ui, vi, ti)</code>.</p>
+<ul>
+<li><code>ui</code> is the source node (an integer from <code>1</code> to <code>n</code>)</li>
+<li><code>vi</code> is the target node (an integer from <code>1</code>to <code>n</code>)</li>
+<li><code>ti</code> is the time it takes for a signal to travel from the source to the target node (an integer greater than or equal to <code>0</code>).</li>
+<li>You are also given an integer <code>k</code>, representing the node that we will send a signal from.</li>
+</ul>
+<p>Return the minimum time it takes for all of the <code>n</code> nodes to receive the signal. If it is impossible for all the nodes to receive the signal, return <code>-1</code> instead.</p>
+<blockquote class="blockquote">
+<p>Example 1:</p>
+<p><img src="network.avif" class="img-fluid"></p>
+<p>Input: <code>times = [[1,2,1],[2,3,1],[1,4,4],[3,4,1]], n = 4, k = 1</code></p>
+<p>Output: <code>3</code></p>
+<p>Example 2:</p>
+<p>Input: <code>times = [[1,2,1],[2,3,1]], n = 3, k = 2</code></p>
+<p>Output: <code>-1</code></p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> networkDelayTime(times: List[List[<span class="bu">int</span>]], n: <span class="bu">int</span>, k: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>: </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># create adjacency list</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    edges <span class="op">=</span> defaultdict(<span class="bu">list</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for each edge, get a list of all neighbors for use in dijkstra</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> u, v, w <span class="kw">in</span> times: </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        edges[u].append((v, w))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize min heap with source</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    min_heap <span class="op">=</span> [(<span class="dv">0</span>, k)]</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># keep track of visited nodes</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    visited <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># max time</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    max_time <span class="op">=</span> t</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># keep going while min heap is not empty</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> min_heap: </span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># keep popping</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        w1, n1 <span class="op">=</span> heapq.heappop(min_heap)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># don't want to visit a node multiple times, so continue to next iteration</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> n1 <span class="kw">in</span> visited: </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if new node, add to visited</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        visited.add(n1)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># update max time</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>        max_time <span class="op">=</span> <span class="bu">max</span>(max_time, w1)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># go through all neighbors of n1</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> n2, w2 <span class="kw">in</span> edges[n1]: </span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>            <span class="co"># if the neighbor hasn't been visited, add to heap</span></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>            heapq.heappush(min_heap, (w2 <span class="op">+</span> w1, n2))</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># it is only possible to visit each node if </span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the length of visited is equal to the number of nodes</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> max_time <span class="cf">if</span> <span class="bu">len</span>(visited) <span class="op">==</span> n <span class="cf">else</span> <span class="op">-</span><span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -879,13 +1064,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/computer_science/dsa/04_hash_maps.html" class="pagination-link" aria-label="Hash Tables">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hash Tables</span>
+      <a href="../../../topics/computer_science/dsa/09_trees.html" class="pagination-link" aria-label="Trees">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Trees</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../topics/computer_science/dsa/06_linked_lists.html" class="pagination-link" aria-label="Linked Lists">
-        <span class="nav-page-text">Linked Lists</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/computer_science/dsa/11_dsa_cheatsheet.html" class="pagination-link" aria-label="Data Structures &amp; Algorithms Cheat Sheet">
+        <span class="nav-page-text">Data Structures &amp; Algorithms Cheat Sheet</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

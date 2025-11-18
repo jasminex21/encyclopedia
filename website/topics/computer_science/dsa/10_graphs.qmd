@@ -1,0 +1,250 @@
+---
+title: "Graphs"
+date: "2025-11-17"
+categories: ["Computer Science"]
+--- 
+
+## Introduction
+A **graph** is a non-linear data structure consisting of a set of **nodes** or **vertices** and **edges** that connect the nodes. Edges can be **directed** or **undirected**, and can optionally have values (**weighted** graphs).
+
+Trees are examples of undirected graphs in which any two nodes are connected by exactly one edge, and there can be no cycles in the graph.
+
+Graphs are commonly used to model relationships between unordered entities, such as friendships between people, or distances between locations.
+
+It is useful to be familiar with the various graph representations, graph search algorithms, and their time and space complexities.
+
+### Graph Representations
+In order to traverse a graph, you must first have a representation of the graph. The most common graph representations are: 
+
+* Adjacency matrix
+* Adjacency list
+* Hash table of hash tables
+
+### Graph Search Algorithms
+
+This video explains DFS and BFS fantastically: 
+{{< video https://www.youtube.com/watch?v=pcKY4hjDrxk aspect-ratio="21x9" >}}
+
+#### Breadth-First Search (BFS)
+Breadth-first search is a graph traversal algorithm which starts at a node and explores all nodes at the current depth before mocing on to the nodes at the next depth level. 
+
+Typically, a queue is used to keep track of the nodes that have been visited but not yet explored. 
+
+Queues in Python should be implemented via the `deque` module, which allows us to use double-ended queues ($O(1)$ dequeuing) and not Python lists ($O(n) dequeuing$). 
+
+```python
+from collections import deque
+
+def bfs(matrix):
+
+    if not matrix: 
+        return []
+
+    rows, cols = len(matrix), len(matrix[0])
+    visited = set()
+
+    # this is iterative; it runs until the queue is empty
+    def traverse(r, c): 
+
+        queue = dequeue()
+        # mark the position as visited
+        visited.add((r, c))
+        # add the position to the queue
+        queue.append((r, c))
+
+        # while queue is not empty
+        while queue: 
+            # pop from queue
+            row, col = queue.popleft()
+            # check adjacent positions from the popped positoin
+            directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
+
+            for dr, dc in directions: 
+                # check if position is in bounds
+                # and that the position has not already been visited
+                if ((r + dr) in range(rows)) and ((c + dc) in range(cols)) and ((r + dr, c + dc) not in visited): 
+                    # add to queue to run BFS later
+                    queue.append((r + dr, c + dc))
+                    # mark as visited
+                    visited.add((r + dr, c + dc))
+
+```
+
+```python
+from collections import deque
+
+def bfs(matrix): 
+
+    # check for an empty matrix
+    if not matrix: 
+        return []
+
+    rows, cols = len(matrix), len(matrix[0])
+    visited = set()
+    directions = ((0, 1), (0, -1), (1, 0), (-1, 0))
+
+    def traverse(i, j): 
+        queue = deque([(i, j)])
+
+        while queue: 
+            # first in, first out
+            curr_i, curr_j = queue.popleft()
+            if (curr_i, curr_j) not in visited: 
+                visited.add((curr_i, curr_j))
+                # traverse all neighbors
+                for direction in directions: 
+                    next_i, next_j = curr_i + direction[0], curr_j + direction[1]
+
+                    if 0 <= next_i < rows and 0 <= next_j < cols: 
+                        # this is where question-specific checks would be implemented
+                        queue.append((next_i, next_j))
+
+    for i in range(rows): 
+        for j in range(cols): 
+            traverse(i, j)
+```
+
+#### Depth-First Search (DFS)
+Depth-first search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking. To keep track of the nodes on the current search path, typically a stack is used. 
+
+Python template: 
+
+```python
+def dfs(matrix): 
+
+    # corner case: check for empty matrix/graph
+    if not matrix: 
+        return []
+
+    # matrix dimensions
+    nrows, ncols = len(matrix), len(matrix[0])
+    # global set to keep track of visited nodes
+    visited = set()
+    # right, left, down, up
+    directions = ((0, 1), (0, -1), (1, 0), (-1, 0))
+
+    # recursive DFS helper function
+    def traverse(i, j): 
+        if (i, j) in 
+```
+
+### Dijkstra's Algorithm
+**Dijkstra's algorithm** is commonly used to solve single-source shortest-path problems (with non-zero edge weights). Dijkstra's algorithm finds the *shortest paths* from a *single source node* to all other nodes in a graph with *non-negative edge weights*. This is usually implemented using a **priority queue** (i.e., a **min-heap**) for efficiency.
+
+The algorithm can be summarized as follows: 
+
+1. Start from the source, which has distance (weight) 0
+2. Always expand the currently known closest unvisited node (greedy choice). I.e., the next node you explore should be the one linked to the previous node with the smallest edge weight.
+3. Once a node is expanded, its shortest distance is finalized and never updated again.
+4. Use a priority queue (min-heap) to always pick the next closest node.
+
+General implementation:
+
+```python
+import heapq
+from collections import defaultdict
+
+def dijkstra(edges, n, k): 
+
+    # n is the number of nodes; k is the starting node
+
+    edges = defaultdict(list)
+
+    for u, vertex, weight in times: 
+        edges[u].append((vertex, weight))
+
+    # the heap starts with the source node and distance (0)
+    min_heap = [(0, k)]
+    visited = set()
+
+    while min_heap:
+        # pop the smallest value from the heap
+        w1, n1 = heapq.heappop(min_heap)
+
+        # if the popped node has already been visited, skip iteration
+        if n1 in visited: 
+            continue
+        
+        # add this node to visited set
+        visited.add((n1))
+
+        # go through all node neighbors
+        for n2, w2 in edges[n1]: 
+            # push each neighbor onto the heap if it hasn't been visited yet
+            # remember that the weight being added is the cumulative weight along the path
+            if n2 not in visit: 
+                heapq.heappush(min_heap, (w1 + w2, n2))
+        
+    return final_variable
+```
+
+Example: 
+Taken from [Neetcode's Network Delay Time](https://neetcode.io/problems/network-delay-time/question?list=neetcode150).
+
+You are given a network of `n` directed nodes, labeled from `1` to `n`. You are also given `times`, a list of directed edges where `times[i] = (ui, vi, ti)`.
+
+* `ui` is the source node (an integer from `1` to `n`)
+* `vi` is the target node (an integer from `1`to `n`)
+* `ti` is the time it takes for a signal to travel from the source to the target node (an integer greater than or equal to `0`).
+* 
+You are also given an integer `k`, representing the node that we will send a signal from.
+
+Return the minimum time it takes for all of the `n` nodes to receive the signal. If it is impossible for all the nodes to receive the signal, return `-1` instead.
+
+> Example 1:
+> 
+> ![](network.avif)
+> 
+> Input: `times = [[1,2,1],[2,3,1],[1,4,4],[3,4,1]], n = 4, k = 1`
+> 
+> Output: `3`
+> 
+> Example 2:
+> 
+> Input: `times = [[1,2,1],[2,3,1]], n = 3, k = 2`
+> 
+> Output: `-1`
+
+```python
+from collections import defaultdict
+
+def networkDelayTime(times: List[List[int]], n: int, k: int) -> int: 
+
+    # create adjacency list
+    edges = defaultdict(list)
+    # for each edge, get a list of all neighbors for use in dijkstra
+    for u, v, w in times: 
+        edges[u].append((v, w))
+    
+    # initialize min heap with source
+    min_heap = [(0, k)]
+    # keep track of visited nodes
+    visited = set()
+    # max time
+    max_time = t
+
+    # keep going while min heap is not empty
+    while min_heap: 
+
+        # keep popping
+        w1, n1 = heapq.heappop(min_heap)
+
+        # don't want to visit a node multiple times, so continue to next iteration
+        if n1 in visited: 
+            continue
+        
+        # if new node, add to visited
+        visited.add(n1)
+
+        # update max time
+        max_time = max(max_time, w1)
+
+        # go through all neighbors of n1
+        for n2, w2 in edges[n1]: 
+            # if the neighbor hasn't been visited, add to heap
+            heapq.heappush(min_heap, (w2 + w1, n2))
+    
+    # it is only possible to visit each node if 
+    # the length of visited is equal to the number of nodes
+    return max_time if len(visited) == n else -1
+```
