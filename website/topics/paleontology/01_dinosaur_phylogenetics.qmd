@@ -1,0 +1,17 @@
+---
+title: "Dinosaur Phylogenetics"
+date: "2026-02-23"
+categories: ["Paleontology", "WIP"]
+draft: true
+--- 
+
+### Phylogenetics
+Phylogenetics is the study of evolutionary relationships among organisms. It arranges organisms into groups called clades based on common ancestry, as indicated by shared derived characteristics (synapomorphies). This is the prevailing method of biological classification now, despite the prominence of the Linnean classification system. 
+
+> #### An Aside on the Linnaen Classification System
+> 
+> The Linnaen classification system is commonly taught in grade schools - it is the system that organizes all of life into ranks of Domain, Kingdom, Phylum, Class, Order, Family, Genus, and Species. While it forms a basis for classification of species and genera, it is an outdated system with two key problems. First, it is based on physical appearance, rather than overall similarity. Physical traits can be useful in recognizing groups, but not in defining them (consider bats and birds - they both have wings, but their wings evolved independently of each other). Secondly, because the ranks in the Linnaen system are fixed, it assumes that nature is static and that animal characteristics do not change through time. If you define an animal by the possession of a feature, then that feature is not allowed to change through time; if it did, then that animal would become part of another classification. 
+>
+> We did, however, retain the concept and nomenclature of the genus and the species. A genus is a group broader than species that groups closely-related species who share a common ancestor. A species is the most specific unit of classifications for animals that can interbreed. The formal name of each species consists of two words, italicized, where the first is the genus and the second is the species (e.g., *Spinosaurus mirabilis*).
+
+TODO: Synapomorphies

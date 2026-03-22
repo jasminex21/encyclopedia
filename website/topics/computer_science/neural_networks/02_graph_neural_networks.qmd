@@ -2,7 +2,7 @@
 title: "Machine Learning with Graphs"
 subtitle: "Graph Neural Networks and Applications"
 date: "2025-07-14"
-categories: ["Computer Science"]
+categories: ["Computer Science", "WIP"]
 draft: true
 --- 
 

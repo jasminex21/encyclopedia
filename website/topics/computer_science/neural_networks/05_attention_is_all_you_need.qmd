@@ -1,7 +1,7 @@
 ---
 title: "Attention Is All You Need"
 date: "2026-01-26"
-categories: ["Computer Science"]
+categories: ["Computer Science", "WIP"]
 bibliography: attn.bib
 draft: true
 --- 
