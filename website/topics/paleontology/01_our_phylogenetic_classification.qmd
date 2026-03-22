@@ -1,0 +1,7 @@
+---
+title: "Dinosaur Phylogenetics"
+subtitle: "Dinosaurs in the Tree of Life"
+date: "2026-02-23"
+categories: ["Paleontology"]
+draft: true
+--- 

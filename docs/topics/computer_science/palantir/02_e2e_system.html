@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-16">
+<meta name="dcterms.date" content="2025-12-01">
 
-<title>Hash Tables – Personal Encyclopedia</title>
+<title>End-to-End System Template – Personal Encyclopedia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../topics/computer_science/dsa/05_matrices.html" rel="next">
-<link href="../../../topics/computer_science/dsa/03_strings.html" rel="prev">
+<link href="../../../topics/notes/01_the_science_of_people.html" rel="next">
+<link href="../../../topics/computer_science/palantir/01_decomp_prep.html" rel="prev">
 <link href="../../../sunflower.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -104,35 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
@@ -146,7 +117,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/01_time_space_complexity.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/04_hash_maps.html">Hash Tables</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/palantir/0_about_palantir.html">Palantir Interview Prep</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/palantir/02_e2e_system.html">End-to-End System Template</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -214,26 +185,49 @@ window.Quarto = {
  <span class="menu-text">Music Preference &amp; Personality</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/psychology/03_why_music.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Determinants of Music Preference</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Computer Science</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Anthropology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/anthropology/01_dude.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">“Dude”</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Data Structures &amp; Algorithms</span></a>
+ <span class="menu-text">Computer Science</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Structures &amp; Algorithms</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/computer_science/dsa/01_time_space_complexity.html" class="sidebar-item-text sidebar-link">
@@ -254,7 +248,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/computer_science/dsa/04_hash_maps.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../topics/computer_science/dsa/04_hash_maps.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hash Tables</span></a>
   </div>
 </li>
@@ -310,17 +304,64 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Neural Networks</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/neural_networks/01_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Neural Networks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/neural_networks/02_graph_neural_networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning with Graphs</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/computer_science/neural_networks/03_intro_to_networkx_pytorch.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to NetworkX and Pytorch Geometric</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/neural_networks/04_recommender_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GNNs for Recommender Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Palantir Interview Prep</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/palantir/0_about_palantir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">0 About Palantir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/palantir/01_decomp_prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decomposition Interview Prep.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/palantir/02_e2e_system.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">End-to-End System Template</span></a>
   </div>
 </li>
       </ul>
@@ -329,24 +370,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Paleontology</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Notes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/notes/01_the_science_of_people.html" class="sidebar-item-text sidebar-link">
@@ -357,6 +387,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../../../topics/notes/02_speed_dating_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Speed Dating Questions to Build Connections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/notes/03_thinking_in_bets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Thinking in Bets</span></a>
   </div>
 </li>
       </ul>
@@ -373,22 +409,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#time-complexity" id="toc-time-complexity" class="nav-link" data-scroll-target="#time-complexity">Time Complexity</a></li>
-  <li><a href="#example-problems" id="toc-example-problems" class="nav-link" data-scroll-target="#example-problems">Example Problems</a>
-  <ul class="collapse">
-  <li><a href="#group-anagrams" id="toc-group-anagrams" class="nav-link" data-scroll-target="#group-anagrams">Group Anagrams</a></li>
-  <li><a href="#top-k-most-frequent-elements" id="toc-top-k-most-frequent-elements" class="nav-link" data-scroll-target="#top-k-most-frequent-elements">Top K Most Frequent Elements</a></li>
-  </ul></li>
+  <li><a href="#example-pipeline.py" id="toc-example-pipeline.py" class="nav-link active" data-scroll-target="#example-pipeline.py">Example <code>pipeline.py</code></a></li>
+  <li><a href="#example-dag" id="toc-example-dag" class="nav-link" data-scroll-target="#example-dag">Example DAG</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/01_time_space_complexity.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/04_hash_maps.html">Hash Tables</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/palantir/0_about_palantir.html">Palantir Interview Prep</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/palantir/02_e2e_system.html">End-to-End System Template</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Hash Tables</h1>
+<h1 class="title">End-to-End System Template</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Computer Science</div>
   </div>
@@ -402,7 +433,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 16, 2025</p>
+      <p class="date">December 1, 2025</p>
     </div>
   </div>
   
@@ -414,136 +445,208 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>A hash table, or hash map, is a data structure that can map keys to values. A hash table uses a hash function on an element to compute an index from which the desired value can be found. During lookup, the key is hashed, and the resulting hash indicates where the corresponding value is stored.</p>
-<p>Hashing is the most common example of a space-time tradeoff. Instead of linearly searching an array each time to determine if an element is present, we can traverse the array once, and hash all its elements into a hash table. Then, to determine whether the element is present just requires checking if it exists in the hash table, which is on average <span class="math inline">\(O(1)\)</span>.</p>
-<p>In Python, hash tables are implemented via built-in dictionaries.</p>
-<p><img src="hash-table.png" class="img-fluid"></p>
-</section>
-<section id="time-complexity" class="level2">
-<h2 class="anchored" data-anchor-id="time-complexity">Time Complexity</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Operation</th>
-<th style="text-align: center;">Complexity</th>
-<th style="text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">search</td>
-<td style="text-align: center;"><span class="math inline">\(O(1)\)</span></td>
-<td style="text-align: left;">on average</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">insert</td>
-<td style="text-align: center;"><span class="math inline">\(O(1)\)</span></td>
-<td style="text-align: left;">on average</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">remove</td>
-<td style="text-align: center;"><span class="math inline">\(O(1)\)</span></td>
-<td style="text-align: left;">on average</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="example-problems" class="level2">
-<h2 class="anchored" data-anchor-id="example-problems">Example Problems</h2>
-<section id="group-anagrams" class="level3">
-<h3 class="anchored" data-anchor-id="group-anagrams">Group Anagrams</h3>
-<p>Taken from <a href="https://neetcode.io/problems/anagram-groups?list=neetcode150">Neetcode’s Group Anagrams</a>.</p>
-<p>Given an array of strings <code>strs</code>, group all anagrams together into sublists. You may return the output in any order.</p>
-<p>An anagram is a string that contains the exact same characters as another string, but the order of the characters can be different.</p>
-<blockquote class="blockquote">
-<p>Example 1:</p>
-<p>Input: <code>strs = ["act","pots","tops","cat","stop","hat"]</code></p>
-<p>Output: <code>[["hat"],["act", "cat"],["stop", "pots", "tops"]]</code></p>
-<p>Example 2:</p>
-<p>Input: <code>strs = ["x"]</code></p>
-<p>Output: <code>[["x"]]</code></p>
-<p>Example 3:</p>
-<p>Input: <code>strs = [""]</code></p>
-<p>Output: <code>[[""]]</code></p>
-</blockquote>
-<p>Recall that when it comes to anagrams, character order does not matter, so for each word, we only need to track character frequencies.</p>
-<p>A good way to track the information we need is via a hash map, where each key is a tuple of character frequencies, and the value is a list of anagrams with those same frequencies.</p>
-<p>A trick used in the following solution is mapping each lower case alphabetical character to an index between 0 and 25 via the <code>ord(char) - ord('a')</code>, where <code>ord</code> returns the ASCII/Unicode value of a character.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> groupAnagrams(strs: List[<span class="bu">str</span>]) <span class="op">-&gt;</span> List[List[<span class="bu">str</span>]]:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># initialize the counter hash map</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    counter <span class="op">=</span> {}</span>
+<!-- ### General Template
+```
+[1 Raw data / user input]
+* Real-world data is often messy.
+         ↓
+[2 Ingestion & cleaning (ETL)]
+* Convert the messy real-world data into safe, complete, and understandable data that can be used in analyses.
+* Data ingestion is the process of collecting, importing, and processing data from various sources to be stored in a target system for analysis, reporting, and other business decisions.
+* A data pipeline is a set of automated processes that collect raw data from various sources, transform it into a usable format, and deliver it to a destination such as a data warehouse or data lake for analysis - essentially an automated assembly line for data.
+         ↓
+[3 Data model / ontology / tables]
+* Representing each real-world entity as a unique, trackable object.
+         ↓
+[4 Core logic / scoring / matching engine / AIP Logic App]
+* Computations are done using the data.
+         ↓
+[5 Delivery / UI / action]
+* Deliver the analysis results to users.
+```
+
+### Avenue 1: Palantir in-house Foundry & AIP
+
+```
+[1 Raw data / user input]
+* No modifications to raw data; used as given
+         ↓
+[2 Ingestion & cleaning]
+* Ingestion via Foundry's Pipeline Builder (Foundry's primary application for data ingestion). 
+    * A data pipeline refers to the flow of data from a source system through intermediate datasets to ultimately produce high-quality, curated datasets that can be structured into the Ontology or serve as the foundation of machine learning and analytical workflows.
+    * Pipeline Builder enables users to quickly and easy set up a pipeline with a streamlined point and click/drag and drop interface.
+    * Automatic schema detection (https://www.palantir.com/docs/foundry/building-pipelines/infer-schema)
+* How Pipeline Builder works: 
+    1. Ingestion: 
+        * Upload data source (e.g., CSV, external database, live API feeds)
+        * Drag-and-drop interface - you drag the source onto a canvas. The structure of the data is auto-detected via schema inference.
+        * A schedule can be set if the data is continuously updated from the source, so that data used for future analyses is up-to-date.
+    2. Cleaning: 
+        * There are built in cleaning actions that allow you to: 
+            * handle null values (e.g., by filling in missing numerical data with averages)
+            * standardize locations (e.g., by converting text locations to GPS coordinates via a quick map lookup)
+            * remove duplicates
+        * Data can be joined or merged.
+        * You can validate data (e.g., spot negative values) using "Validation" blocks
+        * You can summarize your data using"Aggregation" blocks (e.g., averages for numerical columns)
+    3. Making the data queryable:
+        * Drag an "Output" block into the end of the pipeline canvas and choose to create either a Dataset, a Virtual Table, Ontology elements, or other outputs.
+            * These outputs plug into other Foundry apps automatically.
+         ↓
+[3 Data model / ontology / tables]
+* Convert every entity (row) in the real-world to a versioned, auditable Ontology object.
+    * Each object gets its own permanent URL and a Git-like history.
+    * "Versioned" means that a new version of the object is created anytime anything changes. Change history is accessible.
+    * "Auditable" means that the audit trail is immutable and complete; automatic logging.
+* These objects are created/updated automatically by Foundry every time the Code Repository pipeline finishes. 
+         ↓
+[4 Core logic / scoring / matching engine / AIP Logic App]
+* The brain of the program - contains the scoring function.
+* Includes: 
+    * Code Repository pipeline that does the heavy computations (e.g., similarity score computations for all pairs, ML inference, etc.).
+        * Generates the response that is the input to the Logic App.
+        * Think of it as GitHub Actions + Airflow + Jupyter + production scheduler all in one. Looks like a normal Git repo, and you get an IDE.
+        * Contains `pipeline.py`, which is the script that would run every night (example at bottom of page). Can implement automatic retries and alerts.
+    * AIP Logic App that adds final tweaks and additional rules:  optional human gates, and natural-language reasoning. 
+        * The output of this Logic App in Step 4 is the input to Step 5.
+        * AIP Logic is a no-code development environment within AIP for building and automating AI-powered functions. It leverages LLMs to create workflows and to interact with data via the Ontology.
+        * Adds human/business judgement, fairness, and natural language.
+         ↓
+[5 Delivery / UI / action]
+* Where the mission comes to fruition.
+* Can be powered by something like Slate (dynamic web applications) and/or Contour (dashboards, data analysis). Both of Slate and Contour use the same ontology objects.
+* Contour: 
+    * Interactive dashboards to share findings.
+    * Created via drag-and-drop. You can drag ontology objects onto the canvas and each object will automatically render based on the type of data it consists of (e.g., a Zone object results in an interactive map)
+* Slate: 
+    * Software application with custom user experiences. 
+```
+
+
+
+
+
+
+
+
+---
+### Avenue 2: Generic/Standard Stack Version
+
+```
+[1 Raw data / user input]
+* No modifications to raw data; used as given
+* Can be stored in Amazon S3 (Amazon Simple Storage Service), a cloud-based object storage service from AWS for storing and retrieving any amount of data. Highly scalable, durable, and secure.
+         ↓
+[2 Ingestion & cleaning]
+* Ingest data via Airbyte into PostgreSQL nightly. 
+    * Airbyte is an open-source data movement platform; it can move your data from various sources into warehouses, lakes, etc.
+    * Airbyte delivers the data to PostgreSQL, which stores the data in tables.
+* Cleaning scripts must be written manually.
+    * You can schedule these using cron or GitHub Actions for Python scripts, or with `dbt` (data build tool) for SQL files.
+         ↓
+[3 Data model / ontology / tables]
+* Represent real-world entities in SQL tables with proper indexes and foreign keys.
+* As compared to ontology objects, these do not have automatic versioning and a built-in audit trail.
+    * You could keep each entity versioned and auditable by creating an audit/history table.
+         ↓
+[4 Core logic / scoring / matching engine / AIP Logic App]
+* The brain of the program - contains the scoring function.
+* (Apache) Airflow DAG (Directed Acyclic Graph) runs the scoring function every night and then writes its results to the output table created in Step 3.
+    * DAG: a collection of tasks organized with dependencies and relationships that define how they should run. The fundamental concept representing a workflow or data pipeline.
+        * Example at bottom of page.
+* All additional rules and tweaks are hard-coded in Python.
+         ↓
+[5 Delivery / UI / action]
+* Where the mission comes to fruition.
+* Can be powered by something like Streamlit (dashboards).
+``` -->
+<hr>
+<section id="example-pipeline.py" class="level3">
+<h3 class="anchored" data-anchor-id="example-pipeline.py">Example <code>pipeline.py</code></h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pipeline.py — runs every night at 04:00 London time</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palantir_models <span class="im">import</span> Trip, Zone, Recommendation</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palantir_foundry <span class="im">import</span> ontology_manager, datasets</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for each word, grab character freqs, and add the word </span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># to the corresponding value list</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word <span class="kw">in</span> strs: </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># start off w all zeros</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        char_freqs <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> <span class="dv">26</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># for each char, modify the value in char_freqs</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> char <span class="kw">in</span> word: </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="co"># maps each char to an index in 0-25</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            char_freqs[<span class="bu">ord</span>(char) <span class="op">-</span> <span class="bu">ord</span>(<span class="st">'a'</span>)] <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># add the word to corresponding list</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># lists are unhashable, so convert to tuple</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        key <span class="op">=</span> <span class="bu">tuple</span>(char_freqs)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> key <span class="kw">in</span> counter: </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>            counter[key].append(word)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>            counter[key] <span class="op">=</span> [word]</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">list</span>(counter.values())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Load the last 24 hours of cleaned trips</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    raw_trips <span class="op">=</span> datasets.get(<span class="st">"cleaned_taxi_trips"</span>).as_pandas()</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Do the heavy math — calculate £/hour for every zone for the next 4-hour windows</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    zone_scores <span class="op">=</span> calculate_zone_scores(raw_trips)          <span class="co"># ← your 20-line scoring function</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Write new/updated Zone objects back to the ontology</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    zones_to_write <span class="op">=</span> []</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> zone_id, score <span class="kw">in</span> zone_scores.items():</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        zone <span class="op">=</span> Zone.find(zone_id) <span class="kw">or</span> Zone(zone_id<span class="op">=</span>zone_id, name<span class="op">=</span>zone_id)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        zone.current_eph_score <span class="op">=</span> score</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        zone.last_calculated   <span class="op">=</span> datetime.utcnow()</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        zones_to_write.append(zone)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4. One line that does all the magic</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    ontology_manager.write(zones_to_write)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Updated </span><span class="sc">{</span><span class="bu">len</span>(zones_to_write)<span class="sc">}</span><span class="ss"> zones at </span><span class="sc">{</span>datetime<span class="sc">.</span>utcnow()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="top-k-most-frequent-elements" class="level3">
-<h3 class="anchored" data-anchor-id="top-k-most-frequent-elements">Top K Most Frequent Elements</h3>
-<p>Taken from <a href="https://neetcode.io/problems/top-k-elements-in-list?list=neetcode150">Neetcode’s Top K Frequent Elements</a>.</p>
-<p>Given an integer array <code>nums</code> and an integer <code>k</code>, return the <code>k</code> most frequent elements within the array.</p>
-<p>The test cases are generated such that the answer is always unique.</p>
-<p>You may return the output in any order.</p>
-<blockquote class="blockquote">
-<p>Example 1:</p>
-<p>Input: <code>nums = [1,2,2,3,3,3], k = 2</code></p>
-<p>Output: <code>[2,3]</code></p>
-<p>Example 2:</p>
-<p>Input: <code>nums = [7,7], k = 1</code></p>
-<p>Output: <code>[7]</code></p>
-</blockquote>
-<p>The intuitive way to address this problem is to create a counter hash map that maps each number to its count. However, this would be inefficient, because we’d be sorting the entire sequence of numbers when really we only need to sort the top <span class="math inline">\(k\)</span>.</p>
-<p>Also, we should think about restructuring the hash map. If we map each number to its count, that actually doesn’t give us a ton of information about the top <span class="math inline">\(k\)</span> elements. So instead, we can reformat the hash map such that we are mapping counts to a list of numbers with that count.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> topKFrequent(nums: List[<span class="bu">int</span>], k: <span class="bu">int</span>) <span class="op">-&gt;</span> List[<span class="bu">int</span>]:</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># maps nums to counts</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    counts <span class="op">=</span> {}</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># maps counts to list of nums</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    freqs <span class="op">=</span> {i: [] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(nums) <span class="op">+</span> <span class="dv">1</span>)}</span>
+<section id="example-dag" class="level3">
+<h3 class="anchored" data-anchor-id="example-dag">Example DAG</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># airflow/dags/daily_zone_recommendations.py</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> airflow <span class="im">import</span> DAG</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> airflow.operators.python <span class="im">import</span> PythonOperator</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlalchemy</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># propagate counts</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> num <span class="kw">in</span> nums: </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        counts[num] <span class="op">=</span> counts.get(num, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># propagate freqs</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> num, count <span class="kw">in</span> counts.items(): </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        freqs[count].append(num)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># return the top k most frequent elements from freqs</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    top_k <span class="op">=</span> []</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># iterate from largest count and decrement</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(nums) <span class="op">-</span> <span class="dv">1</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>): </span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> num <span class="kw">in</span> freqs[i]: </span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>            top_k.append(num)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>default_args <span class="op">=</span> {<span class="st">"retries"</span>: <span class="dv">3</span>, <span class="st">"retry_delay"</span>: timedelta(minutes<span class="op">=</span><span class="dv">5</span>)}</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> DAG(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    dag_id<span class="op">=</span><span class="st">"daily_zone_recommendations"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    schedule<span class="op">=</span><span class="st">"0 4 * * *"</span>,          <span class="co"># 04:00 UTC every day</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    start_date<span class="op">=</span>datetime(<span class="dv">2025</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    catchup<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    default_args<span class="op">=</span>default_args,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    tags<span class="op">=</span>[<span class="st">"taxi"</span>, <span class="st">"production"</span>],</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>) <span class="im">as</span> dag:</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Task 1 – heavy math (exactly like Code Repository)</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> calculate_raw_scores():</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        engine <span class="op">=</span> sqlalchemy.create_engine(<span class="st">"postgresql://..."</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        trips <span class="op">=</span> pd.read_sql(<span class="st">"SELECT * FROM fct_trip WHERE started_at &gt;= current_date - 7"</span>, engine)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        scores <span class="op">=</span> trips.groupby(<span class="st">"pickup_zone_id"</span>).<span class="bu">apply</span>(compute_eph_with_bonuses)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        scores.to_sql(<span class="st">"temp_raw_zone_scores"</span>, engine, if_exists<span class="op">=</span><span class="st">"replace"</span>)</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>            <span class="co"># keep adding to top_k until it contains k elements</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">len</span>(top_k) <span class="op">==</span> k: </span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> top_k</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    raw_scores_task <span class="op">=</span> PythonOperator(task_id<span class="op">=</span><span class="st">"calculate_raw_scores"</span>, python_callable<span class="op">=</span>calculate_raw_scores)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Task 2 – business rules &amp; human gate (poor-man’s AIP Logic)</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> apply_business_rules_and_write_recommendations():</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># same engine...</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        raw <span class="op">=</span> pd.read_sql(<span class="st">"SELECT * FROM temp_raw_zone_scores"</span>, engine)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># ← these three lines are the “non-engineer” part in real life</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        AIRPORT_BONUS <span class="op">=</span> <span class="fl">1.4</span>          <span class="co"># ← fleet manager changes this in a tiny admin table instead</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        MAX_DRIVERS_PER_ZONE <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        final <span class="op">=</span> raw.copy()</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        final[<span class="st">"final_score"</span>] <span class="op">=</span> final[<span class="st">"raw_score"</span>]</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        final.loc[final.zone_name.<span class="bu">str</span>.contains(<span class="st">"Heathrow"</span>), <span class="st">"final_score"</span>] <span class="op">*=</span> AIRPORT_BONUS</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        <span class="co"># simple human-in-the-loop via a “pending” flag + Slack message</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        high_risk <span class="op">=</span> final[final[<span class="st">"final_score"</span>] <span class="op">&gt;</span> <span class="dv">60</span>]</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="kw">not</span> high_risk.empty:</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>            send_slack_message(<span class="st">"@captain-johnson please approve these crazy zones"</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>            final.loc[final[<span class="st">"final_score"</span>] <span class="op">&gt;</span> <span class="dv">60</span>, <span class="st">"needs_approval"</span>] <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        <span class="co"># write final recommendations</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        final.head(<span class="dv">50</span>).to_sql(<span class="st">"fct_recommendation"</span>, engine, if_exists<span class="op">=</span><span class="st">"append"</span>)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>    final_task <span class="op">=</span> PythonOperator(task_id<span class="op">=</span><span class="st">"apply_rules_and_write"</span>, python_callable<span class="op">=</span>apply_business_rules_and_write_recommendations)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    raw_scores_task <span class="op">&gt;&gt;</span> final_task</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -969,13 +1072,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/computer_science/dsa/03_strings.html" class="pagination-link" aria-label="Strings">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Strings</span>
+      <a href="../../../topics/computer_science/palantir/01_decomp_prep.html" class="pagination-link" aria-label="Decomposition Interview Prep.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Decomposition Interview Prep.</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../topics/computer_science/dsa/05_matrices.html" class="pagination-link" aria-label="Matrices">
-        <span class="nav-page-text">Matrices</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/notes/01_the_science_of_people.html" class="pagination-link" aria-label="The Diary of a CEO - Vanessa Van Edwards">
+        <span class="nav-page-text">The Diary of a CEO - Vanessa Van Edwards</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

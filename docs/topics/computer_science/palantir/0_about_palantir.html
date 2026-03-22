@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-11-16">
 
-<title>Trees – Personal Encyclopedia</title>
+<title>about_palantir – Personal Encyclopedia</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../topics/computer_science/dsa/10_graphs.html" rel="next">
-<link href="../../../topics/computer_science/dsa/08_stacks.html" rel="prev">
+<link href="../../../topics/computer_science/palantir/01_decomp_prep.html" rel="next">
+<link href="../../../topics/computer_science/neural_networks/04_recommender_systems.html" rel="prev">
 <link href="../../../sunflower.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -83,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/01_time_space_complexity.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/09_trees.html">Trees</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/palantir/0_about_palantir.html">Palantir Interview Prep.</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/palantir/0_about_palantir.html">0 About Palantir</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,22 +154,33 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Computer Science</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Anthropology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      </ul>
+  </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Data Structures &amp; Algorithms</span></a>
+ <span class="menu-text">Computer Science</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Structures &amp; Algorithms</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/computer_science/dsa/01_time_space_complexity.html" class="sidebar-item-text sidebar-link">
@@ -221,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../topics/computer_science/dsa/09_trees.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../topics/computer_science/dsa/09_trees.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Trees</span></a>
   </div>
 </li>
@@ -247,17 +257,58 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
  <span class="menu-text">Neural Networks</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/neural_networks/02_graph_neural_networks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning with Graphs</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/computer_science/neural_networks/03_intro_to_networkx_pytorch.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to NetworkX and Pytorch Geometric</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/neural_networks/04_recommender_systems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GNNs for Recommender Systems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Palantir Interview Prep.</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/palantir/0_about_palantir.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">0 About Palantir</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/palantir/01_decomp_prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Decomposition Interview Prep.</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/computer_science/palantir/02_e2e_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">End-to-End System Template</span></a>
   </div>
 </li>
       </ul>
@@ -266,24 +317,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Paleontology</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Notes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../topics/notes/01_the_science_of_people.html" class="sidebar-item-text sidebar-link">
@@ -305,74 +345,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#binary-tree" id="toc-binary-tree" class="nav-link" data-scroll-target="#binary-tree">Binary Tree</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item">Computer Science</li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/01_time_space_complexity.html">Data Structures &amp; Algorithms</a></li><li class="breadcrumb-item"><a href="../../../topics/computer_science/dsa/09_trees.html">Trees</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Trees</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Computer Science</div>
-  </div>
-  </div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">November 16, 2025</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>A <strong>tree</strong> is a widely-used abstract data type that represents a hierarchical structure with a set of connected nodes. Each node in the tree can be connected to several children, but must be connected to exactly one parent, except for the root node, who has no parent.</p>
-<p>Trees are undirected and acyclic, meaning there are no cycles or loops. Each node can be seen as a root node of its own subtree, which makes recursion a useful technique in tree traversal.</p>
-<p>The most common type of tree is a <strong>binary tree</strong> (as well as a <strong>binary search tree</strong>, which is a special case of binary trees).</p>
-<section id="binary-tree" class="level3">
-<h3 class="anchored" data-anchor-id="binary-tree">Binary Tree</h3>
-<p>In a <strong>binary tree</strong>, each node has a maximum of two children (binary means two).</p>
-<p>There are two key types of binary trees, each with specific structural properties.</p>
-<ol type="1">
-<li><p><strong>Complete Binary Tree</strong>: a binary tree where all levels, except possibly the last, are completely filled with nodes. If the last level is not completely filled, its nodes are filled from left to right.</p>
-<ul>
-<li>Such a structure minimizes the tree’s height for a given number of nodes.</li>
-<li>Complete binary trees are inherently balanced.</li>
-</ul></li>
-<li><p><strong>Balanced Binary Tree</strong>: a binary tree where for every node, the height difference between its left and right subtrees is no more than 1.</p>
-<ul>
-<li>Such a structure prevents the tree from ebcoming skewed or degenerate, which could lead to worst-case performance for search operations.</li>
-</ul></li>
-</ol>
-<p><img src="bt_structures.png" class="img-fluid"></p>
-
-
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -797,13 +780,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../topics/computer_science/dsa/08_stacks.html" class="pagination-link" aria-label="Stacks">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Stacks</span>
+      <a href="../../../topics/computer_science/neural_networks/04_recommender_systems.html" class="pagination-link" aria-label="GNNs for Recommender Systems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">GNNs for Recommender Systems</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../topics/computer_science/dsa/10_graphs.html" class="pagination-link" aria-label="Graphs">
-        <span class="nav-page-text">Graphs</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../topics/computer_science/palantir/01_decomp_prep.html" class="pagination-link" aria-label="Decomposition Interview Prep.">
+        <span class="nav-page-text">Decomposition Interview Prep.</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

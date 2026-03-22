@@ -1,0 +1,321 @@
+---
+title: "Grok-Generated DSA Cheat Sheet"
+date: "2025-11-18"
+categories: ["Computer Science"]
+---
+
+## Decision Tree – Spot the Pattern in <10 Seconds
+
+| Trigger Phrase | → Use This Template |
+|---------------|---------------------|
+| "Contiguous subarray/substring + constraint" (longest/shortest, at most K) | Sliding Window |
+| "Sorted array + pair/triplet sum/target" | Two Pointers (Opposite) |
+| "Remove duplicates/partition/move in-place" | Two Pointers (Same Direction) |
+| "Sorted array – find exact value" | Binary Search (Classic) |
+| "Minimize the maximum" / "maximum minimum" (e.g., split array) | Binary Search on Answer |
+| "Grid + shortest steps/time/levels" | BFS on Grid |
+| "Grid + connected components/flood" | DFS on Grid |
+| "Cycle in list/graph" | Fast & Slow Pointers |
+| "Frequency count/anagram/group by key" | HashMap Frequency |
+| "Rob houses/coin change/LIS" | 1D DP (House Robber) |
+| "Top-K / scheduling / merge K lists" | Heap |
+| "Shortest path + non-negative weights" | Dijkstra |
+| "Dynamic connectivity/cycle detection" | Union-Find |
+
+**Pro Tip**: Say: "This is a classic [pattern] because [trigger]. Optimal is O([time]) with [DS]. Let me code while explaining."
+
+---
+
+## Sliding Window + Two Pointers
+
+### Sliding Window (Variable/Fixed Size)
+**When**: Longest/shortest subarray with constraint.  
+**Say**: "Maintain window [left, right]. Add right, shrink left if invalid, track best."
+
+```python
+from collections import defaultdict
+def sliding_window(arr):
+    left = 0; best = 0; count = defaultdict(int)
+    for right in range(len(arr)):
+        count[arr[right]] += 1  # ← ADD
+        while len(count) > K:   # ← INVALID? SHRINK
+            count[arr[left]] -= 1
+            if count[arr[left]] == 0: del count[arr[left]]
+            left += 1
+        best = max(best, right - left + 1)  # ← UPDATE
+    return best
+```
+
+**Examples**: Min Subarray Sum, Longest No Repeat Substring.
+
+### Two Pointers – Opposite (Sorted Array)
+**When**: Pairs in sorted array (sum = target).  
+**Say**: "Sorted → start ends, move inward based on sum."
+
+```python
+def two_ptr_opposite(nums, target):
+    l, r = 0, len(nums) - 1
+    while l < r:
+        total = nums[l] + nums[r]  # ← COMBINE
+        if total == target: return [l, r]
+        elif total < target: l += 1
+        else: r -= 1
+    return []
+```
+
+**Examples**: Two Sum II, Container With Most Water.
+
+### Two Pointers – Same Direction (In-Place)
+**When**: Remove/partition.  
+**Say**: "Fast scans, slow builds clean prefix."
+
+```python
+def remove_dups(nums):
+    slow = 0
+    for fast in range(1, len(nums)):
+        if nums[fast] != nums[slow]:  # ← NEW?
+            slow += 1; nums[slow] = nums[fast]
+    return slow + 1
+```
+
+**Examples**: Remove Duplicates, Move Zeroes.
+
+---
+
+## Binary Search (Classic + On Answer)
+
+### Binary Search – Classic
+**When**: Find exact in sorted array.  
+**Say**: "Sorted → halve search space each time."
+
+```python
+def bin_search(nums, target):
+    l, r = 0, len(nums) - 1
+    while l <= r:
+        m = (l + r) // 2
+        if nums[m] == target: return m
+        elif nums[m] < target: l = m + 1
+        else: r = m - 1
+    return -1
+```
+
+**Examples**: Search Rotated Array, Find Peak.
+
+### Binary Search on Answer
+**When**: Minimize max (feasible range).  
+**Say**: "Binary search the answer value. Check if mid is possible."
+
+```python
+def bin_search_ans(arr, n):
+    def can(mid): return sum(max(0, x - mid) for x in arr) <= n  # ← FEASIBLE?
+    lo, hi = 0, max(arr)
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if can(mid): hi = mid
+        else: lo = mid + 1
+    return lo
+```
+
+**Examples**: Koko Eating Bananas, Split Array Largest Sum.
+
+---
+
+## BFS & DFS on Grid
+
+### BFS on Grid (Shortest Path/Levels)
+**When**: Min steps/time, multi-source.  
+**Say**: "Queue for level-order. Mark on enqueue."
+
+```python
+from collections import deque
+def bfs(grid):
+    if not grid: return 0
+    r, c = len(grid), len(grid[0])
+    q = deque(); visited = set()
+    # Add starts
+    for i in range(r):
+        for j in range(c):
+            if grid[i][j] == 2:  # ← START?
+                q.append((i,j)); visited.add((i,j))
+    dirs = [(0,1),(1,0),(0,-1),(-1,0)]; steps = 0
+    while q:
+        for _ in range(len(q)):
+            x, y = q.popleft()
+            for dx, dy in dirs:
+                nx, ny = x+dx, y+dy
+                if 0<=nx<r and 0<=ny<c and (nx,ny) not in visited and grid[nx][ny]==1:  # ← NEIGHBOR?
+                    visited.add((nx,ny)); q.append((nx,ny))
+        steps += 1
+    return steps - 1
+```
+
+**Examples**: Rotten Oranges, Walls & Gates.
+
+### DFS on Grid (Recursive)
+**When**: Connected components/flood.  
+**Say**: "Recurse deep. Mark on entry."
+
+```python
+def dfs(grid, i, j, visited):
+    if i<0 or i>=r or j<0 or j>=c or (i,j) in visited or grid[i][j]=='0': return  # ← INVALID?
+    visited.add((i,j))
+    for di, dj in [(0,1),(1,0),(0,-1),(-1,0)]:
+        dfs(grid, i+di, j+dj, visited)
+```
+
+**Examples**: Number of Islands, Flood Fill.
+
+---
+
+## Fast & Slow Pointers + Linked List
+
+### Fast & Slow Pointers (Cycle Detection)
+**When**: Find cycle/middle in list.  
+**Say**: "Fast laps slow → meet in cycle."
+
+```python
+def detect_cycle(head):
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:  # Cycle!
+            slow = head
+            while slow != fast:
+                slow = slow.next; fast = fast.next
+            return slow  # Cycle start
+    return None
+```
+
+**Examples**: Linked List Cycle, Happy Number.
+
+### Linked List Basics
+**Reverse**:  
+```python
+def reverse(head):
+    prev = None
+    while head:
+        next = head.next
+        head.next = prev
+        prev = head; head = next
+    return prev
+```
+**Merge Two**: Use dummy + two pointers.
+
+---
+
+## HashMap Frequency + 1D DP
+
+### HashMap Frequency / Counter
+**When**: Count/group/anagram.  
+**Say**: "O(1) lookup for frequencies."
+
+```python
+from collections import Counter, defaultdict
+def group_anagrams(strs):
+    groups = defaultdict(list)
+    for s in strs:
+        key = tuple(sorted(s))  # or Counter(s)
+        groups[key].append(s)
+    return list(groups.values())
+```
+
+**Examples**: Group Anagrams, Valid Anagram.
+
+### 1D DP (House Robber Style)
+**When**: Sequential choices (take/skip).  
+**Say**: "Max of skip or take + prev skip."
+
+```python
+def rob(nums):
+    a, b = 0, 0  # dp[i-2], dp[i-1]
+    for x in nums:
+        a, b = b, max(b, a + x)
+    return b
+```
+
+**Examples**: House Robber, Climbing Stairs (O(1) space).
+
+---
+
+## Heap + Dijkstra
+
+### Heap / Priority Queue (Top-K)
+**When**: Always get min/max.  
+**Say**: "Log n insert/extract for extremes."
+
+```python
+import heapq
+def kth_largest(nums, k):
+    heap = nums[:k]  # min-heap of size k
+    heapq.heapify(heap)
+    for num in nums[k:]:
+        if num > heap[0]:
+            heapq.heappop(heap); heapq.heappush(heap, num)
+    return heap[0]
+```
+
+**Examples**: Kth Largest, Merge K Lists.
+
+### Dijkstra (Shortest Path)
+**When**: Weighted graph, non-neg costs.  
+**Say**: "Greedy: expand closest node forever."
+
+```python
+import heapq; from collections import defaultdict
+def dijkstra(n, edges, src):
+    graph = defaultdict(list)
+    for u, v, w in edges: graph[u].append((v, w))
+    dist = [float('inf')] * n; dist[src] = 0
+    pq = [(0, src)]  # (dist, node)
+    while pq:
+        d, u = heapq.heappop(pq)
+        if d > dist[u]: continue
+        for v, w in graph[u]:
+            if dist[u] + w < dist[v]:
+                dist[v] = dist[u] + w
+                heapq.heappush(pq, (dist[v], v))
+    return dist
+```
+
+**Examples**: Network Delay Time, Cheapest Flights.
+
+---
+
+## Union-Find + Trie + Bonuses
+
+### Union-Find (DSU)
+**When**: Connect/disconnect components.  
+**Say**: "Near O(1) find/union with path compression."
+
+```python
+class UF:
+    def __init__(self, n): self.p = list(range(n))
+    def find(self, x):
+        if self.p[x] != x: self.p[x] = self.find(self.p[x])
+        return self.p[x]
+    def union(self, x, y):
+        px, py = self.find(x), self.find(y)
+        if px != py: self.p[px] = py; return True
+        return False  # Already connected
+```
+
+**Examples**: Redundant Connection, Number of Provinces.
+
+### Trie (Prefix Tree)
+**When**: Autocomplete/word search.  
+**Say**: "Tree per prefix, O(L) insert/search."
+
+```python
+class TrieNode: self.children = {}; self.end = False
+class Trie:
+    def __init__(self): self.root = TrieNode()
+    def insert(self, word):
+        node = self.root
+        for c in word:
+            if c not in node.children: node.children[c] = TrieNode()
+            node = node.children[c]
+        node.end = True
+```
+
+**Examples**: Implement Trie, Word Search II.

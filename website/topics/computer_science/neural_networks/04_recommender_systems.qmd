@@ -3,6 +3,7 @@ title: "GNNs for Recommender Systems"
 subtitle: "Recommender Systems and how Graph Learning can be applied"
 date: "2025-07-16"
 categories: ["Computer Science"]
+draft: true
 --- 
 
 ## Introduction to Recommender Systems

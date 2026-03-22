@@ -1,0 +1,212 @@
+---
+title: "End-to-End System Template"
+date: "2025-12-01"
+categories: ["Computer Science"]
+---
+
+### General Template
+
+#### 1 Raw data / user input
+
+* Real-world data is often messy.
+         
+#### 2 Ingestion & cleaning (ETL)
+
+* Convert the messy real-world data into safe, complete, and understandable data that can be used in analyses.
+* Data ingestion is the process of collecting, importing, and processing data from various sources to be stored in a target system for analysis, reporting, and other business decisions.
+* A data pipeline is a set of automated processes that collect raw data from various sources, transform it into a usable format, and deliver it to a destination such as a data warehouse or data lake for analysis - essentially an automated assembly line for data.
+         
+#### 3 Data model / ontology / tables
+
+* Representing each real-world entity as a unique, trackable object.
+         
+#### 4 Core logic / scoring / matching engine / AIP Logic App
+
+* Computations are done using the data.
+         
+#### 5 Delivery / UI / action
+
+* Deliver the analysis results to users.
+
+### Avenue 1: Palantir in-house Foundry & AIP
+
+#### 1 Raw data / user input
+
+* No modifications to raw data; used as given
+         
+#### 2 Ingestion & cleaning
+
+* Ingestion via Foundry's **Pipeline Builder** (Foundry's primary application for data ingestion). 
+    * A data pipeline refers to the flow of data from a source system through intermediate datasets to ultimately produce high-quality, curated datasets that can be structured into the Ontology or serve as the foundation of machine learning and analytical workflows.
+    * Pipeline Builder enables users to quickly and easy set up a pipeline with a streamlined point and click/drag and drop interface.
+    * Automatic schema detection (https://www.palantir.com/docs/foundry/building-pipelines/infer-schema)
+* How Pipeline Builder works: 
+    1. *Ingestion*: 
+        * Upload data source (e.g., CSV, external database, live API feeds)
+        * *Drag-and-drop interface* - you drag the source onto a canvas. The structure of the data is auto-detected via *schema inference*.
+        * A schedule can be set if the data is continuously updated from the source, so that data used for future analyses is up-to-date.
+    2. *Cleaning*: 
+        * There are built in cleaning actions that allow you to: 
+            * handle null values (e.g., by filling in missing numerical data with averages)
+            * standardize locations (e.g., by converting text locations to GPS coordinates via a quick map lookup)
+            * remove duplicates
+        * Data can be joined or merged.
+        * You can validate data (e.g., spot negative values) using "Validation" blocks
+        * You can summarize your data using"Aggregation" blocks (e.g., averages for numerical columns)
+    3. Making the data *queryable*:
+        * Drag an "Output" block into the end of the pipeline canvas and choose to create either a Dataset, a Virtual Table, Ontology elements, or other outputs.
+            * These outputs plug into other Foundry apps automatically.
+         
+#### 3 Data model / ontology / tables
+
+* Convert every entity (row) in the real-world to a versioned, auditable **Ontology** object.
+    * Each object gets its own permanent URL and a Git-like history.
+    * "*Versioned*" means that a new version of the object is created anytime anything changes. Change history is accessible.
+    * "*Auditable*" means that the audit trail is immutable and complete; automatic logging.
+* These objects are created/updated automatically by Foundry every time the Code Repository pipeline finishes. 
+         
+#### 4 Core logic / scoring / matching engine / AIP Logic App
+
+* The brain of the program - contains the scoring function.
+* Includes: 
+    * **Code Repository pipeline** that does the heavy computations (e.g., similarity score computations for all pairs, ML inference, etc.).
+        * Generates the response that is the input to the Logic App.
+        * Think of it as GitHub Actions + Airflow + Jupyter + production scheduler all in one. Looks like a normal Git repo, and you get an IDE.
+        * Contains `pipeline.py`, which is the script that would run every night (example at bottom of page). Can implement automatic retries and alerts.
+    * **AIP Logic App** that adds final tweaks and additional rules:  optional human gates, and natural-language reasoning. 
+        * The output of this Logic App in Step 4 is the input to Step 5.
+        * AIP Logic is a no-code development environment within AIP for building and automating AI-powered functions. It leverages LLMs to create workflows and to interact with data via the Ontology.
+        * Adds human/business judgement, fairness, and natural language.
+         
+#### 5 Delivery / UI / action
+
+* Where the mission comes to fruition.
+* Can be powered by something like **Slate** (dynamic web applications) and/or **Contour** (dashboards, data analysis). Both of Slate and Contour use the same ontology objects.
+* Contour: 
+    * Interactive dashboards to share findings.
+    * Created via drag-and-drop. You can drag ontology objects onto the canvas and each object will automatically render based on the type of data it consists of (e.g., a Zone object results in an interactive map)
+* Slate: 
+    * Software application with custom user experiences. 
+
+---
+### Avenue 2: Generic/Standard Stack Version
+
+#### 1 Raw data / user input
+
+* No modifications to raw data; used as given
+* Can be stored in **Amazon S3 (Amazon Simple Storage Service)**, a cloud-based object storage service from AWS for storing and retrieving any amount of data. Highly scalable, durable, and secure.
+         
+#### 2 Ingestion & cleaning
+
+* Ingest data via **Airbyte** into **PostgreSQL** nightly. 
+    * Airbyte is an open-source data movement platform; it can move your data from various sources into warehouses, lakes, etc.
+    * Airbyte delivers the data to PostgreSQL, which stores the data in tables.
+* Cleaning scripts must be written manually.
+    * You can schedule these using **cron** or **GitHub Actions** for Python scripts, or with `dbt` (data build tool) for SQL files.
+         
+#### 3 Data model / ontology / tables
+
+* Represent real-world entities in **SQL tables** with proper *indexes* and *foreign keys*.
+* As compared to ontology objects, these do not have automatic versioning and a built-in audit trail.
+    * You could keep each entity versioned and auditable by creating an audit/history table.
+         
+#### 4 Core logic / scoring / matching engine / AIP Logic App
+
+* The brain of the program - contains the scoring function.
+* **(Apache) Airflow DAG (Directed Acyclic Graph)** runs the scoring function every night and then writes its results to the output table created in Step 3.
+    * DAG: a collection of tasks organized with dependencies and relationships that define how they should run. The fundamental concept representing a workflow or data pipeline.
+        * Example at bottom of page.
+* All additional rules and tweaks are hard-coded in Python.
+         
+#### 5 Delivery / UI / action
+* Where the mission comes to fruition.
+* Can be powered by something like **Streamlit** (dashboards).
+
+---
+### Example `pipeline.py`
+```python
+# pipeline.py — runs every night at 04:00 London time
+from datetime import datetime, timedelta
+from palantir_models import Trip, Zone, Recommendation
+from palantir_foundry import ontology_manager, datasets
+
+def main():
+    # 1. Load the last 24 hours of cleaned trips
+    raw_trips = datasets.get("cleaned_taxi_trips").as_pandas()
+    
+    # 2. Do the heavy math — calculate £/hour for every zone for the next 4-hour windows
+    zone_scores = calculate_zone_scores(raw_trips)          # ← your 20-line scoring function
+    
+    # 3. Write new/updated Zone objects back to the ontology
+    zones_to_write = []
+    for zone_id, score in zone_scores.items():
+        zone = Zone.find(zone_id) or Zone(zone_id=zone_id, name=zone_id)
+        zone.current_eph_score = score
+        zone.last_calculated   = datetime.utcnow()
+        zones_to_write.append(zone)
+    
+    # 4. One line that does all the magic
+    ontology_manager.write(zones_to_write)
+    
+    print(f"Updated {len(zones_to_write)} zones at {datetime.utcnow()}")
+
+if __name__ == "__main__":
+    main()
+```
+
+### Example DAG
+
+```python
+# airflow/dags/daily_zone_recommendations.py
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime, timedelta
+import pandas as pd
+import sqlalchemy
+
+default_args = {"retries": 3, "retry_delay": timedelta(minutes=5)}
+
+with DAG(
+    dag_id="daily_zone_recommendations",
+    schedule="0 4 * * *",          # 04:00 UTC every day
+    start_date=datetime(2025, 1, 1),
+    catchup=False,
+    default_args=default_args,
+    tags=["taxi", "production"],
+) as dag:
+
+    # Task 1 – heavy math (exactly like Code Repository)
+    def calculate_raw_scores():
+        engine = sqlalchemy.create_engine("postgresql://...")
+        trips = pd.read_sql("SELECT * FROM fct_trip WHERE started_at >= current_date - 7", engine)
+        scores = trips.groupby("pickup_zone_id").apply(compute_eph_with_bonuses)
+        scores.to_sql("temp_raw_zone_scores", engine, if_exists="replace")
+
+    raw_scores_task = PythonOperator(task_id="calculate_raw_scores", python_callable=calculate_raw_scores)
+
+    # Task 2 – business rules & human gate (poor-man’s AIP Logic)
+    def apply_business_rules_and_write_recommendations():
+        # same engine...
+        raw = pd.read_sql("SELECT * FROM temp_raw_zone_scores", engine)
+        
+        # ← these three lines are the “non-engineer” part in real life
+        AIRPORT_BONUS = 1.4          # ← fleet manager changes this in a tiny admin table instead
+        MAX_DRIVERS_PER_ZONE = 3
+        
+        final = raw.copy()
+        final["final_score"] = final["raw_score"]
+        final.loc[final.zone_name.str.contains("Heathrow"), "final_score"] *= AIRPORT_BONUS
+        
+        # simple human-in-the-loop via a “pending” flag + Slack message
+        high_risk = final[final["final_score"] > 60]
+        if not high_risk.empty:
+            send_slack_message("@captain-johnson please approve these crazy zones")
+            final.loc[final["final_score"] > 60, "needs_approval"] = True
+
+        # write final recommendations
+        final.head(50).to_sql("fct_recommendation", engine, if_exists="append")
+
+    final_task = PythonOperator(task_id="apply_rules_and_write", python_callable=apply_business_rules_and_write_recommendations)
+
+    raw_scores_task >> final_task
+```

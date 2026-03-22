@@ -39,16 +39,16 @@ website:
         contents:
         - section: Psychology
           contents: topics/psychology/*
-        - section: Anthropology
-          contents: topics/anthropology/*
+        # - section: Anthropology
+        #   contents: topics/anthropology/*
         - section: Computer Science
           contents: 
             - section: Data Structures & Algorithms
               contents: topics/computer_science/dsa/*
             - section: Neural Networks
               contents: topics/computer_science/neural_networks/*
-            # - section: Natural Language Processing
-            #   contents: topics/computer_science/nlp/*
+        - section: Paleontology
+          contents: topics/paleontology/*
         - section: Notes
           contents: topics/notes/*
 format:

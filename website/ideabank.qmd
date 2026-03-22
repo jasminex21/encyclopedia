@@ -69,8 +69,40 @@ description: "Topics I want to look into 🤔"
   * Via [Wikipedia](https://en.wikipedia.org/wiki/Simulation_hypothesis): "In 2001, philosopher Nick Bostrom proposed the simulation argument, which suggests that if a civilization becomes capable of creating conscious simulations, it could generate so many simulated beings that a randomly chosen conscious entity would almost certainly be in a simulation. The argument presents a trilemma: either such simulations are not created due to technological limitations or self-destruction; or advanced civilizations choose not to create them; or we are almost certainly living in one. This assumes that consciousness is not uniquely tied to biological brains but can arise from any system that implements the right computational structures and processes."
 
 ### Paleontology
-* Tiktaalik and transition fossils
-  * The evolution from swimming fish to four-legged vertebrates
+* *Tiktaalik* and transition fossils
+* My intention is to create an expanding repository of dinosaur genera, e.g., *Spinosaurus*, *Tyrannosaurus*, *Archaeopteryx*, etc., and map them under a broad phylogenetic category (e.g., Saurischia>Sauropoda/Sauropodomorpha, Ornithischia>Marginocephalia, Saurischia>Theropoda sort of thing). It helps me to think about dinosaurs in terms of those classification categories. And then within each .qmd writeup I'll do a more specific breakdown of each dinosaurs' classification (e.g., for Psittacosaurus it would be Ornithischia>Marginocephalia>Ceratopsia, or for Spinosaurus it would be Saurischia>Therapoda>Spinosauridae). Still figuring out which broad categories I want to use as the folder names but probably Ornithischia (containing subfolders Thyreophora, Ornithopoda, Marginocephalia) and Saurischia (containing subfolders Sauropodomorpha and Theropoda), and depending on the size or distinctness of the groups within the subgroups (e.g., Ceratopsia might warrant its own folder) I'll make more subgroups. I can do species specifications within the genera writeup (S. mirabilis vs S. aegyptiacus). Oh and probably I will have dinosauromorphs in a separate folder as well (but make the clarification that Dinosauromorpha includes Dinosauria; they are not separate lineages)
+  * Prior to writing up each dino group, I'll establish the context of Dinosauria by writing:
+    * A breakdown of where dinosaurs are located phylogenetically, and how they are further broken down within Dinosauria
+    * Geologic Time Scale - a quick breakdown of the Mesosoic Era and what exactly demarcates the boundary btwn the Permian and Triassic (significance of Permo-Triassic extinction), what broadly is going on (in terms of species diversity, mainly) the each of the Triassic, Jurassic, and Cretaceous periods, the "end" of dinosaurs at the end Cretaceous 66Ma. Also, what was going on in the Permian with regards to the evolution of archosaurs (but also synapsids). For the Permian, talk about Dimetrodon and Tiktaalik, gorgonopsians, dicynodonts, rhynchosaurs
+  * Specific genera I will write up (note I am also going to include dinosauromorphs here):
+    * Spinosaurus
+    * Triceratops
+    * Psittacosaurus
+    * T. rex
+    * Iguanodon
+    * Hadrosaur
+    * Pachycephalosaur
+    * Haolong
+    * Anchiornis
+    * Caihong
+    * Compsognathus
+    * Allosaurus
+    * Diplodocus
+    * Dreadnaughtus
+    * Brachiosaurus
+    * Argentinosaurus
+    * Yutyrannus
+    * Marasuchus
+    * Heterodontosaurus
+    * Plateosaurs
+    * Suchomimus
+    * Baryonyx
+    * Ceratosaurus
+    * Carnosaurus
+  * I also want to include:
+    * marine reptiles - Ichthyosaurs, Mosasaurs, Plesiosaurs
+    * pterosaurs - absolutely Quetzalcoatlus and Hatzegopteryx 
+    * (although now that I'm thinking about it, I'll probably make separate major sections for Dinosauria, Pterosauria, and whatever the marine reptiles category is)
 
 ### Bioinformatics / Computational Biology
 * [AVADA: toward automated pathogenic variant evidence

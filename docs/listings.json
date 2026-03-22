@@ -7,8 +7,6 @@
       "/topics/notes/01_the_science_of_people.html",
       "/topics/psychology/02_music_preference.html",
       "/topics/computer_science/nlp/01_ngram_language_models.html",
-      "/topics/computer_science/neural_networks/02_graph_neural_networks.html",
-      "/topics/computer_science/neural_networks/04_recommender_systems.html",
       "/topics/computer_science/dsa/01_time_space_complexity.html",
       "/topics/computer_science/dsa/07_queues.html",
       "/topics/computer_science/dsa/09_trees.html",
@@ -19,6 +17,7 @@
       "/topics/computer_science/dsa/03_strings.html",
       "/topics/computer_science/dsa/08_stacks.html",
       "/topics/computer_science/dsa/10_graphs.html",
+      "/topics/computer_science/dsa/12_grok_cheatsheet.html",
       "/topics/computer_science/dsa/11_dsa_cheatsheet.html",
       "/topics/computer_science/neural_networks/03_intro_to_networkx_pytorch.html"
     ]
