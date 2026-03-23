@@ -1,6 +1,8 @@
 ---
 title: Introduction to NetworkX and Pytorch Geometric
 jupyter: python3
+date: "2025-07-14"
+categories: ["Computer Science"]
 ---
 ## NetworkX Tutorial
 

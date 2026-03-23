@@ -5,7 +5,7 @@ categories: ["Paleontology", "WIP"]
 draft: true
 --- 
 
-### Phylogenetics
+## Phylogenetics
 Phylogenetics is the study of evolutionary relationships among organisms. It arranges organisms into groups called clades based on common ancestry, as indicated by shared derived characteristics (synapomorphies). This is the prevailing method of biological classification now, despite the prominence of the Linnean classification system. 
 
 > #### An Aside on the Linnaen Classification System
@@ -14,4 +14,68 @@ Phylogenetics is the study of evolutionary relationships among organisms. It arr
 >
 > We did, however, retain the concept and nomenclature of the genus and the species. A genus is a group broader than species that groups closely-related species who share a common ancestor. A species is the most specific unit of classifications for animals that can interbreed. The formal name of each species consists of two words, italicized, where the first is the genus and the second is the species (e.g., *Spinosaurus mirabilis*).
 
-TODO: Synapomorphies
+Phylogenetics centers around evolutionary relationships - as in, shared ancestors - rather than plain classification (as in the Linnaen system). These evolutionary relationships are established through the identification of **synapomorphies**, which are shared, derived character traits. More concretely, a synapomorphy is a trait that evolved in the most recent common ancestor of a group and that is henceforth passed on to its descendants. It is these synapomorphies that are used to define **monophyletic groups**, or **clades** (a section of the phylogeny that includes an ancestor and all of its descendants) within the tree of all life. For example, the clade Vertebrata can be distinguished from its ancestors in the clade Chordata by the evolution of a vertebral column and a complete brain case. Note, however, that vertebrates are still chordates - vertebrates evolved and diverged from a common ancestor within Chordata. This applies to phylogenetics as a whole - the "directory" of each species in the tree of life is comprised of all its ancestors.
+
+![](clades.png)
+
+> #### More Terminology
+> In phylogenetics, the terms apomorphy and plesiomorphy are commonly used in describing character states. 
+> * **Plesiomorphy**: an ancestral trait; a trait inherited from a distant common ancestor that is shared by members of a clade, but not unique to them (e.g., a backbone in reptiles)
+> * **Apomorphy**: a derived trait; a character that has evolved from a plesiomorphic character. Consists of the following two types: 
+>   * **Synapomorphy**: (defined above) a shared, derived character that defines a clade
+>   * **Autapomorphy**: a unique, derived character found only in one taxon (e.g., speech in humans)
+>
+> ![](Synapomorphy.jpg)
+
+## Dinosaurs in the Tree of Life
+Phylogenetically, dinosaurs are classified as so: Chordata > Vertebrata > Gnathostomata > Osteichthyes > Sarcoptrygii > Tetrapoda > Amniota > Sauria > (Archosauriformes) > Archosauria > Ornithodira > (Dinosauriformes) > Dinosauria. Recall that each clade is defined by synapomorphies that distinguish it from its parent node (though its placement within the parent group can be established through plesiomorphies).
+
+The following sections will break down each clade leading to Dinosauria, outlining the key synapomorphies that define them, as well as their following lineages.
+
+### Chordata (Chordates)
+Key synapomorphies: a notochord (an elastic, rod-like structure).
+
+Lineages: Vertebrata, Tunicata (tunicates), Cephalochordata (lancelets)
+
+### Vertebrata (Vertebrates)
+Key synapomorphies: a vertebral column, either bony or cartilaginous, and a complete brain case.
+
+* In vertebrates, the notochord is an embryonic structure that disintegrates as the vertebrae develop.
+
+Lineages: Gnathostomata
+
+### Gnathostomata (Gnathostomes)
+Gnathostomes are jawed vertebrates. Placoderms, which are large, prehistoric jawed fish, are gnathostomes.
+
+Key synapomorphies: jaws
+
+Lineages: Osteichthyes (bony fish), Chondrichthyes (cartilaginous fish)
+
+### Osteichthyes (bony fish)
+Osteichthyans, or more commonly known as the bony fish, have an endoskeleton comprised mostly of bone tissue, as opposed to cartilage (as in Chondrichthyes, of which sharks are an example).
+
+Key synapomorphies: a bony vertebral column
+
+Lineages: Sarcoptrygii (lobe-finned fish), Actinoptrygii (ray-finned fish)
+
+### Sarcoptrygii (lobe-finned fish)
+Differs from Actinoptrygii, which includes most fish, in that actinoptrygians only have bony spines supporting their fins. 
+
+Key synapomorphies: lobe fins that are supported by differentiated limb bones 
+
+Lineages: Tetrapoda, Coelocanth, Lungfish
+
+### Tetrapoda (Tetrapods)
+Tetrapoda includes all limbed vertebrates, i.e., all extinct and extant amphibians and amniote, which the latter in turn evolving into two major clades - the saurians (reptiles, including dinosaurs and therefore birds) and synapsids (hence mammals).
+
+Key synapomorphies: limbs with digits
+
+Lineages: Amniota
+
+### Amniota (Amniotes)
+Key synapomorphies: amniotic egg with 3 membranes (the amnion, allantois, and chorion)
+
+Lineages: Sauria, Synapsida
+
+### Sauria (Saurians)
+
