@@ -1,2 +1,920 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"></html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-04-01">
+
+<title>Dinosaur Phylogenetics – Personal Encyclopedia</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../topics/notes/01_the_science_of_people.html" rel="next">
+<link href="../../topics/computer_science/neural_networks/05_attention_is_all_you_need.html" rel="prev">
+<link href="../../sunflower.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../../topics/paleontology/01_dinosaur_phylogenetics.html">Paleontology</a></li><li class="breadcrumb-item"><a href="../../topics/paleontology/01_dinosaur_phylogenetics.html">Dinosaur Phylogenetics</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../sunflower.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../ideabank.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ideabank</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Psychology</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topics/psychology/01_intergroup_bias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Linguistic Intergroup Bias</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topics/psychology/02_music_preference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Music Preference &amp; Personality</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Computer Science</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Neural Networks</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topics/computer_science/neural_networks/03_intro_to_networkx_pytorch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to NetworkX and Pytorch Geometric</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Paleontology</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topics/paleontology/01_dinosaur_phylogenetics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Dinosaur Phylogenetics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topics/notes/01_the_science_of_people.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Diary of a CEO - Vanessa Van Edwards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../topics/notes/02_speed_dating_questions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Speed Dating Questions to Build Connections</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#phylogenetics" id="toc-phylogenetics" class="nav-link active" data-scroll-target="#phylogenetics">Phylogenetics</a></li>
+  <li><a href="#dinosaurs-in-the-tree-of-life" id="toc-dinosaurs-in-the-tree-of-life" class="nav-link" data-scroll-target="#dinosaurs-in-the-tree-of-life">Dinosaurs in the Tree of Life</a>
+  <ul class="collapse">
+  <li><a href="#chordata" id="toc-chordata" class="nav-link" data-scroll-target="#chordata">Chordata</a></li>
+  <li><a href="#vertebrata" id="toc-vertebrata" class="nav-link" data-scroll-target="#vertebrata">Vertebrata</a></li>
+  <li><a href="#gnathostomata" id="toc-gnathostomata" class="nav-link" data-scroll-target="#gnathostomata">Gnathostomata</a></li>
+  <li><a href="#osteichthyes-bony-fish" id="toc-osteichthyes-bony-fish" class="nav-link" data-scroll-target="#osteichthyes-bony-fish">Osteichthyes (bony fish)</a></li>
+  <li><a href="#sarcoptrygii-lobe-finned-fish" id="toc-sarcoptrygii-lobe-finned-fish" class="nav-link" data-scroll-target="#sarcoptrygii-lobe-finned-fish">Sarcoptrygii (lobe-finned fish)</a></li>
+  <li><a href="#tetrapoda" id="toc-tetrapoda" class="nav-link" data-scroll-target="#tetrapoda">Tetrapoda</a></li>
+  <li><a href="#amniota" id="toc-amniota" class="nav-link" data-scroll-target="#amniota">Amniota</a></li>
+  <li><a href="#sauria" id="toc-sauria" class="nav-link" data-scroll-target="#sauria">Sauria</a></li>
+  <li><a href="#archosauriformes" id="toc-archosauriformes" class="nav-link" data-scroll-target="#archosauriformes">Archosauriformes</a></li>
+  <li><a href="#archosauria" id="toc-archosauria" class="nav-link" data-scroll-target="#archosauria">Archosauria</a></li>
+  <li><a href="#ornithodira" id="toc-ornithodira" class="nav-link" data-scroll-target="#ornithodira">Ornithodira</a></li>
+  <li><a href="#dinosauromorpha" id="toc-dinosauromorpha" class="nav-link" data-scroll-target="#dinosauromorpha">Dinosauromorpha</a></li>
+  <li><a href="#dinosauria" id="toc-dinosauria" class="nav-link" data-scroll-target="#dinosauria">Dinosauria</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Topics</li><li class="breadcrumb-item"><a href="../../topics/paleontology/01_dinosaur_phylogenetics.html">Paleontology</a></li><li class="breadcrumb-item"><a href="../../topics/paleontology/01_dinosaur_phylogenetics.html">Dinosaur Phylogenetics</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Dinosaur Phylogenetics</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Paleontology</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="phylogenetics" class="level2">
+<h2 class="anchored" data-anchor-id="phylogenetics">Phylogenetics</h2>
+<p><strong>Phylogenetics</strong> is the study of evolutionary relationships among organisms. It arranges organisms into groups called clades based on common ancestry, as indicated by shared derived characteristics (synapomorphies). This is the prevailing method of biological classification now, despite the prominence of the Linnean classification system.</p>
+<blockquote class="blockquote">
+<h4 id="an-aside-on-the-linnaen-classification-system" class="anchored">An Aside on the Linnaen Classification System</h4>
+<p>The Linnaen classification system is commonly taught in grade schools - it is the system that organizes all of life into ranks of Domain, Kingdom, Phylum, Class, Order, Family, Genus, and Species. While it forms a basis for classification of species and genera, it is an outdated system with two key problems. First, it is based on physical appearance, rather than overall similarity. Physical traits can be useful in recognizing groups, but not in defining them (consider bats and birds - they both have wings, but their wings evolved independently of each other). Secondly, because the ranks in the Linnaen system are fixed, it assumes that nature is static and that animal characteristics do not change through time. If you define an animal by the possession of a feature, then that feature is not allowed to change through time; if it did, then that animal would become part of another classification.</p>
+<p>We did, however, retain the concept and nomenclature of the genus and the species. A <strong>genus</strong> is a group broader than species that groups closely-related species who share a common ancestor. A <strong>species</strong> is the most specific unit of classifications for animals that can interbreed. The formal name of each species consists of two words, italicized, where the first is the genus and the second is the species (e.g., <em>Spinosaurus mirabilis</em>).</p>
+</blockquote>
+<p>Phylogenetics centers around evolutionary relationships - as in, shared ancestors - rather than plain classification (as in the Linnaen system). These evolutionary relationships are established through the identification of <strong>synapomorphies</strong>, which are shared, derived character traits. More concretely, a synapomorphy is a trait that evolved in the most recent common ancestor of a group and that is henceforth passed on to its descendants. It is these synapomorphies that are used to define <strong>monophyletic groups</strong>, or <strong>clades</strong> (a section of the phylogeny that includes an ancestor and all of its descendants) within the tree of all life. For example, the clade Vertebrata can be distinguished from its ancestors in the clade Chordata by the evolution of a vertebral column and a complete brain case. Note, however, that vertebrates are still chordates - vertebrates evolved and diverged from a common ancestor within Chordata. This applies to phylogenetics as a whole - the “directory” of each species in the tree of life is comprised of all its ancestors.</p>
+<p><img src="clades.png" class="img-fluid"></p>
+<blockquote class="blockquote">
+<h4 id="more-terminology" class="anchored">More Terminology</h4>
+<p>In phylogenetics, the terms apomorphy and plesiomorphy are commonly used in describing character states.</p>
+<ul>
+<li><p><strong>Plesiomorphy</strong>: an ancestral trait; a trait inherited from a distant common ancestor that is shared by members of a clade, but not unique to them (e.g., a backbone in reptiles)</p></li>
+<li><p><strong>Apomorphy</strong>: a derived trait; a character that has evolved from a plesiomorphic character. Consists of the following two types:</p>
+<ul>
+<li><p><strong>Synapomorphy</strong>: (defined above) a shared, derived character that defines a clade</p></li>
+<li><p><strong>Autapomorphy</strong>: a unique, derived character found only in one taxon (e.g., speech in humans)</p></li>
+</ul></li>
+</ul>
+<p><img src="Synapomorphy.jpg" class="img-fluid"></p>
+</blockquote>
+</section>
+<section id="dinosaurs-in-the-tree-of-life" class="level2">
+<h2 class="anchored" data-anchor-id="dinosaurs-in-the-tree-of-life">Dinosaurs in the Tree of Life</h2>
+<p>Phylogenetically, dinosaurs are classified as so: Chordata &gt; Vertebrata &gt; Gnathostomata &gt; Osteichthyes &gt; Sarcoptrygii &gt; Tetrapoda &gt; Amniota &gt; Sauria &gt; (Archosauriformes) &gt; Archosauria &gt; Ornithodira &gt; (Dinosauriformes) &gt; Dinosauria. Recall that each clade is defined by synapomorphies that distinguish it from its parent node (though its placement within the parent group can be established through plesiomorphies).</p>
+<p>The following sections will break down each clade leading to Dinosauria, outlining the key synapomorphies that define them, as well as their following lineages.</p>
+<section id="chordata" class="level3">
+<h3 class="anchored" data-anchor-id="chordata">Chordata</h3>
+<p>Key synapomorphies: a notochord (an elastic, rod-like structure).</p>
+<p>Lineages: Vertebrata, Tunicata (tunicates), Cephalochordata (lancelets)</p>
+<p><img src="notochord.jpg" class="img-fluid"></p>
+</section>
+<section id="vertebrata" class="level3">
+<h3 class="anchored" data-anchor-id="vertebrata">Vertebrata</h3>
+<p>Key synapomorphies: a vertebral column, either bony or cartilaginous, and a complete brain case.</p>
+<ul>
+<li>In vertebrates, the notochord is an embryonic structure that disintegrates as the vertebrae develop.</li>
+</ul>
+<p>Lineages: Gnathostomata</p>
+<p><img src="basic-vertebral-anatomy.jpg" class="img-fluid"></p>
+</section>
+<section id="gnathostomata" class="level3">
+<h3 class="anchored" data-anchor-id="gnathostomata">Gnathostomata</h3>
+<p>Gnathostomes are jawed vertebrates. Placoderms, which are large, prehistoric jawed fish, are gnathostomes.</p>
+<p>Key synapomorphies: jaws</p>
+<p>Lineages: Osteichthyes (bony fish), Chondrichthyes (cartilaginous fish)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dunkleosteus.jpg" class="img-fluid figure-img"></p>
+<figcaption><em>Dunkleosteus</em>, a genus of Placoderms, which are large, armored, jawed fish.</figcaption>
+</figure>
+</div>
+</section>
+<section id="osteichthyes-bony-fish" class="level3">
+<h3 class="anchored" data-anchor-id="osteichthyes-bony-fish">Osteichthyes (bony fish)</h3>
+<p>Osteichthyans, or more commonly known as the bony fish, have an endoskeleton comprised mostly of bone tissue, as opposed to cartilage (as in Chondrichthyes, of which sharks are an example).</p>
+<p>Key synapomorphies: a bony vertebral column</p>
+<p>Lineages: Sarcoptrygii (lobe-finned fish), Actinoptrygii (ray-finned fish)</p>
+<p><img src="Osteichthyes.jpg" class="img-fluid"></p>
+</section>
+<section id="sarcoptrygii-lobe-finned-fish" class="level3">
+<h3 class="anchored" data-anchor-id="sarcoptrygii-lobe-finned-fish">Sarcoptrygii (lobe-finned fish)</h3>
+<p>Differs from Actinoptrygii, which includes most fish, in that actinoptrygians only have bony spines supporting their fins.</p>
+<p>Key synapomorphies: lobe fins that are supported by differentiated limb bones</p>
+<p>Lineages: Tetrapoda, Coelocanth, Lungfish</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ray vs lobed.jpg" class="img-fluid figure-img"></p>
+<figcaption>Ray-finned vs lobe-finned fish</figcaption>
+</figure>
+</div>
+</section>
+<section id="tetrapoda" class="level3">
+<h3 class="anchored" data-anchor-id="tetrapoda">Tetrapoda</h3>
+<p>Tetrapoda includes all limbed vertebrates, i.e., all extinct and extant amphibians and amniote, which the latter in turn evolving into two major clades - the saurians (reptiles, including dinosaurs and therefore birds) and synapsids (hence mammals).</p>
+<p>Key synapomorphies: limbs with digits</p>
+<p>Lineages: Amniota</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="acanthostega.jpg" class="img-fluid figure-img"></p>
+<figcaption><em>Acanthostega</em>, one of the earliest known tetrapods. It was primarily aquatic with well-developed limbs and gills.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Tiktaalik.jpg" class="img-fluid figure-img"></p>
+<figcaption><em>Tiktaalik</em>, not quite considered a tetrapod but a “fishapod,” representing the transition from fish to tetrapods. While it had a neck and primitive wrists, it had fins rather than digits as in traditional tetrapods.</figcaption>
+</figure>
+</div>
+</section>
+<section id="amniota" class="level3">
+<h3 class="anchored" data-anchor-id="amniota">Amniota</h3>
+<p>Key synapomorphies: amniotic egg with 3 membranes (the amnion, allantois, and chorion)</p>
+<p>Lineages: Sauria, Synapsida</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="amniotic_egg.jpg" class="img-fluid figure-img"></p>
+<figcaption>An amniotic egg with three membranes.</figcaption>
+</figure>
+</div>
+</section>
+<section id="sauria" class="level3">
+<h3 class="anchored" data-anchor-id="sauria">Sauria</h3>
+<p>Sauria is essentially the crown group of reptiles.</p>
+<p>Key synapomorphies: 2 temporal fenestrae - both the infratemporal and the supratemporal fenestra (as opposed to synapsids, who only have the infratemporal fenestra)</p>
+<p>Lineages: Archosauriformes, Lepidosauria (lizards and snakes), Testudines (turtles)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="diapsid_skull.jpg" class="img-fluid figure-img"></p>
+<figcaption>Sauria is a crown clade within Diapsida. Diapsids (and hence saurians) have two temporal fenestrae, distinguishing them from synapsids, who only have one.</figcaption>
+</figure>
+</div>
+</section>
+<section id="archosauriformes" class="level3">
+<h3 class="anchored" data-anchor-id="archosauriformes">Archosauriformes</h3>
+<p>Archosauriformes is the clade of reptiles encompassing archosaurs and their close relatives.</p>
+<p>Key synapomorphies: antorbital fenestra, madibular fenestra, socketed teeth, symmetrical footh with the third toe longest</p>
+<p>Lineages: Archosauria</p>
+<p><img src="arch_skull.gif" class="img-fluid"> <img src="fenestrae.png" class="img-fluid" alt="Fenestrae in archosauriformes (and hence archosaurs). The two temporal fenestae are a synapomorphy of reptiles (saurians), while the antorbital fenestra and the mandibular fenestra are synapomorphies of aarchosauriformes."></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="erythrosuchus_reddit.webp" class="img-fluid figure-img"></p>
+<figcaption><em>Erythrosuchus</em>, an archosauriform from the Early to Middle Triassic. <a href="https://www.reddit.com/r/Paleoart/comments/1hg2a56/erythrosuchus_hell_yes/">Art credit</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="archosauria" class="level3">
+<h3 class="anchored" data-anchor-id="archosauria">Archosauria</h3>
+<p>Archosauria includes the most recent common ancestor of bids and crocodilians, and all their descendants. The Archosaur Revolution in the Triassic saw reptiles adopt new ways of locomotion and breathing, setting the scene for the rise of dinosaurs. Specifically, archosaurs had upright stances (as opposed to a sprawling stance) that allowed for gait independent of breathing, and a 4-chambered heart that allowed for higher sustained metabolic rates.</p>
+<p>Key synapomorphies: more upright stance, acetabular crest, 4-chambered heart, parental care. * Also, all the Archosauriformes synapomorphies are also unique to Archosauria relative to all other reptiles, but arose earlier in Archosauriformes.</p>
+<p>Lineages: Ornithodira, Pseudosuchia (crocodile-line archosaurs - archosaurs more closely-related to crocodiles than to birds)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="croc_archosaur.gif" class="img-fluid figure-img"></p>
+<figcaption>Crocodiles are members of Pseudosuchia, contained in Archosauria. Archosaurs are upright, meaning that their limbs can be pulled under their body. While modern crocodylians are often seen sprawled out while sedentary, they are upright animals.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="acetabular_crest.png" class="img-fluid figure-img"></p>
+<figcaption>A key synapomorphy of archosaurs is a supra-acetabular crest to aid in locomotion - it braces the femur when in upright orientation.</figcaption>
+</figure>
+</div>
+</section>
+<section id="ornithodira" class="level3">
+<h3 class="anchored" data-anchor-id="ornithodira">Ornithodira</h3>
+<p>Ornithodira, also called Avemetatarsalia, is the clade containing all archosaurs more closely related to birds than to crocodiles.</p>
+<p>Key synapomorphies: are subtle and continue to change * However, there is a key difference between ornithodiran and pseudosuchian ankles. Pseudosuchians have a crurotarsan ankle that allows for an upright, semi-erect “high walk,” whereas ornithodirans have a mesotarsal ankle that limits motion to a single plane, which allows for a more upright, parasagittal (limbs directly under the body) gait that is optimized for speed and stability.</p>
+<p>Lineages: Dinosauromorpha, Pterosauromorpha (&gt; Pterosauria)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ornithodira_ankles.gif" class="img-fluid figure-img"></p>
+<figcaption>The ankle of ornithodirans (right) supports a parasagittal gait that is optimized for speed, stability, and bipedalism.</figcaption>
+</figure>
+</div>
+</section>
+<section id="dinosauromorpha" class="level3">
+<h3 class="anchored" data-anchor-id="dinosauromorpha">Dinosauromorpha</h3>
+<p>Dinosauromorpha first appeared in the Middle Triassic, and contains dinosaurs and all its close relatives.</p>
+<p>Key synapomorphies: first three fingers of hand are the longest, S-shaped neck</p>
+<p>Lineages: Dinosauria</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="silesaurus.webp" class="img-fluid figure-img"></p>
+<figcaption><em>Silesaurus</em>, a dinosauromorph from the Late Triassic.</figcaption>
+</figure>
+</div>
+</section>
+<section id="dinosauria" class="level3">
+<h3 class="anchored" data-anchor-id="dinosauria">Dinosauria</h3>
+<p>Dinosaurs! Dinosauria is defined as the most recent common ancestor of ornithischians and birds, and all their descendants. They first appeared in the Middle or early Late Triassic. Within Dinosauria, there are two main branches of dinosaurs - namely the ornithischians and the saurischians.</p>
+<p>Key synapomorphies: opposable thumb, perforate acetabulum, sharply inturned femoral head, crest on humerus, faster growth rates</p>
+<p>Lineages: Ornithischia, Saurischia</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="perforate_acetabulum.png" class="img-fluid figure-img"></p>
+<figcaption>A perforate acetabulum is a defining feature of dinosaurs, where the hip socket is an open hole rather than a closed cup, allowing the femur to insert directly. This pelvic structure dictates an upright, parasagittal posture, enabling efficient movement.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pelvis.png" class="img-fluid figure-img"></p>
+<figcaption>A dinosaur (saurischian) pelvis, labelled.</figcaption>
+</figure>
+</div>
+<hr>
+<p>Here is where we are in the phylogeny.</p>
+<p><img src="Dinosaur Phylogenetic Tree.png" class="img-fluid"></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../topics/computer_science/neural_networks/05_attention_is_all_you_need.html" class="pagination-link" aria-label="Attention Is All You Need">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Attention Is All You Need</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../topics/notes/01_the_science_of_people.html" class="pagination-link" aria-label="The Diary of a CEO - Vanessa Van Edwards">
+        <span class="nav-page-text">The Diary of a CEO - Vanessa Van Edwards</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
