@@ -262,6 +262,12 @@ window.Quarto = {
  <span class="menu-text">Dinosaur Phylogenetics</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../topics/paleontology/02_ornithischia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ornithischia</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -361,7 +367,7 @@ window.Quarto = {
 <p>NetworkX is one of the most frequently used Python packages to create, manipulate, and mine graphs.</p>
 <section id="setup" class="level3">
 <h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<div id="f5d6eda0" class="cell" data-execution_count="1">
+<div id="3e6cee0c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import the NetworkX package</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -370,7 +376,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="graph">Graph</h3>
 <p>NetworkX provides several classes to store different types of graphs, such as directed and undirected graph. It also provides classes to create multigraphs (both directed and undirected).</p>
 <p>For more information, please refer to <a href="https://networkx.org/documentation/stable/reference/classes/index.html">NetworkX graph types</a>.</p>
-<div id="6817cecb" class="cell" data-execution_count="2">
+<div id="d06e1af3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an undirected graph G</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> nx.Graph()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(G.is_directed())</span>
@@ -392,7 +398,7 @@ True
 <section id="nodes" class="level3">
 <h3 class="anchored" data-anchor-id="nodes">Nodes</h3>
 <p>Nodes (with attributes) can be easily added to NetworkX graphs.</p>
-<div id="7fe9e572" class="cell" data-execution_count="3">
+<div id="c91df8fa" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add one node with node level attributes</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>G.add_node(<span class="dv">0</span>, feature<span class="op">=</span><span class="dv">0</span>, label<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -403,7 +409,7 @@ True
 <pre><code>Node 0 has the attributes {'feature': 0, 'label': 0}</code></pre>
 </div>
 </div>
-<div id="9676be3c" class="cell" data-execution_count="4">
+<div id="889de691" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add multiple nodes with attributes</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>G.add_nodes_from([</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">1</span>, {<span class="st">"feature"</span>: <span class="dv">1</span>, <span class="st">"label"</span>: <span class="dv">1</span>}),</span>
@@ -429,7 +435,7 @@ G has 3 nodes</code></pre>
 <section id="edges" class="level3">
 <h3 class="anchored" data-anchor-id="edges">Edges</h3>
 <p>Similar to nodes, edges (with attributes) can also be easily added to NetworkX graphs.</p>
-<div id="03a7e330" class="cell" data-execution_count="5">
+<div id="bc1bb231" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add one edge with edge weight 0.5</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="dv">0</span>, <span class="dv">1</span>, weight<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -440,7 +446,7 @@ G has 3 nodes</code></pre>
 <pre><code>Edge (0, 1) has the attributes {'weight': 0.5}</code></pre>
 </div>
 </div>
-<div id="ce79290a" class="cell" data-execution_count="6">
+<div id="4e05e3f8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add multiple edges with edge weights</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>G.add_edges_from([</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  (<span class="dv">1</span>, <span class="dv">2</span>, {<span class="st">"weight"</span>: <span class="fl">0.3</span>}),</span>
@@ -465,7 +471,7 @@ G has 3 edges</code></pre>
 </section>
 <section id="visualization" class="level3">
 <h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
-<div id="95d4e91d" class="cell" data-execution_count="7">
+<div id="e5d113f6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># draw the graph</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>nx.draw(G, with_labels <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -479,7 +485,7 @@ G has 3 edges</code></pre>
 </section>
 <section id="node-degree-and-neighbor" class="level3">
 <h3 class="anchored" data-anchor-id="node-degree-and-neighbor">Node Degree and Neighbor</h3>
-<div id="4bbccc5a" class="cell" data-execution_count="8">
+<div id="7cb0dfc2" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>node_id <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># degree of node 1</span></span>
@@ -499,7 +505,7 @@ Node 1 has neighbor 2</code></pre>
 <h3 class="anchored" data-anchor-id="other-functionalities">Other Functionalities</h3>
 <p>NetworkX also provides plenty of useful methods to study graphs.</p>
 <p>Here is an example to get <a href="https://networkx.org/documentation/stable/reference/algorithms/generated/networkx.algorithms.link_analysis.pagerank_alg.pagerank.html#networkx.algorithms.link_analysis.pagerank_alg.pagerank">PageRank</a> of nodes (we will talk about PageRank in one of the future lectures).</p>
-<div id="84b95144" class="cell" data-execution_count="9">
+<div id="52fc2fd6" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>num_nodes <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new path like graph and change it to a directed graph</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> nx.DiGraph(nx.path_graph(num_nodes))</span>
@@ -532,7 +538,7 @@ Node 1 has neighbor 2</code></pre>
 <h2 class="anchored" data-anchor-id="pytorch-geometric-tutorial">PyTorch Geometric Tutorial</h2>
 <p>PyTorch Geometric (PyG) is an extension library for PyTorch. It provides useful primitives to develop Graph Deep Learning models, including various graph neural network layers and a large number of benchmark datasets.</p>
 <p>This tutorial is adapted from https://colab.research.google.com/drive/1h3-vJGRVloF5zStxL5I0rSy4ZUPNsjy8?usp=sharing#scrollTo=ci-LpZWhRJoI by <a href="https://rusty1s.github.io/#/">Matthias Fey</a></p>
-<div id="9e39458b" class="cell" data-execution_count="10">
+<div id="95098c91" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"PyTorch has version </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(torch.__version__))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -542,7 +548,7 @@ Node 1 has neighbor 2</code></pre>
 <section id="setup-1" class="level3">
 <h3 class="anchored" data-anchor-id="setup-1">Setup</h3>
 <p>The installation of PyG on Colab can be a little bit tricky. Execute the cell below – in case of issues, more information can be found on the <a href="https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html">PyG’s installation page</a>.</p>
-<div id="9c881372" class="cell" data-execution_count="11">
+<div id="fb74d2eb" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install torch geometric</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install -q torch-scatter -f https://pytorch-geometric.com/whl/torch-1.7.0+cu101.html</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install -q torch-sparse -f https://pytorch-geometric.com/whl/torch-1.7.0+cu101.html</span></span>
@@ -551,7 +557,7 @@ Node 1 has neighbor 2</code></pre>
 </section>
 <section id="visualization-1" class="level3">
 <h3 class="anchored" data-anchor-id="visualization-1">Visualization</h3>
-<div id="5bb3a831" class="cell" data-execution_count="12">
+<div id="a61db5b9" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># helper function for visualization.</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
@@ -586,7 +592,7 @@ Node 1 has neighbor 2</code></pre>
 <section id="dataset" class="level3">
 <h3 class="anchored" data-anchor-id="dataset">Dataset</h3>
 <p>PyTorch Geometric provides an easy access to the dataset via the <a href="https://pytorch-geometric.readthedocs.io/en/latest/modules/datasets.html#torch_geometric.datasets"><code>torch_geometric.datasets</code></a> subpackage:</p>
-<div id="f6c11058" class="cell" data-execution_count="13">
+<div id="a566b14e" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch_geometric.datasets <span class="im">import</span> KarateClub</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> KarateClub()</span>
@@ -610,7 +616,7 @@ Number of classes: 4</code></pre>
 <p>For example, we can see that this dataset holds exactly <strong>one graph</strong>, and that each node in this dataset is assigned a <strong>34-dimensional feature vector</strong> (which uniquely describes the members of the karate club).</p>
 <p>Furthermore, the graph holds exactly <strong>4 classes</strong>, which represent the community each node belongs to.</p>
 <p>Let’s now look at the underlying graph in more detail:</p>
-<div id="0334068c" class="cell" data-execution_count="14">
+<div id="d7129d7b" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> dataset[<span class="dv">0</span>]  <span class="co"># get the first graph object.</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span>
@@ -655,7 +661,7 @@ Is undirected: True</code></pre>
 <p>In total, we are only aware of the ground-truth labels of 4 nodes (one for each community), and the task is to infer the community assignment for the remaining nodes.</p>
 <p>The <code>data</code> object also provides some <strong>utility functions</strong> to infer some basic properties of the underlying graph.</p>
 <p>For example, we can easily infer whether there exists isolated nodes in the graph (<em>i.e.</em> there exists no edge to any node), whether the graph contains self-loops (<em>i.e.</em>, <span class="math inline">\((v, v) \in \mathcal{E}\)</span>), or whether the graph is undirected (<em>i.e.</em>, for each edge <span class="math inline">\((v, w) \in \mathcal{E}\)</span> there also exists the edge <span class="math inline">\((w, v) \in \mathcal{E}\)</span>).</p>
-<div id="643194b8" class="cell" data-execution_count="15">
+<div id="73155ee3" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Javascript  <span class="co"># restrict height of output cell.</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>display(Javascript(<span class="st">'''google.colab.output.setIframeHeight(0, true, </span><span class="sc">{maxHeight: 300}</span><span class="st">)'''</span>))</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -833,7 +839,7 @@ google.colab.output.setIframeHeight(0, true, {maxHeight: 300})
 <p>This representation is known as the <strong>COO format (coordinate format)</strong> commonly used for representing sparse matrices.</p>
 <p>Instead of holding the adjacency information in a dense representation <span class="math inline">\(\mathbf{A} \in \{ 0, 1 \}^{|\mathcal{V}| \times |\mathcal{V}|}\)</span>, PyG represents graphs sparsely, which refers to only holding the coordinates/values for which entries in <span class="math inline">\(\mathbf{A}\)</span> are non-zero.</p>
 <p>We can further visualize the graph by converting it to the <code>networkx</code> library format, which implements, in addition to graph manipulation functionalities, powerful tools for visualization:</p>
-<div id="df59e58a" class="cell" data-execution_count="16">
+<div id="1f6ffdd2" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch_geometric.utils <span class="im">import</span> to_networkx</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> to_networkx(data, to_undirected<span class="op">=</span><span class="va">True</span>)</span>
@@ -853,7 +859,7 @@ google.colab.output.setIframeHeight(0, true, {maxHeight: 300})
 <p>For this, we will use one of the most simple GNN operators, the <strong>GCN layer</strong> (<a href="https://arxiv.org/abs/1609.02907">Kipf et al.&nbsp;(2017)</a>).</p>
 <p>PyG implements this layer via <a href="https://pytorch-geometric.readthedocs.io/en/latest/modules/nn.html#torch_geometric.nn.conv.GCNConv"><code>GCNConv</code></a>, which can be executed by passing in the node feature representation <code>x</code> and the COO graph connectivity representation <code>edge_index</code>.</p>
 <p>With this, we are ready to create our first Graph Neural Network by defining our network architecture in a <code>torch.nn.Module</code> class:</p>
-<div id="cd93e0e2" class="cell" data-execution_count="17">
+<div id="c5fbab75" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.nn <span class="im">import</span> Linear</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch_geometric.nn <span class="im">import</span> GCNConv</span>
@@ -898,7 +904,7 @@ google.colab.output.setIframeHeight(0, true, {maxHeight: 300})
 <p>After that, we apply a single linear transformation (<a href="https://pytorch.org/docs/stable/generated/torch.nn.Linear.html?highlight=linear#torch.nn.Linear"><code>torch.nn.Linear</code></a>) that acts as a classifier to map our nodes to 1 out of the 4 classes/communities.</p>
 <p>We return both the output of the final classifier as well as the final node embeddings produced by our GNN.</p>
 <p>We proceed to initialize our final model via <code>GCN()</code>, and printing our model produces a summary of all its used sub-modules.</p>
-<div id="7f4a62e3" class="cell" data-execution_count="18">
+<div id="7e60f867" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> GCN()</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>_, h <span class="op">=</span> model(data.x, data.edge_index)</span>
@@ -934,7 +940,7 @@ google.colab.output.setIframeHeight(0, true, {maxHeight: 300})
 <p>While we compute node embeddings for all of our nodes, we <strong>only make use of the training nodes for computing the loss</strong>.</p>
 <p>Here, this is implemented by filtering the output of the classifier <code>out</code> and ground-truth labels <code>data.y</code> to only contain the nodes in the <code>train_mask</code>.</p>
 <p>Let us now start training and see how our node embeddings evolve over time (best experienced by explicitely running the code):</p>
-<div id="2096754e" class="cell" data-execution_count="19">
+<div id="b6d9ac8a" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Javascript  <span class="co"># restrict height of output cell.</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>display(Javascript(<span class="st">'''google.colab.output.setIframeHeight(0, true, </span><span class="sc">{maxHeight: 430}</span><span class="st">)'''</span>))</span>

@@ -79,7 +79,7 @@ Lineages: Tetrapoda, Coelocanth, Lungfish
 ![Ray-finned vs lobe-finned fish](ray%20vs%20lobed.jpg)
 
 ### Tetrapoda 
-Tetrapoda includes all limbed vertebrates, i.e., all extinct and extant amphibians and amniote, which the latter in turn evolving into two major clades - the saurians (reptiles, including dinosaurs and therefore birds) and synapsids (hence mammals).
+Tetrapoda includes all limbed vertebrates, i.e., all extinct and extant amphibians and amniotes, with the latter in turn evolving into two major clades - the saurians (reptiles, including dinosaurs and therefore birds) and synapsids (including mammals).
 
 Key synapomorphies: limbs with digits
 
@@ -113,6 +113,7 @@ Key synapomorphies: antorbital fenestra, madibular fenestra, socketed teeth, sym
 Lineages: Archosauria
 
 ![](arch_skull.gif)
+
 ![Fenestrae in archosauriformes (and hence archosaurs). The two temporal fenestae are a synapomorphy of reptiles (saurians), while the antorbital fenestra and the mandibular fenestra are synapomorphies of aarchosauriformes.](fenestrae.png)
 
 ![*Erythrosuchus*, an archosauriform from the Early to Middle Triassic. [Art credit](https://www.reddit.com/r/Paleoart/comments/1hg2a56/erythrosuchus_hell_yes/)](erythrosuchus_reddit.webp)
@@ -133,6 +134,7 @@ Lineages: Ornithodira, Pseudosuchia (crocodile-line archosaurs - archosaurs more
 Ornithodira, also called Avemetatarsalia, is the clade containing all archosaurs more closely related to birds than to crocodiles.
 
 Key synapomorphies: are subtle and continue to change
+
 * However, there is a key difference between ornithodiran and pseudosuchian ankles. Pseudosuchians have a crurotarsan ankle that allows for an upright, semi-erect "high walk," whereas ornithodirans have a mesotarsal ankle that limits motion to a single plane, which allows for a more upright, parasagittal (limbs directly under the body) gait that is optimized for speed and stability.
 
 Lineages: Dinosauromorpha, Pterosauromorpha (> Pterosauria)
