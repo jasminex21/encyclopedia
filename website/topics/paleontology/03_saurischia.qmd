@@ -3,7 +3,6 @@ title: "Saurischia"
 subtitle: "Lizard-hipped dinosaurs"
 date: "2026-04-01"
 categories: ["Paleontology"]
-draft: true
 --- 
 
 ## Introduction
