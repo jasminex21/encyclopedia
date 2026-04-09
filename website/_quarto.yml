@@ -53,14 +53,14 @@ website:
               contents:
                 - href: topics/paleontology/01_dinosaur_phylogenetics.qmd
                   text: Dinosaur Phylogenetics
-                - href: topics/paleontology/02_ornithischia.qmd
-                  text: Ornithischia
-                - href: topics/paleontology/03_saurischia.qmd
-                  text: Saurischia
             - section: Ornithischia
-              contents: topics/paleontology/ornithischia/*
+              contents: 
+                - href: topics/paleontology/ornithischia/00_ornithischia.qmd
+                  text: Ornithischia
             - section: Saurischia
               contents: 
+                - href: topics/paleontology/saurischia/00_saurischia.qmd
+                  text: Saurischia
                 - section: Sauropodomorpha
                   contents: topics/paleontology/saurischia/sauropodomorpha/*
                 - section: Theropoda
