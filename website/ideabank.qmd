@@ -5,6 +5,8 @@ description: "Topics I want to look into 🤔"
 > The aim is to complete at least one writeup per week. Topics will be randomly generated from the below Ideabank (and removed once completed). If there is a pressing topic, I will choose it by hand. 
 > 
 > For additional ideas, [generate a random Wikipedia page...](https://en.wikipedia.org/wiki/Wikipedia:Random)
+> 
+> (TODO: I will attempt to build out an automated pipeline for this.)
 
 ### Psychology
 * Biological contributors to homicide
@@ -73,6 +75,7 @@ description: "Topics I want to look into 🤔"
 ### Astronomy
 * Olbers' Paradox
   * Why is the sky dark at night? Via [Britannica](https://www.britannica.com/science/Olbers-paradox): "If the universe is endless and uniformly populated with luminous stars, then every line of sight must eventually terminate at the surface of a star. Hence, contrary to observation, this argument implies that the night sky should everywhere be bright, with no dark spaces between the stars."
+* Astrobiology
 
 ### Marine Science
 * Series of deep sea creatures
