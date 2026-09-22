@@ -2,6 +2,8 @@
 title: "Ideabank"
 description: "Topics I want to look into 🤔"
 --- 
+> The aim is to complete at least one writeup per week. Topics will be randomly generated from the below Ideabank (and removed once completed). If there is a pressing topic, I will choose it by hand. 
+> 
 > For additional ideas, [generate a random Wikipedia page...](https://en.wikipedia.org/wiki/Wikipedia:Random)
 
 ### Psychology
@@ -11,8 +13,6 @@ description: "Topics I want to look into 🤔"
 * The psychology of advertising and consumer behaviour - what psychological tactics are used in marketing and why do they work to influence consumer decisions?
 * Cultural influences on behaviour and cognition
   * Individualism vs Collectivism (Hofstede's Dimensions)
-* Attachment styles and their impact on adult romantic relationships
-  * Specifically, I find avoidant attachment styles to be pretty interesting
 * Why do people watch horror movies (when they are intended specifically to evoke fear and negative emotions in viewers)?
   * Andersen et al., 2021 ([Playing With Fear: A Field Study in Recreational Horror](https://journals.sagepub.com/doi/10.1177/0956797620972116))
 * Psychiatric disorders as dynamical systems
@@ -25,8 +25,28 @@ description: "Topics I want to look into 🤔"
 * Game Theory
   * Application of Game Theory - SHAP values in machine learning
 * NLP - go through Dan Jurafsky and James H. Martin's [textbook](https://web.stanford.edu/~jurafsky/slp3/) 
+* Synthetic data generation: 
+  * Differential privacy (used in wx.ai)
+  * How is it possible to alter the attributes of the dataset (adding noise) while retaining its statistical properties? How safe is this process? How difficult is it to revert?
+* Encryption
+* OCR - Optical Character Recognition. Using automated data extraction to convert images of text into a machine-readable format. Rapid text recognition. 
+* Document Processing - converting manual / analog documents into digital formats for downstream analysis. 
+  * Docling
+* Low-Rank Adaptation (LoRA) and QLoRA (the quantized version)- a method for fine-tuning large language models with fewer parameters and less computational resources. 
+  * Hu et al., 2021 ([LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685))
+* Model Context Protocols (MCPs) - an open-source standard that enables AI applications and LLMs to connect to external data sources, tools, and workflows (think of it as a USB-C port for AI)
 
-### Linguistics
+### Mathematics
+* Chaos Theory - seemingly random systems that have hidden patterns but are highly sensitive to initial conditions. 
+  * Fractals (I had a writeup years ago in Notion abt this, try to find)
+* Topology
+  * Flatland (the book from FRI) may be a fun reference even though I hate that book
+  * The Klein Bottle - a non-orientable surface with no distinct "inside" or "outside" (it has one surface). There's a Youtube video I watched with an ant walking along the surface that was useful.
+* Fourier Analysis - breaking down complex signals into their constituent sine and cosine waves. 
+  * Fourier Transform 
+  * Fast Fourier Transform (FFT) 
+
+### Linguistics & Anthropology
 * Onomastics (the study of the history and origin of proper names, especially personal names) and nicknaming
   * Kennedy & Zamuner, 2006 ([Nicknames and the Lexicon of Sports](https://read.dukeupress.edu/american-speech/article/81/4/387/5450/NICKNAMES-AND-THE-LEXICON-OF-SPORTS))
   * Bechar-Israeli, 1995 ([From 〈Bonehead〉 to 〈cLoNehEad〉: Nicknames, Play, and Identity on Internet Relay Chat](https://academic.oup.com/jcmc/article/1/2/JCMC127/4584330))

@@ -106,3 +106,4 @@ Four key areas of concern for enterprises that are planning on building an activ
 * [IBM: What are AI Agents?](https://www.ibm.com/think/topics/ai-agents)
 * [IBM: What is Agentic AI?](https://www.ibm.com/think/topics/agentic-ai)
 * [IBM: AskHR Case Study](https://www.ibm.com/new/announcements/reshaping-hr-with-ai-agents)
+* [IBM YouTube: What are AI Agents?](https://www.youtube.com/watch?v=F8NKVhkZZWI)
