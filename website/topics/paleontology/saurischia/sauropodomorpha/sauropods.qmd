@@ -1,13 +1,13 @@
 ---
 title: "Sauropods"
-date: "2026-04-07"
+date: "2026-04-13"
 categories: ["Paleontology"]
 draft: true
 ---
 ## Introduction
 Sauropods are members of the saurischian clade Sauropoda. They are best known for having attained enormous sizes - Sauropoda includes the largest animals to have ever lived on land. Morphologically, sauropods are known for having very long necks, long tails, small heads (relative to the rest of their body), and four thick, pillar-like legs. 
 
-Well known genera are *Alamosaurus*, *Dreadnoughtus*, *Brachiosaurus*, *Diplodocus*, and *Argentinosaurus*.
+Well-known genera are *Alamosaurus*, *Dreadnoughtus*, *Brachiosaurus*, *Diplodocus*, and *Argentinosaurus*.
 
 ![Art by Mark Witton.](sauropods_paleoart.jpeg)
 
@@ -23,8 +23,31 @@ The earliest and most primitive sauropodomorphs were small (1-2 meters long) and
 
 Throughout the Triassic Period, sauropodomorphs gradually increased in size, leading to genera such as *Plateosaurus*, who could reach lengths of 7-8m. 
 
-![Plateosaurus, a basal sauropodomorph from the Late Triassic. Sauropodomorphs increased in size over the Triassic, with Plateosaurus having reached between 5-10m long.](Plateosaurus_Skelett_2.jpg)
+![*Plateosaurus*, a basal sauropodomorph from the Late Triassic. Sauropodomorphs increased in size over the Triassic, with *Plateosaurus* having reached between 5-10m long.](Plateosaurus_Skelett_2.jpg)
 
 These larger sizes were enabled by the evolution of obligatory quadrupedalism, and in particular, the development of columnar limbs, which evolved sometime in the Early Jurassic. It is said that *Vulcanodon* is the oldest-known sauropod to have had columnar limbs.
 
-![Size comparison of Vulcanodon - one of the most primitive known sauropods - to a human. While smaller than most other sauropods, Vulcanodon showed the typical sauropod body plan with columnar limbs and a long neck and tail.](Vulcanodon_Size_Comparison_by_PaleoGeek.svg.png)
+![Size comparison of *Vulcanodon* - one of the most primitive known sauropods - to a human. While smaller than most other sauropods, Vulcanodon showed the typical sauropod body plan with columnar limbs and a long neck and tail.](Vulcanodon_Size_Comparison_by_PaleoGeek.svg.png)
+
+The synapomorphies of Sauropodomorpha include blunt teeth (adaptations for herbivory), and a long neck with a small head. Both sauropodomorphs (and hence sauropods) and ornithischians are herbivorous, as a result of convergent evolution. However, sauropodomorphs never evolved the complex, efficient grinding teeth that ornithischians possessed; rather, they used gastroliths (stomach stones) to mechanically break down plant material in their system.
+
+### Sauropoda
+Sauropodomorphs eventually diversified and increased in size. From basal sauropodomorphs such as *Plateosaurus* arose members of Sauropoda, which includes the largest terrestrial animals of all time.
+
+The synapomorphies of Saurpoda are an extremely long neck, an enlarged, upward-shifted external naris, and columnar limbs with a reduced number of phalanges.
+
+![Diagram of a Brachiosaurus skull; "n" indicates the nasal, and "en" indicates the external naris. [Reference](https://commons.wikimedia.org/wiki/File:Brachiosaurus_Skull_Diagram.svg).](bBrachiosaurus_Skull_Diagram.svg)
+
+![Diagram of a sauropod hindlimb, showing columnar limbs designed to support massive body weights.](sauropod_hindlimb.jpeg)
+
+The sheer size of sauropods, relative to today's extant land animals, is mind-boggling. The largest and heaviest land animals today are elephants, who generally weigh around 5-6 tons. The biggest sauropods - members of the group Titanosauria - were estimated to have weighed upwards of 50 tons (more than a Boeing 737). In fact, when the first sauropod fossil bones were discovered in the 1820s, scientists believed they were from a whale, the only animal they knew could get so large.
+
+![The sizes of various giant sauropods compared to a human.](Longest_dinosaurs2.svg.png)
+
+The size of sauropods may seem biologically unfathomable - many factors are required in order for animals to become extremely large. First, they need to eat a lot of food. It is estimated that large sauropods likely needed to consume around 100 pounds of leaves, stems, and twigs every day. Second, they need to grow fast. Taking too long to grow to a large size would result in numerous opportunities to be attacked by a predator. Finally, they need to be able to breathe very efficiently. This provides them with sufficient oxygen to power all the metabolic reactions in their colossal bodies. Sauropods must have been able to do all of the above.
+
+The extremely long necks of sauropods - perhaps their most distinctive feature - was an adaptive advantage that enabled them to eat the large amounts of food necessary to put on excessive weight. A longer-than-usual neck started evolving in the earliest prosauropods in the Triassic, and continued getting even longer in the later sauropods. This allowed sauropods to reach higher up in trees, giving them access to a new source of food.
+
+Sauropods also grew rapidly. A key synapomorphy of dinosaurs is their faster growth rates relative to other ancient amphibians and reptiles. Studies suggest that most sauropods grew rapidly, maturing from guinea-pig-sized hatchlings to airplane-sized adults in only about 30-40 years.
+
+Finally, sauropods had highly efficient lungs, similar to that of birds. Mammals (including humans) have bi-directional lungs, where air flows in and out through the same path. Birds have a unidirectional lung, where oxygen is extracted during both inhalation and exhalation; each new breath bringing in new air also pushes old air out. 
