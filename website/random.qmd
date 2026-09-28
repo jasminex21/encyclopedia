@@ -1,0 +1,86 @@
+---
+title: "Random Topic Generator"
+description: "Generate a random topic from the Ideabank"
+---
+
+```{=html}
+<!DOCTYPE html>
+<html><body>
+
+<style>
+  .picker-controls {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .picker-controls button {
+    padding: 0.9rem 2.2rem;
+    font-size: 1.15rem;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="picker-controls">
+  <button id="roll" class="btn btn-primary">🎲 Generate a random topic</button>
+</div>
+
+<div id="result" style="margin-top:1.5rem"></div>
+
+<script>
+let ideas = [];
+
+// HTML of an <li> excluding its nested list
+function ownHTML(li) {
+  const c = li.cloneNode(true);
+  c.querySelectorAll("ul").forEach(u => u.remove());
+  return c.innerHTML.trim();
+}
+
+async function loadIdeas() {
+  const res = await fetch("ideabank.html", { cache: "no-store" });
+  const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+
+  doc.querySelectorAll("section.level3").forEach(sec => {
+    const category = sec.querySelector(":scope > h3")?.textContent.trim();
+    const ul = sec.querySelector(":scope > ul");
+    if (!category || !ul) return;
+
+    ul.querySelectorAll(":scope > li").forEach(li => {
+      if (li.querySelector("del, s")) return;        // skip crossed-out (done) items
+      const subUl = li.querySelector(":scope > ul");
+      ideas.push({
+        category,
+        html: ownHTML(li),
+        subHTML: subUl ? subUl.outerHTML : ""
+      });
+    });
+  });
+}
+
+function show(idea, save = true) {
+  document.getElementById("result").innerHTML = `
+    <h3>${idea.category}</h3>
+    <p><strong>${idea.html}</strong></p>
+    ${idea.subHTML}`;
+  if (save) {
+    try { localStorage.setItem("lastPick", JSON.stringify({ idea })); } catch {}
+  }
+}
+
+// Restore the last pick when the page loads
+try {
+  const saved = JSON.parse(localStorage.getItem("lastPick"));
+  if (saved) show(saved.idea, false);
+} catch {}
+
+const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+
+document.getElementById("roll").onclick = async () => {
+  if (!ideas.length) await loadIdeas();
+  show(pick(ideas));
+};
+</script>
+
+</body></html>
+```
