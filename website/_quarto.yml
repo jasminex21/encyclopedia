@@ -1,7 +1,8 @@
 project:
   type: website
   title: "Personal Encyclopedia"
-  output-dir: /home/jasmine/PROJECTS/encyclopedia/docs
+  # ensure the output dir is a relative path so it works on any machine
+  output-dir: docs
 
 website:
   title: "Personal Encyclopedia"
@@ -34,6 +35,8 @@ website:
         text: Home
       - href: ideabank.qmd
         text: Ideabank
+      - href: random.qmd
+        text: Random Generator
       - text: "---"
       - section: Topics
         contents:
