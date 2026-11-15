@@ -1,8 +1,7 @@
 project:
   type: website
   title: "Personal Encyclopedia"
-  # ensure the output dir is a relative path so it works on any machine
-  output-dir: docs
+  output-dir: /Users/jasminexu/encyclopedia/docs
 
 website:
   title: "Personal Encyclopedia"
